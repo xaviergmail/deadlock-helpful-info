@@ -4,11 +4,12 @@ Sets of "cheatsheets" for Deadlock - for quick viewing in your Steam overlay bro
 
 ## Site setup
 
-This repository now uses **Jekyll** as a static site generator and deploys automatically to **GitHub Pages** using GitHub Actions.
+This repository uses **Jekyll** as a static site generator and deploys automatically to **GitHub Pages** using GitHub Actions.
 
 - Workflow: `.github/workflows/pages.yml`
 - Site entry page: `index.md`
 - Image folder: `assets/images/`
+- **Git LFS**: All image files (`.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`) are tracked via Git LFS (see `.gitattributes`). The GitHub Actions workflow checks out with `lfs: true` to ensure images are included in builds.
 
 ## Editing quickly
 
