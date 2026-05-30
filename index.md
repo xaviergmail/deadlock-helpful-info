@@ -1,17 +1,18 @@
-# Deadlock Helpful Info
+---
+layout: default
+title: Deadlock Helpful Info
+---
 
-Quick in-game reference notes.
+<style>
+  .cheatsheet-img {
+    display: block;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: auto;
+  }
+</style>
 
-## Editing content
+<img src="assets/images/counter-item-cheatsheet.png" alt="Deadlock Counter Item Cheatsheet" class="cheatsheet-img">
 
-- Edit this file directly on GitHub.
-- Add more markdown pages in the repository root and link them here.
-- Put images in `assets/images/`.
-
-## Image example
-
-```md
-![Hero positioning](assets/images/hero-positioning.png)
-```
-
-After you push a change, GitHub Actions automatically rebuilds and deploys the site to GitHub Pages.
+<img src="assets/images/counter-item-cheatsheet-2.png" alt="Deadlock Counter Item Cheatsheet 2" class="cheatsheet-img">
