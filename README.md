@@ -1,24 +1,120 @@
-# deadlock-helpful-info
+# Deadlock Helpful Info
 
-Sets of "cheatsheets" for Deadlock - for quick viewing in your Steam overlay browser when fullscreen tabbing out is too laggy, or whatever.
+Hero, item, and ability reference for Deadlock — built for the Steam Overlay browser.
 
-## Site setup
+**Live site**: https://xaviergmail.github.io/deadlock-helpful-info/
 
-This repository uses **Jekyll** as a static site generator and deploys automatically to **GitHub Pages** using GitHub Actions.
+## Tech stack
 
-- Workflow: `.github/workflows/pages.yml`
-- Site entry page: `index.md`
-- Image folder: `assets/images/`
-- **Git LFS**: All image files (`.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`) are tracked via Git LFS (see `.gitattributes`). The GitHub Actions workflow checks out with `lfs: true` to ensure images are included in builds.
+- **[Solid.js](https://www.solidjs.com/)** — fine-grained reactivity, no Virtual DOM
+- **[Vite](https://vitejs.dev/)** — build tool
+- **TypeScript** strict mode
+- **[Biome](https://biomejs.dev/)** — single-binary lint + format
+- **[Vitest](https://vitest.dev/)** + `@solidjs/testing-library` — unit tests
+- **[Playwright](https://playwright.dev/)** — E2E smoke tests
+- **pnpm** — package manager
+- **GitHub Pages** — hosting via GitHub Actions
 
-## Editing quickly
+See [`AGENTS.md`](./AGENTS.md) for the full architecture brief and Solid.js conventions.
 
-1. Edit `index.md` (or add more `.md` files) directly in GitHub.
-2. Add images to `assets/images/`.
-3. Link images from markdown, for example:
+## Quickstart
 
-```md
-![Callout](assets/images/callout.png)
+```sh
+pnpm install
+pnpm dev          # http://localhost:5173
+pnpm test         # vitest unit tests
+pnpm test:e2e     # playwright smoke (requires `pnpm exec playwright install --with-deps chromium`)
+pnpm build        # production build → dist/
+pnpm preview      # serve built site at http://localhost:4173/deadlock-helpful-info/
 ```
 
-Every push to `main` triggers deployment to GitHub Pages.
+## Scripts
+
+| Script | Purpose |
+|---|---|
+| `pnpm dev` | Start Vite dev server at http://localhost:5173 |
+| `pnpm build` | Build production bundle to `dist/` |
+| `pnpm preview` | Serve the built `dist/` (with prod base path) |
+| `pnpm test` | Run Vitest unit tests in watch mode |
+| `pnpm test:watch` | Same as `test` (explicit watch mode) |
+| `pnpm test:e2e` | Run Playwright E2E smoke tests against `pnpm preview` |
+| `pnpm typecheck` | TypeScript strict typecheck (`tsc --noEmit`) |
+| `pnpm lint` | Biome lint + format check |
+| `pnpm format` | Biome auto-format files |
+| `pnpm check` | Biome lint + format + auto-fix |
+| `pnpm bundle-size` | Verify gzipped initial JS is under budget (60 KB) |
+| `pnpm prepare` | Set up local git hooks (auto-runs after `pnpm install`) |
+
+## Architecture
+
+- **Build-time data**: All data is baked into the static bundle at build time. The Steam Overlay browser never makes runtime API calls.
+- **Fine-grained reactivity**: Solid components run once. Reactivity flows through signals, not re-renders.
+- **Hash routing**: Uses `<HashRouter>` from `@solidjs/router` for zero-config GitHub Pages subpath compatibility.
+- **Dark theme**: Single dark theme baked in (Steam Overlay context). Design tokens in `src/styles/tokens.css`.
+- **Bundle budget**: CI fails if initial JS exceeds 60 KB gzipped. See `scripts/check-bundle-size.ts`.
+
+## Deployment
+
+Pushes to `main` automatically trigger a build + deploy via `.github/workflows/pages.yml`.
+
+### One-time setup (REQUIRED before first deploy succeeds)
+
+In your GitHub repo:
+
+1. Go to **Settings → Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Save
+
+Without this step, the deploy job will silently no-op. There is no way to automate this — it must be done manually once per repo.
+
+## Images
+
+Images (`*.png`, `*.jpg`, `*.jpeg`, `*.gif`, `*.webp`) are tracked via Git LFS — see `.gitattributes`. The deploy workflow checks out with `lfs: true` so images are included.
+
+## Adding a route
+
+1. Create a page component in `src/pages/<route-name>.tsx`
+2. Register it in `src/app.tsx` with `lazy()` import + `<Route>` element
+3. Add to `src/routes.ts` `navRoutes` array if it should appear in the primary nav
+
+## Adding a test
+
+Place `*.test.tsx` files under `src/**/__tests__/`. Use `@solidjs/testing-library` semantic queries (`getByRole`, `getByText`) — not implementation-detail selectors.
+
+## Conventions
+
+Read [`AGENTS.md`](./AGENTS.md) before contributing. The most important rules:
+
+- **Never destructure props** in Solid components. Use `props.x`, not `({ x })`.
+- **Signals are functions**. Call them: `count()`, not `count`.
+- **Use `<For>` / `<Show>` / `<Switch>`** for rendering. No `.map()` in JSX. No ternaries.
+- **Build-time data only**. No runtime API calls from the browser.
+
+Solid framework-specific lint rules are not enforced by Biome (see `CONTRIBUTING.md` for the trade-off note).
+
+## Bundle budget
+
+Current budgets enforced in CI:
+- Initial JS: **60 KB** gzipped
+- Total CSS: **20 KB** gzipped
+- Any single chunk: **100 KB** gzipped
+
+Tune in `scripts/check-bundle-size.ts`.
+
+## Pre-commit hooks
+
+`simple-git-hooks` + `lint-staged` auto-format staged files via Biome on commit.
+
+The `prepare` script in `package.json` sets `core.hooksPath` locally to `.git/hooks` to override any global setting. This runs automatically after `pnpm install`.
+
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
+## Security
+
+See [`SECURITY.md`](./SECURITY.md).
+
+## License
+
+See [`LICENSE`](./LICENSE).
