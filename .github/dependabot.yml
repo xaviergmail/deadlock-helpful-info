@@ -1,0 +1,32 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Etc/UTC
+    open-pull-requests-limit: 5
+    labels: [dependencies, npm]
+    commit-message:
+      prefix: ci(deps)
+      include: scope
+    groups:
+      solid-ecosystem:
+        patterns: ["solid-js", "@solidjs/*", "vite-plugin-solid"]
+      dev-tooling:
+        patterns: ["vite", "vitest", "@vitest/*", "@biomejs/biome", "typescript", "@playwright/test", "playwright"]
+      testing:
+        patterns: ["@solidjs/testing-library", "@testing-library/*", "jsdom"]
+      types:
+        patterns: ["@types/*"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    labels: [dependencies, github-actions]
+    commit-message:
+      prefix: ci(deps)
