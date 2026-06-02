@@ -1,0 +1,7 @@
+=== index.html checks ===
+PASS: #root div
+PASS: entry script
+PASS: viewport
+PASS: theme-color
+PASS: FOUC prevention
+PASS: no external URLs
