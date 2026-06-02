@@ -1,0 +1,6 @@
+=== public/ checks ===
+PASS: robots.txt
+PASS: favicon.svg
+PASS: SVG is valid XML
+PASS: robots.txt has User-agent
+PASS: robots.txt has Allow: /
