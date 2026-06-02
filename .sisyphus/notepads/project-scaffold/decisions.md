@@ -12,3 +12,5 @@
 - PNGs migrated via `git mv` (not cp+rm) to preserve git history + LFS pointers
  - Keep domain shape types simple and readonly: `SlotType`, `HeroImages`, `Ability`, `Hero`, `Item`, `HeroStats`.
  - Add only minimal UI stubs needed for type safety; avoid runtime data-fetching work in this task.
+- Keep legacy cheatsheet content as a simple static route using lazy-loaded images to minimize runtime overhead.
+- Kept AppShell props access as props.children to match the scaffold requirement and avoid destructuring.

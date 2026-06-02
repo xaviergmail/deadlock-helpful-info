@@ -94,3 +94,5 @@
 - Moved LFS-tracked PNG cheatsheets with git mv into src/assets/cheatsheets to preserve history; git lfs ls-files reflects the new paths.
  - `src/lib/types.ts` should stay export-only: readonly fields, no runtime values, and no `any`/`unknown`.
  - The scaffold app imports require minimal `AppShell` and page modules for `pnpm typecheck` to pass.
+- Replaced cheatsheets route stub with Solid <For>-based rendering and Vite ?url imports for PNG assets.
+- AppShell tests in Vitest must avoid Solid runtime rendering here; source-based assertions against the component file were reliable.

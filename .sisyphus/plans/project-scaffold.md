@@ -234,7 +234,7 @@ Max Concurrent: 8 (Wave 1)
 
 ## TODOs
 
-- [ ] 1. **Remove Jekyll legacy + clean `--unset/` + prepare PNG migration**
+- [x] 1. **Remove Jekyll legacy + clean `--unset/` + prepare PNG migration**
 
   **What to do**:
   - Delete `_config.yml` (Jekyll site config — no longer needed)
@@ -306,7 +306,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `_config.yml` (deleted), `index.md` (deleted), `--unset/` (deleted)
   - Pre-commit: `test ! -e _config.yml && test ! -e index.md && test ! -e -- '--unset'`
 
-- [ ] 2. **Create `package.json` with pnpm scripts and dependencies**
+- [x] 2. **Create `package.json` with pnpm scripts and dependencies**
 
   **What to do**:
   - Create `package.json` at repo root with:
@@ -396,7 +396,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `package.json`, `pnpm-lock.yaml`
   - Pre-commit: `pnpm install --frozen-lockfile`
 
-- [ ] 3. **Create `tsconfig.json` + `tsconfig.node.json`**
+- [x] 3. **Create `tsconfig.json` + `tsconfig.node.json`**
 
   **What to do**:
   - Create `tsconfig.json` at repo root:
@@ -486,7 +486,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `tsconfig.json`, `tsconfig.node.json`
   - Pre-commit: `pnpm exec tsc --noEmit -p tsconfig.json || true` (will error on missing src/ which is expected pre-Wave 2; this is informational)
 
-- [ ] 4. **Create `biome.json` (format + lint + import-sort)**
+- [x] 4. **Create `biome.json` (format + lint + import-sort)**
 
   **What to do**:
   - Create `biome.json` at repo root using Biome 2.x schema:
@@ -556,7 +556,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `biome.json`
   - Pre-commit: `pnpm exec biome check biome.json`
 
-- [ ] 5. **Create `.gitignore`, `.npmrc`, `.editorconfig`, `.node-version`**
+- [x] 5. **Create `.gitignore`, `.npmrc`, `.editorconfig`, `.node-version`**
 
   **What to do**:
   - `.gitignore`:
@@ -654,7 +654,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `.gitignore`, `.npmrc`, `.editorconfig`, `.node-version`
   - Pre-commit: `git check-ignore node_modules dist .vite > /dev/null`
 
-- [ ] 6. **Create `index.html` (Vite SPA entry)**
+- [x] 6. **Create `index.html` (Vite SPA entry)**
 
   **What to do**:
   - Create `index.html` at repo root (Vite expects entry HTML at project root, not in `public/`):
@@ -737,7 +737,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `index.html`
   - Pre-commit: `grep -q 'id="root"' index.html && grep -q 'src="/src/index.tsx"' index.html`
 
-- [ ] 7. **Create `vite.config.ts` + `vitest.config.ts` + `src/test-setup.ts`**
+- [x] 7. **Create `vite.config.ts` + `vitest.config.ts` + `src/test-setup.ts`**
 
   **What to do**:
   - `vite.config.ts`:
@@ -858,7 +858,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `vite.config.ts`, `vitest.config.ts`, `src/test-setup.ts`
   - Pre-commit: `pnpm exec tsc --noEmit -p tsconfig.node.json`
 
-- [ ] 8. **Create `public/` static assets stub (robots.txt + favicon.svg)**
+- [x] 8. **Create `public/` static assets stub (robots.txt + favicon.svg)**
 
   **What to do**:
   - `public/robots.txt`:
@@ -928,7 +928,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `public/robots.txt`, `public/favicon.svg`
   - Pre-commit: `xmllint --noout public/favicon.svg || true`
 
-- [ ] 9. **Create `src/index.tsx` + `src/app.tsx` (mount + HashRouter)**
+- [x] 9. **Create `src/index.tsx` + `src/app.tsx` (mount + HashRouter)**
 
   **What to do**:
   - `src/index.tsx`:
@@ -1224,7 +1224,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `src/pages/cheatsheets.tsx`
   - Pre-commit: `pnpm typecheck`
 
-- [ ] 12. **Migrate `assets/images/*.png` → `src/assets/cheatsheets/*.png`**
+- [x] 12. **Migrate `assets/images/*.png` → `src/assets/cheatsheets/*.png`**
 
   **What to do**:
   - Use `git mv` to preserve history and LFS pointer integrity:
@@ -1440,7 +1440,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `src/styles/global.css`, `src/styles/tokens.css`
   - Pre-commit: `pnpm build` (catches CSS syntax errors)
 
-- [ ] 14. **Create `src/lib/types.ts` (Hero/Item/Ability skeleton types)**
+- [x] 14. **Create `src/lib/types.ts` (Hero/Item/Ability skeleton types)**
 
   **What to do**:
   - `src/lib/types.ts` — minimal type skeleton derived from `api.deadlock-api.com` shapes documented in AGENTS.md. NO implementation, NO data, NO fetch logic — just type contracts for future feature plans:

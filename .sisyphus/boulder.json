@@ -1,7 +1,9 @@
 {
   "active_plan": "/Volumes/projects/deadlock-helpful-info/.sisyphus/plans/project-scaffold.md",
   "started_at": "2026-06-02T22:40:51.304Z",
-  "session_ids": ["ses_175996352ffeJcV0ggvPOqr30B"],
+  "session_ids": [
+    "ses_175996352ffeJcV0ggvPOqr30B"
+  ],
   "session_origins": {
     "ses_175996352ffeJcV0ggvPOqr30B": "direct"
   },
@@ -16,6 +18,24 @@
       "agent": "Sisyphus-Junior",
       "category": "quick",
       "updated_at": "2026-06-02T22:47:44.284Z"
+    },
+    "todo:9": {
+      "task_key": "todo:9",
+      "task_label": "9",
+      "task_title": "**Create `src/index.tsx` + `src/app.tsx` (mount + HashRouter)**",
+      "session_id": "ses_1756fb69dffelynmkeNQKp80bh",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-06-02T23:02:24.103Z"
+    },
+    "todo:10": {
+      "task_key": "todo:10",
+      "task_label": "10",
+      "task_title": "**Create `src/routes.ts` + `src/pages/home.tsx` + `src/pages/not-found.tsx`**",
+      "session_id": "ses_175672e49ffeusDFNBNR1iO2a9",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-06-02T23:10:24.142Z"
     }
   }
 }

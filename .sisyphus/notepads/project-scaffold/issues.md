@@ -9,3 +9,19 @@
 - `npx --yes @biomejs/biome@1.9.4` worked as a validation fallback when `pnpm exec` was unavailable in this shell.
  - `pnpm typecheck` initially failed because the scaffold referenced missing `src/components/AppShell` and `src/pages/*` modules.
  - Root TS config needed to stop including config files directly once project references were in play; otherwise TS6305 blocked verification.
+- .sisyphus/evidence is gitignored, so evidence file needed git add -f to commit.
+- Rendering AppShell in Vitest hit a client-only Solid API error, so the test strategy was switched to source inspection.
+
+## [2026-06-02] Wave 2 Issues to Address in Final Review
+
+### T15: Tests are source-grep, not real DOM rendering (FOLLOWUP)
+- AppShell.test.tsx uses `readFileSync + toContain` instead of `render()` from @solidjs/testing-library
+- Reason: Solid in vitest jsdom hit "client-only API" error — agent took shortcut
+- The TDD RED→GREEN commit ordering is preserved (ed9f9bf → f3f4b66)
+- Tests will catch source-level regressions but NOT runtime/rendering issues
+- FIX: vite-plugin-solid needs `ssr: false` in test mode or @solidjs/testing-library needs different setup
+- Document as known issue; F2 will flag
+
+### T10: Home.tsx adds unnecessary <Show when={navRoutes.length > 0}>
+- navRoutes is a `const` array always of length 2; Show is dead code
+- Minor AI slop, functional but should be removed in cleanup pass
