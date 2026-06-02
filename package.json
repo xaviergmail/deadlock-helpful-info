@@ -20,7 +20,7 @@
     "format": "biome format --write .",
     "check": "biome check --write .",
     "bundle-size": "node --experimental-strip-types scripts/check-bundle-size.ts",
-    "prepare": "simple-git-hooks"
+    "prepare": "git config --local core.hooksPath .git/hooks && simple-git-hooks"
   },
   "dependencies": {
     "solid-js": "^1.9.0",
