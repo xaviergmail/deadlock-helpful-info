@@ -1,0 +1,6 @@
+=== task-14 types verification ===
+PASS: types only
+PASS: no any/unknown
+6
+Checked 1 file in 2ms. No fixes applied.
+PASS: pnpm typecheck

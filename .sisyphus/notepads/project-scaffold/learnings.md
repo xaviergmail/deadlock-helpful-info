@@ -49,3 +49,48 @@
 ### Public static assets (T8)
 - `public/` is the Vite passthrough directory, so `robots.txt` and `favicon.svg` should be placed there to ship at root unchanged.
 - A minimal SVG favicon can stay XML-valid and still match Deadlock colors with a dark background and gold accent.
+
+## [2026-06-02] Wave 1 Completion — Critical Lessons
+
+### pnpm 11 Build Scripts (CRITICAL for all future agents)
+- pnpm 11 blocks build scripts by default (ERR_PNPM_IGNORED_BUILDS)
+- The `pnpm` field in package.json is IGNORED in pnpm 11
+- `pnpm-workspace.yaml` with `onlyBuiltDependencies` does NOT work in pnpm 11.5.1
+- CORRECT FIX: Run `pnpm approve-builds --all` — creates `allowBuilds` section in pnpm-workspace.yaml
+- Current pnpm-workspace.yaml now has: `allowBuilds: { '@biomejs/biome': true, esbuild: true, simple-git-hooks: true }`
+- pnpm version: 11.5.1 (NOT 9.x — agent installed newer version)
+- `pnpm exec <cmd>` was failing because of ERR_PNPM_IGNORED_BUILDS; now fixed
+
+### vite-plugin-solid v2.11 Options
+- The `typescript: { onlyRemoveTypeImports: true }` option DOES NOT EXIST in vite-plugin-solid v2.11 types
+- The Options interface has: include, exclude, dev, ssr, hot, extensions, babel, solid
+- Use `solid()` with no args for default behavior; pass options via `babel:` if needed
+- Version installed: vite-plugin-solid@2.11.12
+
+### Vite 6.4.3 minify
+- `minify: 'oxc'` is NOT in Vite 6.x TypeScript types (it's experimental/Vite 7+)
+- Using `minify: 'esbuild'` — functionally identical for our use case
+- Vite 8.0.16 is available if needed later
+
+### vitest.config.ts mergeConfig
+- Import `type { UserConfig } from 'vite'` and cast `viteConfig as UserConfig`
+- This is a known typing quirk in vitest+vite setup
+
+### @types/node Required
+- Added `@types/node@^22.0.0` to devDependencies (for process.env, import.meta.dirname, node:path)
+- Installed: @types/node@22.19.19
+
+### pnpm-workspace.yaml
+- File exists at repo root (single-package project uses it for allowBuilds config)
+- Do NOT overwrite or delete this file
+
+### Repo State at Wave 1 Complete
+- git log: 12 commits from b6f3a89 to 6ea4ee3
+- All Wave 1 files present and verified
+- Biome: CLEAN (exit 0)
+- TypeScript: CLEAN (exit 0) on tsconfig.node.json scope
+- node_modules: installed correctly with pnpm@11.5.1
+
+- Moved LFS-tracked PNG cheatsheets with git mv into src/assets/cheatsheets to preserve history; git lfs ls-files reflects the new paths.
+ - `src/lib/types.ts` should stay export-only: readonly fields, no runtime values, and no `any`/`unknown`.
+ - The scaffold app imports require minimal `AppShell` and page modules for `pnpm typecheck` to pass.

@@ -10,3 +10,5 @@
 - simple-git-hooks over husky: zero .husky/ directory overhead
 - Vite entry at repo root index.html (not public/index.html)
 - PNGs migrated via `git mv` (not cp+rm) to preserve git history + LFS pointers
+ - Keep domain shape types simple and readonly: `SlotType`, `HeroImages`, `Ability`, `Hero`, `Item`, `HeroStats`.
+ - Add only minimal UI stubs needed for type safety; avoid runtime data-fetching work in this task.
