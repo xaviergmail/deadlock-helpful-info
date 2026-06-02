@@ -1,0 +1,23 @@
+{
+  "active_plan": "/Volumes/projects/deadlock-helpful-info/.sisyphus/plans/project-scaffold.md",
+  "started_at": "2026-06-02T22:40:51.304Z",
+  "session_ids": [
+    "ses_175996352ffeJcV0ggvPOqr30B"
+  ],
+  "session_origins": {
+    "ses_175996352ffeJcV0ggvPOqr30B": "direct"
+  },
+  "plan_name": "project-scaffold",
+  "agent": "atlas",
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "**Remove Jekyll legacy + clean `--unset/` + prepare PNG migration**",
+      "session_id": "ses_1757d56b5ffernidqZYNU3xkYq",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-06-02T22:47:44.284Z"
+    }
+  }
+}

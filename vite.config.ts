@@ -1,25 +1,20 @@
 import { defineConfig } from 'vite';
 import solid from 'vite-plugin-solid';
-
-declare const process: {
-  env: {
-    VITE_BASE?: string;
-  };
-};
+import { resolve } from 'node:path';
 
 export default defineConfig({
-  base: process.env.VITE_BASE ?? '/',
+  base: process.env['VITE_BASE'] ?? '/',
   plugins: [
     solid({
       typescript: { onlyRemoveTypeImports: true },
-    } as any),
+    }),
   ],
   resolve: {
-    alias: { '~': new URL('./src', import.meta.url).pathname },
+    alias: { '~': resolve(import.meta.dirname, 'src') },
   },
   build: {
     target: 'esnext',
-    minify: 'oxc' as any,
+    minify: 'oxc',
     cssCodeSplit: true,
     assetsInlineLimit: 0,
     chunkSizeWarningLimit: 300,

@@ -1,9 +1,8 @@
 import { defineConfig, mergeConfig } from 'vitest/config';
-
 import viteConfig from './vite.config';
 
 export default mergeConfig(
-  viteConfig as any,
+  viteConfig,
   defineConfig({
     test: {
       globals: true,
@@ -18,5 +17,5 @@ export default mergeConfig(
       },
       deps: { optimizer: { web: { include: ['solid-js'] } } },
     },
-  }) as any,
+  }),
 );
