@@ -10,6 +10,7 @@ test-results/
 .env.local
 .env.*.local
 /e2e/.cache/
+.playwright-mcp/
 .sisyphus/evidence/
 tsconfig.node.tsbuildinfo
 *.tsbuildinfo
