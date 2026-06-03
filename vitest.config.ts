@@ -18,5 +18,8 @@ export default mergeConfig(
       },
       deps: { optimizer: { web: { include: ['solid-js'] } } },
     },
+    resolve: {
+      conditions: ['browser', 'development'],
+    },
   }),
 );
