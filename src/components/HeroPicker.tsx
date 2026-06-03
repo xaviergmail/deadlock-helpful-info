@@ -35,8 +35,10 @@ export default function HeroPicker(props: HeroPickerProps) {
         'button, [href], [tabindex]:not([tabindex="-1"])',
       );
       if (focusables.length === 0) return;
-      const first = focusables[0] as HTMLElement;
-      const last = focusables[focusables.length - 1] as HTMLElement;
+      // biome-ignore lint/style/noNonNullAssertion: length already checked above
+      const first = focusables[0]!;
+      // biome-ignore lint/style/noNonNullAssertion: length already checked above
+      const last = focusables[focusables.length - 1]!;
       const active = document.activeElement as HTMLElement | null;
       if (e.shiftKey && active === first) {
         e.preventDefault();
@@ -81,9 +83,10 @@ export default function HeroPicker(props: HeroPickerProps) {
         <HeroCard hero={props.selected} />
       </button>
       <Show when={open()}>
-        <dialog
+        <div
           ref={overlayEl}
           class="hero-picker__overlay"
+          role="dialog"
           aria-modal="true"
           aria-label="Pick a hero"
           tabindex="-1"
@@ -97,7 +100,7 @@ export default function HeroPicker(props: HeroPickerProps) {
             ×
           </button>
           <HeroGrid heroes={props.heroes} selectedId={props.selected?.id} onSelect={handleSelect} />
-        </dialog>
+        </div>
       </Show>
     </div>
   );

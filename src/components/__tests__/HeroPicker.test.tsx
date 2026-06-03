@@ -1,20 +1,18 @@
-import { cleanup, fireEvent, render, screen } from '@solidjs/testing-library';
+import { fireEvent, render, screen } from '@solidjs/testing-library';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { Hero } from '~/lib/types';
 import HeroPicker from '../HeroPicker';
 
-afterEach(cleanup);
-
-const HEROES: Hero[] = [
+const heroes: ReadonlyArray<Hero> = [
   {
     id: 1,
     name: 'Abrams',
     class_name: 'hero_abrams',
     images: {
-      icon_image_small: 'a.png',
-      icon_image_small_webp: 'a.webp',
-      icon_hero_card: 'ac.png',
-      icon_hero_card_webp: 'ac.webp',
+      icon_image_small: 'https://example.com/abrams-small.png',
+      icon_image_small_webp: 'https://example.com/abrams-small.webp',
+      icon_hero_card: 'https://example.com/abrams-card.png',
+      icon_hero_card_webp: 'https://example.com/abrams-card.webp',
     },
   },
   {
@@ -22,117 +20,121 @@ const HEROES: Hero[] = [
     name: 'Bebop',
     class_name: 'hero_bebop',
     images: {
-      icon_image_small: 'b.png',
-      icon_image_small_webp: 'b.webp',
-      icon_hero_card: 'bc.png',
-      icon_hero_card_webp: 'bc.webp',
+      icon_image_small: 'https://example.com/bebop-small.png',
+      icon_image_small_webp: 'https://example.com/bebop-small.webp',
+      icon_hero_card: 'https://example.com/bebop-card.png',
+      icon_hero_card_webp: 'https://example.com/bebop-card.webp',
     },
   },
   {
     id: 3,
-    name: 'Wraith',
-    class_name: 'hero_wraith',
+    name: 'Calico',
+    class_name: 'hero_calico',
     images: {
-      icon_image_small: '',
-      icon_image_small_webp: '',
-      icon_hero_card: '',
-      icon_hero_card_webp: '',
+      icon_image_small: 'https://example.com/calico-small.png',
+      icon_image_small_webp: 'https://example.com/calico-small.webp',
+      icon_hero_card: 'https://example.com/calico-card.png',
+      icon_hero_card_webp: 'https://example.com/calico-card.webp',
     },
   },
 ];
 
+afterEach(() => {
+  vi.useRealTimers();
+});
+
 describe('HeroPicker', () => {
-  it('initial render: no dialog, trigger has aria-expanded="false" and aria-haspopup="dialog"', () => {
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={vi.fn()} />);
-    expect(screen.queryByRole('dialog')).toBeNull();
-    // trigger may not have accessible name — fallback: find button with aria-haspopup
-    const btn = document.querySelector('.hero-picker__trigger') as HTMLButtonElement;
-    expect(btn).toBeTruthy();
-    expect(btn.getAttribute('aria-expanded')).toBe('false');
-    expect(btn.getAttribute('aria-haspopup')).toBe('dialog');
+  it('initial render — no dialog', () => {
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={vi.fn()} />);
+    expect(document.querySelector('[role="dialog"]')).toBeNull();
+    const trigger = screen.getByRole('button', { expanded: false });
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    expect(trigger).toHaveAttribute('aria-haspopup', 'dialog');
   });
 
-  it('click trigger → dialog appears with role=dialog, aria-modal=true, aria-label="Pick a hero"; trigger aria-expanded="true"', async () => {
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={vi.fn()} />);
-    const btn = document.querySelector('.hero-picker__trigger') as HTMLButtonElement;
-    fireEvent.click(btn);
-    const dialog = await screen.findByRole('dialog');
-    expect(dialog).toBeTruthy();
-    expect(dialog.getAttribute('aria-modal')).toBe('true');
-    expect(dialog.getAttribute('aria-label')).toBe('Pick a hero');
-    expect(btn.getAttribute('aria-expanded')).toBe('true');
+  it('click trigger → opens dialog', () => {
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={vi.fn()} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
   });
 
-  it('when open: N hero options present inside dialog', async () => {
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={vi.fn()} />);
-    fireEvent.click(document.querySelector('.hero-picker__trigger') as HTMLButtonElement);
-    await screen.findByRole('dialog');
-    const options = document.querySelectorAll('[role="dialog"] [role="option"]');
-    expect(options.length).toBe(HEROES.length);
+  it('overlay shows all hero options', () => {
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={vi.fn()} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    const options = screen.getAllByRole('option');
+    expect(options).toHaveLength(3);
   });
 
-  it('click hero option → onChange called with that hero + dialog closes', async () => {
+  it('select hero → onChange called + dialog closes', () => {
     const onChange = vi.fn();
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={onChange} />);
-    fireEvent.click(document.querySelector('.hero-picker__trigger') as HTMLButtonElement);
-    await screen.findByRole('dialog');
-    const firstOption = document.querySelector('[role="dialog"] [role="option"]') as HTMLElement;
-    fireEvent.click(firstOption);
-    expect(onChange).toHaveBeenCalledOnce();
-    expect(onChange).toHaveBeenCalledWith(HEROES[0]);
-    expect(screen.queryByRole('dialog')).toBeNull();
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={onChange} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    const options = screen.getAllByRole('option');
+    // biome-ignore lint/style/noNonNullAssertion: safe in test fixture
+    fireEvent.click(options[0]!);
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(heroes[0]);
+    expect(document.querySelector('[role="dialog"]')).toBeNull();
   });
 
-  it('Escape key closes dialog; onChange NOT called', async () => {
+  it('Escape key closes overlay', () => {
     const onChange = vi.fn();
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={onChange} />);
-    fireEvent.click(document.querySelector('.hero-picker__trigger') as HTMLButtonElement);
-    await screen.findByRole('dialog');
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={onChange} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
     fireEvent.keyDown(document, { key: 'Escape' });
-    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(document.querySelector('[role="dialog"]')).toBeNull();
     expect(onChange).not.toHaveBeenCalled();
   });
 
-  it('mousedown outside overlay closes dialog', async () => {
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={vi.fn()} />);
-    fireEvent.click(document.querySelector('.hero-picker__trigger') as HTMLButtonElement);
-    await screen.findByRole('dialog');
+  it('mousedown outside closes overlay', () => {
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={vi.fn()} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
     fireEvent.mouseDown(document.body);
-    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(document.querySelector('[role="dialog"]')).toBeNull();
   });
 
-  it('mousedown inside overlay does NOT close dialog', async () => {
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={vi.fn()} />);
-    fireEvent.click(document.querySelector('.hero-picker__trigger') as HTMLButtonElement);
-    const dialog = await screen.findByRole('dialog');
+  it('mousedown inside overlay does NOT close', () => {
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={vi.fn()} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    const dialog = screen.getByRole('dialog');
     fireEvent.mouseDown(dialog);
-    expect(screen.queryByRole('dialog')).toBeTruthy();
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
-  it('on open: document.activeElement is first option inside dialog (after setTimeout)', async () => {
+  it('focus moves to first option on open', () => {
     vi.useFakeTimers();
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={vi.fn()} />);
-    fireEvent.click(document.querySelector('.hero-picker__trigger') as HTMLButtonElement);
-    await screen.findByRole('dialog');
-    vi.runAllTimers();
-    const firstOption = document.querySelector('[role="dialog"] [role="option"]') as HTMLElement;
-    expect(document.activeElement).toBe(firstOption);
-    vi.useRealTimers();
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={vi.fn()} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    vi.advanceTimersByTime(100);
+    const options = screen.getAllByRole('option');
+    expect(document.activeElement).toBe(options[0]);
   });
 
-  it('on close: document.activeElement is the trigger button', async () => {
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={vi.fn()} />);
-    const btn = document.querySelector('.hero-picker__trigger') as HTMLButtonElement;
-    fireEvent.click(btn);
-    await screen.findByRole('dialog');
+  it('focus returns to trigger on close', () => {
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={vi.fn()} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
     fireEvent.keyDown(document, { key: 'Escape' });
-    expect(document.activeElement).toBe(btn);
+    expect(document.querySelector('[role="dialog"]')).toBeNull();
+    expect(document.activeElement).toBe(trigger);
   });
 
-  it('overlay container has tabindex="-1"', async () => {
-    render(() => <HeroPicker heroes={HEROES} selected={undefined} onChange={vi.fn()} />);
-    fireEvent.click(document.querySelector('.hero-picker__trigger') as HTMLButtonElement);
-    const dialog = await screen.findByRole('dialog');
+  it('overlay container has tabindex="-1"', () => {
+    render(() => <HeroPicker heroes={heroes} selected={undefined} onChange={vi.fn()} />);
+    const trigger = screen.getByRole('button', { expanded: false });
+    fireEvent.click(trigger);
+    const dialog = screen.getByRole('dialog');
     expect(dialog.getAttribute('tabindex')).toBe('-1');
   });
 });

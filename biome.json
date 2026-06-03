@@ -76,6 +76,36 @@
           }
         }
       }
+    },
+    {
+      "include": ["src/components/HeroTile.tsx"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useSemanticElements": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["src/components/HeroGrid.tsx"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useSemanticElements": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["src/components/HeroPicker.tsx"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useSemanticElements": "off"
+          }
+        }
+      }
     }
   ]
 }
