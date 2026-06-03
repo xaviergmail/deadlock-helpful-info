@@ -1,9 +1,7 @@
 {
   "active_plan": "/Volumes/projects/deadlock-helpful-info/.sisyphus/plans/project-scaffold.md",
   "started_at": "2026-06-02T22:40:51.304Z",
-  "session_ids": [
-    "ses_175996352ffeJcV0ggvPOqr30B"
-  ],
+  "session_ids": ["ses_175996352ffeJcV0ggvPOqr30B"],
   "session_origins": {
     "ses_175996352ffeJcV0ggvPOqr30B": "direct"
   },
@@ -37,5 +35,15 @@
       "category": "quick",
       "updated_at": "2026-06-02T23:10:24.142Z"
     }
-  }
+  },
+  "completed_at": "2026-06-03T00:25:29.386264+00:00",
+  "final_status": "completed",
+  "final_verdicts": {
+    "F1_plan_compliance": "APPROVE_WITH_NOTES",
+    "F2_code_quality": "APPROVE_WITH_NOTES",
+    "F3_manual_qa": "APPROVE_WITH_NOTES",
+    "F4_scope_fidelity": "APPROVE_WITH_NOTES"
+  },
+  "user_okay": true,
+  "user_okay_at": "2026-06-03T00:25:29.386388+00:00"
 }
