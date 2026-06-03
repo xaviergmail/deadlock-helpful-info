@@ -1666,7 +1666,7 @@ Max Concurrent: 8 (Wave 1)
   - Commit B: `feat(AppShell): minimal shell with header/main/footer landmarks (GREEN)` — files: `src/components/AppShell.tsx`
   - Pre-commit: `pnpm test --run`
 
-- [ ] 16. **Replace `.github/workflows/pages.yml` (Vite build + deploy, cron + manual)**
+- [x] 16. **Replace `.github/workflows/pages.yml` (Vite build + deploy, cron + manual)**
 
   **What to do**:
   - Overwrite `.github/workflows/pages.yml`:
@@ -1812,7 +1812,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `.github/workflows/pages.yml`
   - Pre-commit: `python3 -c "import yaml; yaml.safe_load(open('.github/workflows/pages.yml'))"`
 
-- [ ] 17. **Create `.github/workflows/ci.yml` (PR validation)**
+- [x] 17. **Create `.github/workflows/ci.yml` (PR validation)**
 
   **What to do**:
   - `.github/workflows/ci.yml`:
@@ -1946,7 +1946,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `.github/workflows/ci.yml`
   - Pre-commit: `python3 -c "import yaml; yaml.safe_load(open('.github/workflows/ci.yml'))"`
 
-- [ ] 18. **Create `scripts/check-bundle-size.ts` (CI bundle budget gate)**
+- [x] 18. **Create `scripts/check-bundle-size.ts` (CI bundle budget gate)**
 
   **What to do**:
   - `scripts/check-bundle-size.ts`:
@@ -2094,7 +2094,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `scripts/check-bundle-size.ts`
   - Pre-commit: `pnpm typecheck`
 
-- [ ] 19. **Create `.github/dependabot.yml` (weekly npm + actions updates)**
+- [x] 19. **Create `.github/dependabot.yml` (weekly npm + actions updates)**
 
   **What to do**:
   - `.github/dependabot.yml`:
@@ -2185,7 +2185,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `.github/dependabot.yml`
   - Pre-commit: `python3 -c "import yaml; yaml.safe_load(open('.github/dependabot.yml'))"`
 
-- [ ] 20. **Configure pre-commit hooks (simple-git-hooks + lint-staged)**
+- [x] 20. **Configure pre-commit hooks (simple-git-hooks + lint-staged)**
 
   **What to do**:
   - `simple-git-hooks` and `lint-staged` config already added to `package.json` in T2 — this task ACTIVATES them
@@ -2254,7 +2254,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: (none — `package.json` already has config; `pnpm-lock.yaml` already includes deps; this task is verification-driven)
   - Pre-commit: `test -x .git/hooks/pre-commit`
 
-- [ ] 21. **Create `playwright.config.ts` + `e2e/smoke.spec.ts`**
+- [x] 21. **Create `playwright.config.ts` + `e2e/smoke.spec.ts`**
 
   **What to do**:
   - `playwright.config.ts`:
@@ -2385,7 +2385,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `playwright.config.ts`, `e2e/smoke.spec.ts`
   - Pre-commit: `pnpm typecheck`
 
-- [ ] 22. **Rewrite `README.md` for new stack**
+- [x] 22. **Rewrite `README.md` for new stack**
 
   **What to do**:
   - Rewrite `README.md` with sections (in this order):
@@ -2471,7 +2471,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `README.md`
   - Pre-commit: `test -f README.md && grep -q 'pnpm install' README.md && ! grep -qi 'jekyll' README.md`
 
-- [ ] 23. **Add PR template + issue templates + CONTRIBUTING.md + SECURITY.md**
+- [x] 23. **Add PR template + issue templates + CONTRIBUTING.md + SECURITY.md**
 
   **What to do**:
   - `.github/PULL_REQUEST_TEMPLATE.md`:
@@ -2681,7 +2681,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: 6 files listed above
   - Pre-commit: `for f in .github/ISSUE_TEMPLATE/*.yml; do python3 -c "import yaml; yaml.safe_load(open('$f'))"; done`
 
-- [ ] 24. **Local verification sweep (install → dev → build → test → typecheck → lint → bundle-size → e2e)**
+- [x] 24. **Local verification sweep (install → dev → build → test → typecheck → lint → bundle-size → e2e)**
 
   **What to do**:
   - Execute a clean-state end-to-end verification of every script in `package.json`:
