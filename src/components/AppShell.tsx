@@ -1,5 +1,5 @@
-import type { ParentComponent } from 'solid-js';
 import { A } from '@solidjs/router';
+import type { ParentComponent } from 'solid-js';
 
 const AppShell: ParentComponent = (props) => {
   return (
