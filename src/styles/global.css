@@ -126,8 +126,13 @@ img {
 }
 
 .page-heroes {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 16px;
   padding: 16px;
+}
+
+.page-heroes .hero-picker__grid {
+  align-self: stretch;
 }

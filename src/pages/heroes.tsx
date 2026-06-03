@@ -1,5 +1,6 @@
 import { createSignal } from 'solid-js';
-import HeroPicker from '~/components/HeroPicker';
+import HeroCard from '~/components/HeroCard';
+import HeroGrid from '~/components/HeroGrid';
 import '~/components/HeroPicker.css';
 import heroesData from '~/generated/heroes.json';
 import type { Hero } from '~/lib/types';
@@ -10,7 +11,8 @@ export default function HeroesPage() {
   const [selected, setSelected] = createSignal<Hero | undefined>(undefined);
   return (
     <section class="page-heroes">
-      <HeroPicker heroes={heroes} selected={selected()} onChange={setSelected} />
+      <HeroCard hero={selected()} />
+      <HeroGrid heroes={heroes} selectedId={selected()?.id} onSelect={setSelected} />
     </section>
   );
 }

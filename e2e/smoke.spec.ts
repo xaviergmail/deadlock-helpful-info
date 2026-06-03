@@ -36,31 +36,29 @@ test.describe('smoke', () => {
     }
   });
 
-  test('hero picker opens and selects a hero', async ({ page }) => {
+  test('heroes page shows card + inline grid (no overlay, no trigger)', async ({ page }) => {
     await page.goto('/#/heroes');
-    await expect(page.locator('.hero-picker__trigger [data-placeholder="true"]')).toBeVisible();
-    await page.locator('.hero-picker__trigger').click();
-    await expect(page.locator('[role="dialog"][aria-label="Pick a hero"]')).toBeVisible();
-    const firstOption = page.locator('[role="dialog"] [role="option"]').first();
-    await firstOption.click();
+    await expect(page.locator('.hero-card')).toBeVisible();
+    await expect(page.locator('.hero-card [data-placeholder="true"]')).toBeVisible();
+    await expect(page.locator('.hero-picker__grid')).toBeVisible();
+    await expect(page.locator('[role="option"]')).toHaveCount(38);
     await expect(page.locator('[role="dialog"]')).toHaveCount(0);
-    await expect(page.locator('.hero-picker__trigger [data-placeholder="true"]')).toHaveCount(0);
-    await page.screenshot({ path: '.omo/evidence/task-9-selected.png' });
+    await expect(page.locator('.hero-picker__trigger')).toHaveCount(0);
   });
 
-  test('escape key closes the hero picker', async ({ page }) => {
+  test('clicking a tile updates the card inline', async ({ page }) => {
     await page.goto('/#/heroes');
-    await page.locator('.hero-picker__trigger').click();
-    await expect(page.locator('[role="dialog"]')).toBeVisible();
-    await page.keyboard.press('Escape');
-    await expect(page.locator('[role="dialog"]')).toHaveCount(0);
+    await page.locator('[role="option"]').first().click();
+    await expect(page.locator('.hero-card [data-placeholder="true"]')).toHaveCount(0);
+    await expect(page.locator('.hero-card img, .hero-card__fallback')).toBeVisible();
+    await page.screenshot({ path: '.omo/evidence/heroes-inline-selected.png' });
   });
 
-  test('click outside closes the hero picker', async ({ page }) => {
+  test('hero tiles do not exceed native image size (128px)', async ({ page }) => {
     await page.goto('/#/heroes');
-    await page.locator('.hero-picker__trigger').click();
-    await expect(page.locator('[role="dialog"]')).toBeVisible();
-    await page.mouse.click(2, 2);
-    await expect(page.locator('[role="dialog"]')).toHaveCount(0);
+    const tile = page.locator('[role="option"]').first();
+    const box = await tile.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box?.width).toBeLessThanOrEqual(128);
   });
 });
