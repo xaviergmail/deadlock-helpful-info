@@ -1,0 +1,11 @@
+=== task-10 verification ===
+PASS: no .map()
+PASS: no destructured props
+PASS: <For> used
+PASS: navRoutes exported
+PASS: A from router
+Checked 3 files in 1784µs. Fixed 1 file.
+biome write exit: 0
+Checked 3 files in 1401µs. No fixes applied.
+biome check exit: 0
+typecheck exit: 0

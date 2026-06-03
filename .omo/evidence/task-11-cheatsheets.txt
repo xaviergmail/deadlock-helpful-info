@@ -1,0 +1,10 @@
+=== task-11 verification ===
+PASS: ?url imports
+PASS: lazy loading
+PASS: <For> used
+PASS: no .map()
+Checked 1 file in 19ms. Fixed 1 file.
+Checked 1 file in 1298µs. No fixes applied.
+biome exit: 0
+$ tsc --noEmit
+typecheck exit: 0

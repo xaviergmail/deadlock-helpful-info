@@ -1,0 +1,13 @@
+=== task-23 verification ===
+PASS: .github/PULL_REQUEST_TEMPLATE.md
+PASS: .github/ISSUE_TEMPLATE/bug.yml
+PASS: .github/ISSUE_TEMPLATE/feature.yml
+PASS: .github/ISSUE_TEMPLATE/config.yml
+PASS: CONTRIBUTING.md
+PASS: SECURITY.md
+PASS: .github/ISSUE_TEMPLATE/bug.yml valid yaml
+PASS: .github/ISSUE_TEMPLATE/config.yml valid yaml
+PASS: .github/ISSUE_TEMPLATE/feature.yml valid yaml
+PASS: AGENTS link
+PASS: destructure rule
+PASS: advisories url
