@@ -20,12 +20,18 @@ type Hero = {
   name: string;
   class_name: string;
   player_selectable: boolean;
+  disabled: boolean;
+  in_development: boolean;
   images?: HeroImage;
 };
 
 const heroes = (await response.json()) as Hero[];
 
-const filtered = heroes.filter((h) => h.player_selectable === true);
+// player_selectable alone leaks unreleased + test heroes (e.g. hero_testhero,
+// Boho, Skyrunner, Swan, ...). They are also flagged disabled + in_development.
+const filtered = heroes.filter(
+  (h) => h.player_selectable === true && h.disabled === false && h.in_development === false,
+);
 
 const projected = filtered.map((h) => ({
   id: h.id,
@@ -41,9 +47,9 @@ const projected = filtered.map((h) => ({
 
 const sorted = projected.sort((a, b) => a.name.localeCompare(b.name));
 
-if (sorted.length < 40) {
+if (sorted.length < 30) {
   process.exitCode = 1;
-  throw new Error(`Expected at least 40 player-selectable heroes, got ${sorted.length}`);
+  throw new Error(`Expected at least 30 player-selectable heroes, got ${sorted.length}`);
 }
 
 const output = `${JSON.stringify(sorted, null, 2)}\n`;
