@@ -124,3 +124,9 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+.page-heroes {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+}
