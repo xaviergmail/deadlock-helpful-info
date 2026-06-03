@@ -1020,7 +1020,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `src/index.tsx`, `src/app.tsx`
   - Pre-commit: `pnpm typecheck`
 
-- [ ] 10. **Create `src/routes.ts` + `src/pages/home.tsx` + `src/pages/not-found.tsx`**
+- [x] 10. **Create `src/routes.ts` + `src/pages/home.tsx` + `src/pages/not-found.tsx`**
 
   **What to do**:
   - `src/routes.ts` (route metadata only — actual routing in app.tsx):
@@ -1129,7 +1129,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `src/routes.ts`, `src/pages/home.tsx`, `src/pages/not-found.tsx`
   - Pre-commit: `pnpm typecheck`
 
-- [ ] 11. **Create `src/pages/cheatsheets.tsx` preserving legacy PNG content**
+- [x] 11. **Create `src/pages/cheatsheets.tsx` preserving legacy PNG content**
 
   **What to do**:
   - `src/pages/cheatsheets.tsx`:
@@ -1291,7 +1291,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `assets/images/*.png` (moved), `src/assets/cheatsheets/*.png` (new)
   - Pre-commit: `git lfs ls-files | grep -c cheatsheet | grep -q 2`
 
-- [ ] 13. **Create `src/styles/global.css` + `src/styles/tokens.css` (dark theme)**
+- [x] 13. **Create `src/styles/global.css` + `src/styles/tokens.css` (dark theme)**
 
   **What to do**:
   - `src/styles/tokens.css` (CSS custom properties for the design system):
@@ -1548,7 +1548,7 @@ Max Concurrent: 8 (Wave 1)
   - Files: `src/lib/types.ts`
   - Pre-commit: `pnpm typecheck`
 
-- [ ] 15. **TDD: `src/components/AppShell.tsx` + `src/components/__tests__/AppShell.test.tsx`**
+- [x] 15. **TDD: `src/components/AppShell.tsx` + `src/components/__tests__/AppShell.test.tsx`**
 
   **What to do** (strict RED → GREEN → REFACTOR ordering):
   - **RED phase**: Write `src/components/__tests__/AppShell.test.tsx` FIRST:
