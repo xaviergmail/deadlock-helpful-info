@@ -46,6 +46,5 @@ if (sorted.length < 40) {
   throw new Error(`Expected at least 40 player-selectable heroes, got ${sorted.length}`);
 }
 
-const output = JSON.stringify(sorted, null, 2) + '\n';
+const output = `${JSON.stringify(sorted, null, 2)}\n`;
 await writeFile('src/generated/heroes.json', output, 'utf-8');
-console.log(`Wrote ${sorted.length} heroes to src/generated/heroes.json`);
