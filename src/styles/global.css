@@ -127,6 +127,7 @@ img {
 
 .page-heroes {
   display: grid;
+  place-items: center;
   gap: 16px;
   padding: 16px;
 }

@@ -35,4 +35,32 @@ test.describe('smoke', () => {
       await expect(page.getByRole('contentinfo')).toBeVisible();
     }
   });
+
+  test('hero picker opens and selects a hero', async ({ page }) => {
+    await page.goto('/#/heroes');
+    await expect(page.locator('.hero-picker__trigger [data-placeholder="true"]')).toBeVisible();
+    await page.locator('.hero-picker__trigger').click();
+    await expect(page.locator('[role="dialog"][aria-label="Pick a hero"]')).toBeVisible();
+    const firstOption = page.locator('[role="dialog"] [role="option"]').first();
+    await firstOption.click();
+    await expect(page.locator('[role="dialog"]')).toHaveCount(0);
+    await expect(page.locator('.hero-picker__trigger [data-placeholder="true"]')).toHaveCount(0);
+    await page.screenshot({ path: '.omo/evidence/task-9-selected.png' });
+  });
+
+  test('escape key closes the hero picker', async ({ page }) => {
+    await page.goto('/#/heroes');
+    await page.locator('.hero-picker__trigger').click();
+    await expect(page.locator('[role="dialog"]')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('[role="dialog"]')).toHaveCount(0);
+  });
+
+  test('click outside closes the hero picker', async ({ page }) => {
+    await page.goto('/#/heroes');
+    await page.locator('.hero-picker__trigger').click();
+    await expect(page.locator('[role="dialog"]')).toBeVisible();
+    await page.mouse.click(2, 2);
+    await expect(page.locator('[role="dialog"]')).toHaveCount(0);
+  });
 });
