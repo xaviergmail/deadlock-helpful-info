@@ -4,7 +4,7 @@ test.describe('smoke', () => {
   test('home renders title and primary nav', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('h1').first()).toHaveText(/Deadlock Helpful Info/i);
-    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(2);
+    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(3);
   });
 
   test('cheatsheets route shows both PNG images', async ({ page }) => {
