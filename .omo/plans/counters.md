@@ -226,7 +226,7 @@ scripts/
 - [x] 2. Create `src/components/deadlock-ui/DeadlockUiProvider.tsx`. Accepts `{ children, language? }` props. For MVP, renders children only (no `<dl-provider>` wrap — auto-fetch on individual components works fine). Future flag for when global language switching is needed.
 - [x] 3. Create `src/components/deadlock-ui/ItemCard.tsx`. Wraps `<dl-item-card item-id={props.itemId} />`. Props: `{ itemId: string; onHoverChange?: (active: boolean) => void; class?: string }`. Internal: handles mouse enter/leave/click/focus/blur events, calls `onHoverChange`.
 - [x] 4. Create `src/components/deadlock-ui/ItemTooltip.tsx`. Wraps `<dl-item-tooltip item-id={props.itemId} />`. Props: `{ itemId: string | null }`. When `itemId` is null, returns `null` (or renders empty container). Uses `<Show>` per Solid conventions.
-- [ ] 5. Add `src/components/deadlock-ui/__tests__/ItemCard.test.tsx` — render with itemId prop, assert `<dl-item-card>` exists in DOM with correct attribute. Use Vitest + `@solidjs/testing-library`. (Web component behavior NOT tested at unit level — that's covered in Phase 0 spike + Phase 6 E2E.)
+- [x] 5. Add `src/components/deadlock-ui/__tests__/ItemCard.test.tsx` — render with itemId prop, assert `<dl-item-card>` exists in DOM with correct attribute. Use Vitest + `@solidjs/testing-library`. (Web component behavior NOT tested at unit level — that's covered in Phase 0 spike + Phase 6 E2E.)
 
 ### Phase 2: Type + Schema
 
@@ -235,8 +235,8 @@ scripts/
 
 ### Phase 3: Data Pipeline
 
-- [ ] 8. Create `scripts/generate-counters.ts`. Reads all `data/counters/heroes/*.yaml`, validates each against `v1.json` schema, normalizes to `CountersData` shape (`{ [hero]: HeroCounters }`), writes `src/generated/counters.json`. Run with `node --experimental-strip-types scripts/generate-counters.ts`. Exit non-zero on validation failure; leaves existing `counters.json` untouched on error.
-- [ ] 9. Create `scripts/validate-counter-data.ts`. CI gate: validates YAML against schema, verifies every `hero` slug exists in `src/generated/heroes.json`, verifies no duplicate items per hero. Exit non-zero on failure. Used in CI workflow.
+- [x] 8. Create `scripts/generate-counters.ts`. Reads all `data/counters/heroes/*.yaml`, validates each against `v1.json` schema, normalizes to `CountersData` shape (`{ [hero]: HeroCounters }`), writes `src/generated/counters.json`. Run with `node --experimental-strip-types scripts/generate-counters.ts`. Exit non-zero on validation failure; leaves existing `counters.json` untouched on error.
+- [x] 9. Create `scripts/validate-counter-data.ts`. CI gate: validates YAML against schema, verifies every `hero` slug exists in `src/generated/heroes.json`, verifies no duplicate items per hero. Exit non-zero on failure. Used in CI workflow.
 - [x] 10. Add `counters:validate` step to `.github/workflows/ci.yml` (right after `typecheck`, before `test`).
 - [x] 11. Add `pnpm` script aliases: `"counters:generate": "node --experimental-strip-types scripts/generate-counters.ts"` and `"counters:validate": "node --experimental-strip-types scripts/validate-counter-data.ts"` to `package.json`.
 
@@ -256,8 +256,8 @@ scripts/
 - [x] 20. Curate `data/counters/heroes/haze.yaml` — same.
 - [x] 21. Curate `data/counters/heroes/vindicta.yaml` — same.
 - [x] 22. Curate `data/counters/heroes/yamato.yaml` — same.
-- [ ] 23. Run `pnpm counters:generate` to bake → `src/generated/counters.json`. Verify no validation errors.
-- [ ] 24. Commit `src/generated/counters.json` (matches convention with `src/generated/heroes.json`).
+- [x] 23. Run `pnpm counters:generate` to bake → `src/generated/counters.json`. Verify no validation errors.
+- [x] 24. Commit `src/generated/counters.json` (matches convention with `src/generated/heroes.json`).
 
 ### Phase 6: Verification
 
