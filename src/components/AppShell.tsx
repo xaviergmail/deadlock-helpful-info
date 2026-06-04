@@ -1,5 +1,7 @@
 import { A } from '@solidjs/router';
 import type { ParentComponent } from 'solid-js';
+import ItemTooltip from '~/components/deadlock-ui/ItemTooltip';
+import { hoveredItem } from '~/lib/tooltip-state';
 
 const AppShell: ParentComponent = (props) => {
   return (
@@ -13,6 +15,7 @@ const AppShell: ParentComponent = (props) => {
       <footer class="app-shell__footer">
         <small>Community reference. Not affiliated with Valve.</small>
       </footer>
+      <ItemTooltip itemId={hoveredItem()} />
     </div>
   );
 };

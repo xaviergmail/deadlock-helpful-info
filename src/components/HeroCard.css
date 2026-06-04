@@ -1,0 +1,26 @@
+/* Counter items row below hero portrait */
+.hero-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.hero-card__counters {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-1);
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-card__counter-item {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+/* Tap-to-reveal: .is-active highlights the selected item (applied by ItemCard on click) */
+.hero-card__counter-item.is-active {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
