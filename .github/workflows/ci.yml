@@ -39,6 +39,9 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
+      - name: Validate counter data
+        run: pnpm counters:validate
+
       - name: Unit tests
         run: pnpm test --run --coverage
 

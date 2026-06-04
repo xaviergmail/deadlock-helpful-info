@@ -16,6 +16,8 @@
     "test:watch": "vitest --watch",
     "test:e2e": "playwright test --config=./playwright.config.ts",
     "typecheck": "tsc --noEmit",
+    "counters:generate": "node --experimental-strip-types scripts/generate-counters.ts",
+    "counters:validate": "node --experimental-strip-types scripts/validate-counter-data.ts",
     "lint": "biome check .",
     "format": "biome format --write .",
     "check": "biome check --write .",

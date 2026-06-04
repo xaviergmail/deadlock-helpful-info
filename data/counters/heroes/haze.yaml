@@ -1,0 +1,15 @@
+schemaVersion: 1
+hero: haze
+itemCounters:
+  - item: metal_skin
+    confidence: high
+    reason: Blocks all bullet damage during Bullet Dance spray.
+    lastReviewedPatch: "2026-06-04"
+  - item: knockdown
+    confidence: high
+    reason: Interrupts the Bullet Dance channel.
+    lastReviewedPatch: "2026-06-04"
+  - item: return_fire
+    confidence: medium
+    reason: Reflects a portion of Haze's rapid bullet hits back at her.
+    lastReviewedPatch: "2026-06-04"

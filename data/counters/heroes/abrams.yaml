@@ -1,0 +1,15 @@
+schemaVersion: 1
+hero: abrams
+itemCounters:
+  - item: knockdown
+    confidence: high
+    reason: Interrupts Seismic Impact or Siphon Life channel mid-cast.
+    lastReviewedPatch: "2026-06-04"
+  - item: metal_skin
+    confidence: high
+    reason: Blocks all bullet damage from Siphon Life during its duration.
+    lastReviewedPatch: "2026-06-04"
+  - item: slowing_hex
+    confidence: medium
+    reason: Slows Abrams to prevent Shoulder Charge gap-close and disrupt positioning.
+    lastReviewedPatch: "2026-06-04"
