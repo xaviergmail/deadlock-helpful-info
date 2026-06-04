@@ -17,6 +17,7 @@ Scaffold is **built and verified end-to-end**. Build pipeline, test infrastructu
 - **[Biome](https://biomejs.dev/) 1.9** — single-binary lint + format + import-sort (no ESLint, no Prettier)
 - **[Vitest](https://vitest.dev/) 2.1** + `@solidjs/testing-library` 0.8 — unit tests
 - **[Playwright](https://playwright.dev/) 1.50** — E2E smoke tests (chromium-only)
+- **[@deadlock-api/ui-core](https://ui.deadlock-api.com/)** — Web Components for Deadlock item UI (item cards, tooltips, shop panel). Fetches item data + images from the Deadlock API at runtime.
 - **pnpm 11** — package manager (note: see "pnpm 11 quirks" below)
 - **Node 22** LTS (pinned via `.node-version`)
 - **GitHub Pages** — static hosting, deployed via GitHub Actions
@@ -158,13 +159,20 @@ Domain types (skeleton only) live in `src/lib/types.ts`.
 
 ### Data Strategy
 
-Fetch data from the Deadlock API at **build time** and bake it into the static bundle. The Steam Overlay browser should never make runtime API calls — all content is pre-built static HTML+JS. Run a periodic CI rebuild (daily cron at 04:15 UTC, already wired in `pages.yml`) to pick up game balance changes.
+**Hybrid approach** — build-time baking for structured data we control, runtime fetching delegated to trusted UI components:
 
-> 🚧 **Not yet implemented.** The data fetcher (`scripts/fetch-data.ts` or similar) and the JSON-bake-into-`src/generated/` pipeline are in a **separate follow-up plan**. The current scaffold has zero runtime API calls and zero data — only skeleton types in `src/lib/types.ts`.
+- **Build-time**: Hero metadata, ability data, analytics (win rates, pick rates), and any structured data we render ourselves is fetched from the Deadlock API at build time and baked into the static bundle. A periodic CI rebuild (daily cron at 04:15 UTC, already wired in `pages.yml`) picks up game balance changes.
+- **Runtime (Deadlock UI)**: Item cards, tooltips, and the shop panel use `@deadlock-api/ui-core` web components (`<dl-item-card>`, `<dl-shop-panel>`, `<dl-provider>`). These components fetch their own item data and images from the Deadlock API at runtime. This is an **approved exception** to the build-time-only rule — the library handles CDN image loading, localization, and tooltip rendering out of the box.
+
+**Allowed runtime API calls** (exhaustive list):
+- `@deadlock-api/ui-core` internal calls to `api.deadlock-api.com` and `assets-bucket.deadlock-api.com` for item data and images
+- No other runtime API calls. Custom code must not `fetch()` external APIs directly.
+
+> 🚧 **Not yet implemented.** The build-time data fetcher (`scripts/fetch-data.ts` or similar) and the JSON-bake-into-`src/generated/` pipeline are in a **separate follow-up plan**. The current scaffold has skeleton types in `src/lib/types.ts` only.
 
 ## Performance Constraints
 
-- **No runtime API calls** — all data baked at build time
+- **Minimize runtime API calls** — structured data baked at build time; item UI delegated to `@deadlock-api/ui-core` (approved exception). No ad-hoc `fetch()` in custom code. See "Data Strategy" for the full policy.
 - **Lazy-load images** — hero/item images should use `loading="lazy"` or intersection observer (cheatsheets page already does this)
 - **Minimize DOM nodes** — fewer nodes = less memory. Prefer virtual scrolling for large lists (hero roster, full item catalog)
 - **Avoid large component trees** — keep the reactive graph shallow
@@ -269,9 +277,9 @@ Same root cause as the hooks issue — a stray `git config core.hooksPath --unse
 
 - **AppShell tests are source-grep, not real DOM**: `src/components/__tests__/AppShell.test.tsx` uses `readFileSync + toContain` on the source file rather than `render()` from `@solidjs/testing-library`. The TDD RED → GREEN ordering is preserved in git history (`ed9f9bf` → `f3f4b66`), but the tests don't exercise the rendered DOM. Cause: subagent hit a Solid+vitest+`@solidjs/router` context error during scaffolding and shortcut to source assertions. Fix is ~30 min of work — wrap render in `<Router>` or `<MemoryRouter>` from `@solidjs/router` and use `screen.getByRole('banner' | 'main' | 'contentinfo')`.
 
-- **Data pipeline not built**: see "Data Strategy" above. Separate plan.
+- **Build-time data pipeline not built**: see "Data Strategy" above. The build-time fetcher for hero/ability/analytics data is a separate plan. Item rendering is handled by `@deadlock-api/ui-core` at runtime.
 
-- **Hero/Item/Ability UI not built**: separate plan after data pipeline lands.
+- **Hero/Item/Ability UI not built**: separate plan. Item UI will use `@deadlock-api/ui-core` web components; hero and ability UI will use baked data + Solid components.
 
 ## When in doubt
 

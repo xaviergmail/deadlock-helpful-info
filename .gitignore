@@ -12,5 +12,8 @@ test-results/
 /e2e/.cache/
 .playwright-mcp/
 .sisyphus/evidence/
+.omo/boulder.json
+.omo/notepads/
+.omo/run-continuation/
 tsconfig.node.tsbuildinfo
 *.tsbuildinfo

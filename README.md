@@ -47,7 +47,7 @@ pnpm preview      # serve built site at http://localhost:4173/deadlock-helpful-i
 
 ## Architecture
 
-- **Build-time data**: All data is baked into the static bundle at build time. The Steam Overlay browser never makes runtime API calls.
+- **Hybrid data**: Structured data (heroes, abilities, analytics) baked at build time. Item UI uses `@deadlock-api/ui-core` web components which fetch item data at runtime (approved exception).
 - **Fine-grained reactivity**: Solid components run once. Reactivity flows through signals, not re-renders.
 - **Hash routing**: Uses `<HashRouter>` from `@solidjs/router` for zero-config GitHub Pages subpath compatibility.
 - **Dark theme**: Single dark theme baked in (Steam Overlay context). Design tokens in `src/styles/tokens.css`.
@@ -88,7 +88,7 @@ Read [`AGENTS.md`](./AGENTS.md) before contributing. The most important rules:
 - **Never destructure props** in Solid components. Use `props.x`, not `({ x })`.
 - **Signals are functions**. Call them: `count()`, not `count`.
 - **Use `<For>` / `<Show>` / `<Switch>`** for rendering. No `.map()` in JSX. No ternaries.
-- **Build-time data only**. No runtime API calls from the browser.
+- **No ad-hoc runtime API calls**. Item UI is handled by `@deadlock-api/ui-core`. Custom code must not `fetch()` external APIs directly. See AGENTS.md "Data Strategy" for the full policy.
 
 Solid framework-specific lint rules are not enforced by Biome (see `CONTRIBUTING.md` for the trade-off note).
 
