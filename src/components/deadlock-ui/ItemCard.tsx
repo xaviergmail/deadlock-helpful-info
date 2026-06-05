@@ -20,6 +20,7 @@ export default function ItemCard(props: ItemCardProps) {
   return (
     <dl-item-card
       item-class-name={props.itemId}
+      tooltip-trigger="hover"
       class={cardClass()}
       onClick={() => setIsActive((a) => !a)}
       onKeyDown={(e: KeyboardEvent) => {

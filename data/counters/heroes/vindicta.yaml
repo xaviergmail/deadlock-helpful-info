@@ -1,15 +1,15 @@
 schemaVersion: 1
 hero: hornet
 itemCounters:
-  - item: knockdown
+  - item: upgrade_target_stun
     confidence: high
     reason: Knocks Vindicta out of flight or cancels Assassinate channel.
     lastReviewedPatch: "2026-06-04"
-  - item: slowing_hex
+  - item: upgrade_containment
     confidence: high
     reason: Denies positioning needed for Assassinate line-of-sight.
     lastReviewedPatch: "2026-06-04"
-  - item: metal_skin
+  - item: upgrade_metal_skin
     confidence: medium
     reason: Blocks the Assassinate bullet if timed correctly.
     lastReviewedPatch: "2026-06-04"

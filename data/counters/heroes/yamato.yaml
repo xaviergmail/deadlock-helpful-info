@@ -1,15 +1,15 @@
 schemaVersion: 1
 hero: yamato
 itemCounters:
-  - item: decay
+  - item: upgrade_rupture
     confidence: high
     reason: Reduces the massive heal from Shadow Transformation, limiting her sustain.
     lastReviewedPatch: "2026-06-04"
-  - item: knockdown
+  - item: upgrade_target_stun
     confidence: medium
     reason: Catches Yamato after Shadow Transformation ends when CC immunity drops.
     lastReviewedPatch: "2026-06-04"
-  - item: slowing_hex
+  - item: upgrade_containment
     confidence: medium
     reason: Slows Yamato to prevent Flying Strike gap-close and Power Slash setups.
     lastReviewedPatch: "2026-06-04"

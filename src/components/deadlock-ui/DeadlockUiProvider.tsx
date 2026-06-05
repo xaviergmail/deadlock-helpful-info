@@ -2,15 +2,14 @@ import type { ParentComponent } from 'solid-js';
 import type { DeadlockUiProviderProps } from './types';
 
 /**
- * Phase 1 stub — renders children directly without wrapping in `<dl-provider>`.
+ * Passthrough wrapper kept as a seam for future global config.
  *
- * Individual `<dl-item-card>` components auto-fetch their item data from the
- * Deadlock API, so a global provider element is not required in Phase 1.
- *
- * Future phases may wrap `<dl-provider>` here when global language switching
- * or a shared `tooltip-trigger` config is needed across all item components
- * simultaneously. The `language` prop is accepted now so call-sites don't
- * need to change when the upgrade happens.
+ * Rendering a real `<dl-provider>` here would force every route to load the
+ * Stencil lazy chunks (`*.entry.js`) which Vite does not copy to `dist/`
+ * during production builds — see Stencil's `/* @vite-ignore *\/` dynamic import.
+ * Until we either adopt eager `defineCustomElement` (which would blow the
+ * 60 KB initial-JS budget) or wire a static-copy plugin, configure tooltips
+ * per-card via the `tooltip-trigger` attribute on `<dl-item-card>` instead.
  */
 const DeadlockUiProvider: ParentComponent<DeadlockUiProviderProps> = (props) => {
   return <>{props.children}</>;

@@ -16,11 +16,12 @@ export interface ItemCardProps {
  * Props for the {@link DeadlockUiProvider} wrapper component.
  *
  * `children` is provided implicitly by Solid's `ParentComponent<T>` and is NOT
- * declared here. The provider is a Phase 1 noop wrapper kept so call-sites
- * (currently only `AppShell`) don't change when `<dl-provider>` is adopted in
- * a future phase for global language switching.
+ * declared here. The provider is currently a passthrough wrapper kept as a
+ * seam — see `DeadlockUiProvider.tsx` for why rendering `<dl-provider>` is
+ * deferred. Tooltip + language config is set per-card via attributes on
+ * `<dl-item-card>` until then.
  */
 export interface DeadlockUiProviderProps {
-  /** BCP-47 language tag for item name localisation (e.g. `"en"`, `"de"`). */
+  /** Reserved for future global language switching. Has no effect today. */
   language?: string;
 }

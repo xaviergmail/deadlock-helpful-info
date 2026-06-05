@@ -1,15 +1,15 @@
 schemaVersion: 1
 hero: atlas
 itemCounters:
-  - item: knockdown
+  - item: upgrade_target_stun
     confidence: high
     reason: Interrupts Seismic Impact or Siphon Life channel mid-cast.
     lastReviewedPatch: "2026-06-04"
-  - item: metal_skin
+  - item: upgrade_metal_skin
     confidence: high
     reason: Blocks all bullet damage from Siphon Life during its duration.
     lastReviewedPatch: "2026-06-04"
-  - item: slowing_hex
+  - item: upgrade_containment
     confidence: medium
     reason: Slows Abrams to prevent Shoulder Charge gap-close and disrupt positioning.
     lastReviewedPatch: "2026-06-04"

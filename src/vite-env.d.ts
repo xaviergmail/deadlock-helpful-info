@@ -17,7 +17,7 @@ declare module 'solid-js' {
       'dl-item-card': {
         /** Numeric item ID. Use as `item-id={123}` or `item-id="123"`. */
         'item-id'?: number | string;
-        /** Item class name slug (e.g. `"decay"`, `"metal_skin"`). */
+        /** Item class name slug (e.g. `"upgrade_metal_skin"`, `"upgrade_rupture"`). */
         'item-class-name'?: string;
         /** Visual variant: `"card"` | `"image"` | `"inline-image"` | `"inline-image-name"` | `"icon"` */
         variant?: string;
@@ -27,6 +27,8 @@ declare module 'solid-js' {
         'show-tier-badge'?: boolean;
         /** Language override for item name only. */
         'item-name-language'?: string;
+        /** Per-card tooltip trigger. `"hover"` | `"click"` | `"none"`. Required when no `<dl-provider>` ancestor exists; otherwise falls back to provider state. */
+        'tooltip-trigger'?: string;
         class?: string;
         style?: string;
         [key: string]: unknown;

@@ -27,8 +27,8 @@
         "properties": {
           "item": {
             "type": "string",
-            "minLength": 1,
-            "description": "Item class name slug (e.g. 'decay', 'metal_skin')."
+            "pattern": "^upgrade_[a-z0-9_]+$",
+            "description": "Canonical Deadlock API item class_name (e.g. 'upgrade_metal_skin', 'upgrade_target_stun'). Must start with 'upgrade_' — this is the exact `class_name` field from api.deadlock-api.com/v1/assets/items that @deadlock-api/ui-core's <dl-item-card> resolves."
           },
           "confidence": {
             "type": "string",

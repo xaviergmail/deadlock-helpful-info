@@ -4,19 +4,19 @@
     "hero": "hero_atlas",
     "itemCounters": [
       {
-        "item": "knockdown",
+        "item": "upgrade_target_stun",
         "confidence": "high",
         "reason": "Interrupts Seismic Impact or Siphon Life channel mid-cast.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "metal_skin",
+        "item": "upgrade_metal_skin",
         "confidence": "high",
         "reason": "Blocks all bullet damage from Siphon Life during its duration.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "slowing_hex",
+        "item": "upgrade_containment",
         "confidence": "medium",
         "reason": "Slows Abrams to prevent Shoulder Charge gap-close and disrupt positioning.",
         "lastReviewedPatch": "2026-06-04"
@@ -28,19 +28,19 @@
     "hero": "hero_bebop",
     "itemCounters": [
       {
-        "item": "knockdown",
+        "item": "upgrade_target_stun",
         "confidence": "high",
         "reason": "Interrupts Hyper Beam channel immediately.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "unstoppable",
+        "item": "upgrade_unstoppable",
         "confidence": "high",
         "reason": "Negates the Hook grab CC, letting you stay in place.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "metal_skin",
+        "item": "upgrade_metal_skin",
         "confidence": "medium",
         "reason": "Negates bullet damage from Hyper Beam while active.",
         "lastReviewedPatch": "2026-06-04"
@@ -52,19 +52,19 @@
     "hero": "hero_haze",
     "itemCounters": [
       {
-        "item": "metal_skin",
+        "item": "upgrade_metal_skin",
         "confidence": "high",
         "reason": "Blocks all bullet damage during Bullet Dance spray.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "knockdown",
+        "item": "upgrade_target_stun",
         "confidence": "high",
         "reason": "Interrupts the Bullet Dance channel.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "return_fire",
+        "item": "upgrade_return_fire",
         "confidence": "medium",
         "reason": "Reflects a portion of Haze's rapid bullet hits back at her.",
         "lastReviewedPatch": "2026-06-04"
@@ -76,19 +76,19 @@
     "hero": "hero_hornet",
     "itemCounters": [
       {
-        "item": "knockdown",
+        "item": "upgrade_target_stun",
         "confidence": "high",
         "reason": "Knocks Vindicta out of flight or cancels Assassinate channel.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "slowing_hex",
+        "item": "upgrade_containment",
         "confidence": "high",
         "reason": "Denies positioning needed for Assassinate line-of-sight.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "metal_skin",
+        "item": "upgrade_metal_skin",
         "confidence": "medium",
         "reason": "Blocks the Assassinate bullet if timed correctly.",
         "lastReviewedPatch": "2026-06-04"
@@ -100,19 +100,19 @@
     "hero": "hero_yamato",
     "itemCounters": [
       {
-        "item": "decay",
+        "item": "upgrade_rupture",
         "confidence": "high",
         "reason": "Reduces the massive heal from Shadow Transformation, limiting her sustain.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "knockdown",
+        "item": "upgrade_target_stun",
         "confidence": "medium",
         "reason": "Catches Yamato after Shadow Transformation ends when CC immunity drops.",
         "lastReviewedPatch": "2026-06-04"
       },
       {
-        "item": "slowing_hex",
+        "item": "upgrade_containment",
         "confidence": "medium",
         "reason": "Slows Yamato to prevent Flying Strike gap-close and Power Slash setups.",
         "lastReviewedPatch": "2026-06-04"
