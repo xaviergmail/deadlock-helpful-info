@@ -2,17 +2,17 @@
 
 ## TL;DR
 
-> **Quick Summary**: Build a hero→item counter feature on the existing `/heroes` page that shows the top 3 counter items inline under each `HeroCard`, with a global `<ItemTooltip>` at the AppShell level. Data is curated in `data/counters/heroes/*.yaml`, validated + baked to `src/generated/counters.json` at build time, and consumed by Solid components. `@deadlock-api/ui-core` web components (`<dl-item-card>`, `<dl-item-tooltip>`) are wrapped in local adapters at `src/components/deadlock-ui/` to isolate the blast radius of any future v2 breaking changes. The framework is extensible to hero→hero and ability→hero counters later via schema versioning + a generic `target: { type, id }` field shape.
+> **Quick Summary**: Build a hero→item counter feature on the existing `/heroes` page that shows the top 3 counter items inline under each `HeroCard`. Data is curated in `data/counters/heroes/*.yaml`, validated + baked to `src/generated/counters.json` at build time, and consumed by Solid components. `@deadlock-api/ui-core` web components (`<dl-item-card>`) are wrapped in local adapters at `src/components/deadlock-ui/` to isolate the blast radius of any future v2 breaking changes. The framework is extensible to hero→hero and ability→hero counters later via schema versioning + a generic `target: { type, id }` field shape.
 >
 > **Deliverables (Phase 1)**:
-> - `src/components/deadlock-ui/DeadlockUiProvider.tsx` + `ItemCard.tsx` + `ItemTooltip.tsx` + `types.ts` (adapter layer)
+> - `src/components/deadlock-ui/DeadlockUiProvider.tsx` + `ItemCard.tsx` + `types.ts` (adapter layer)
 > - `src/lib/types.ts` (add `Counter`, `CounterEntry`, `HeroCounters`, `CountersData`)
 > - `data/counters/heroes/*.yaml` (5 popular heroes curated first: Abrams, Haze, Bebop, Vindicta, Yamato)
 > - `scripts/generate-counters.ts` (one-shot regen tool, NOT CI-wired in Phase 1)
 > - `scripts/validate-counter-data.ts` (CI gate)
 > - `src/generated/counters.json` (baked output)
 > - `src/components/HeroCard.tsx` (extend to render top 3 `<ItemCard>` below hero)
-> - `src/components/AppShell.tsx` (mount global `<ItemTooltip>`)
+> - `src/components/AppShell.tsx` (static shell only)
 > - Solid JSX intrinsic typing for `<dl-*>` elements
 > - E2E coverage in `e2e/smoke.spec.ts`
 >
@@ -91,7 +91,7 @@ The `counter-framework-planning` team (5 members) produced 4 hostile proposals. 
 
 Ship a working hero→item counter feature on `/heroes` that:
 - Shows top 3 counter items inline below each `HeroCard` (for 5 curated heroes in Phase 1)
-- Shows item details on hover/tap via a single global `<ItemTooltip>` at AppShell level
+- Uses the built-in `<dl-item-tooltip>` behavior inside `<dl-item-card>`
 - Renders correctly in Steam Overlay (tap-to-reveal fallback)
 - Stays under the 60 KB gzipped initial JS budget
 - Has typed contracts end-to-end (no `as any`, no `@ts-ignore`)
@@ -114,7 +114,6 @@ Specifically: the YAML schema has a `schemaVersion` field present from day one, 
 src/components/deadlock-ui/
   DeadlockUiProvider.tsx   # Optional wrapper for <dl-provider>; defaults to no provider
   ItemCard.tsx             # Wraps <dl-item-card>; takes { itemId, compact?, onHover? }
-  ItemTooltip.tsx          # Wraps <dl-item-tooltip>; takes { itemId | null }; mounted at AppShell
   types.ts                 # Solid JSX intrinsic declarations for <dl-*> elements
 ```
 
@@ -197,11 +196,8 @@ scripts/
 
 #### UI Integration (Phase 1)
 
-- `src/components/AppShell.tsx`: mount `<ItemTooltip>` once at the AppShell level, store hovered itemId in a top-level signal.
+- `src/components/AppShell.tsx`: static shell only.
 - `src/components/HeroCard.tsx`: extend to render `<For each={topThreeCounters(hero)}>` block of `<ItemCard>` components inline below the hero image.
-- New signal `hoveredItem: () => string | null` exported from a small `src/lib/tooltip-state.ts` module.
-- On `<ItemCard>` mouse enter / touch / focus → `setHoveredItem(itemId)`.
-- On `<ItemCard>` mouse leave / blur → `setHoveredItem(null)` (with a small debounce to allow moving to tooltip).
 - Tap-to-reveal fallback: `<ItemCard>` toggles `.is-active` class on click for touch users.
 
 ---
@@ -224,9 +220,9 @@ scripts/
 
 - [x] 1. Create `src/components/deadlock-ui/types.ts` with Solid JSX intrinsic declarations for `<dl-item-card>`, `<dl-item-tooltip>`, `<dl-provider>`. Use `module 'solid-js' { namespace JSX { interface IntrinsicElements { ... } } }` pattern.
 - [x] 2. Create `src/components/deadlock-ui/DeadlockUiProvider.tsx`. Accepts `{ children, language? }` props. For MVP, renders children only (no `<dl-provider>` wrap — auto-fetch on individual components works fine). Future flag for when global language switching is needed.
-- [x] 3. Create `src/components/deadlock-ui/ItemCard.tsx`. Wraps `<dl-item-card item-id={props.itemId} />`. Props: `{ itemId: string; onHoverChange?: (active: boolean) => void; class?: string }`. Internal: handles mouse enter/leave/click/focus/blur events, calls `onHoverChange`.
-- [x] 4. Create `src/components/deadlock-ui/ItemTooltip.tsx`. Wraps `<dl-item-tooltip item-id={props.itemId} />`. Props: `{ itemId: string | null }`. When `itemId` is null, returns `null` (or renders empty container). Uses `<Show>` per Solid conventions.
-- [x] 5. Add `src/components/deadlock-ui/__tests__/ItemCard.test.tsx` — render with itemId prop, assert `<dl-item-card>` exists in DOM with correct attribute. Use Vitest + `@solidjs/testing-library`. (Web component behavior NOT tested at unit level — that's covered in Phase 0 spike + Phase 6 E2E.)
+- [x] 3. Create `src/components/deadlock-ui/ItemCard.tsx`. Wraps `<dl-item-card item-id={props.itemId} />`. Props: `{ itemId: string; class?: string }`. Internal: handles click/keydown for `.is-active` toggle.
+- [x] 4. Add `src/components/deadlock-ui/__tests__/ItemCard.test.tsx` — render with itemId prop, assert `<dl-item-card>` exists in DOM with correct attribute. Use Vitest + `@solidjs/testing-library`. (Web component behavior NOT tested at unit level — that's covered in Phase 0 spike + Phase 6 E2E.)
+- [x] 5. NO `ItemTooltip` wrapper component — `<dl-item-card>` handles its own tooltip internally.
 
 ### Phase 2: Type + Schema
 
@@ -242,12 +238,12 @@ scripts/
 
 ### Phase 4: UI Integration
 
-- [ ] 12. Create `src/lib/tooltip-state.ts` exporting `hoveredItem: Accessor<string | null>` + `setHoveredItem: Setter<string | null>` via `createSignal`. Use module-level signal (single global state, OK because tooltip is global).
-- [ ] 13. Extend `src/components/AppShell.tsx`: import `ItemTooltip` + `hoveredItem`, render `<ItemTooltip itemId={hoveredItem()} />` inside the AppShell tree (NOT in a portal — let it sit naturally so AppShell's CSS scopes apply).
-- [ ] 14. Extend `src/components/HeroCard.tsx`: import `ItemCard` + `setHoveredItem` + generated `counters.json`. Below the existing hero image, render a `<For>` block of top 3 counter items (use `counters[hero.class_name]?.itemCounters.slice(0, 3) ?? []`). Each `<ItemCard>` calls `setHoveredItem(itemId)` on hover-enter, `setHoveredItem(null)` on hover-leave. For heroes with no curated counters (most heroes in Phase 1), render nothing (empty `<For>` is fine).
-- [ ] 15. Add counter row styles to `src/components/HeroCard.css` (create if absent): BEM kebab-case classes (`.hero-card__counters`, `.hero-card__counter-item`), horizontal flex layout, small gaps. Match existing card design tokens from `tokens.css`.
-- [ ] 16. Add tap-to-reveal fallback: `<ItemCard>` toggles `.is-active` class on click. CSS rule `.is-active` triggers the same hover effect.
-- [ ] 17. Add unit test `src/components/__tests__/HeroCard.test.tsx` — for a hero with curated counters, assert 3 `<dl-item-card>` elements exist; for a hero without, assert 0.
+- [x] 12. ~~Create `src/lib/tooltip-state.ts`~~ — REMOVED: superseded by library's built-in tooltip; file deleted
+- [x] 13. ~~Extend `src/components/AppShell.tsx`~~ — REMOVED: superseded by library's built-in tooltip; AppShell reverted to pre-counter state
+- [x] 14. Extend `src/components/HeroCard.tsx`: import `ItemCard` + generated `counters.json`. Below the existing hero image, render a `<For>` block of top 3 counter items (use `counters[hero.class_name]?.itemCounters.slice(0, 3) ?? []`). For heroes with no curated counters (most heroes in Phase 1), render nothing.
+- [x] 15. Add counter row styles to `src/components/HeroCard.css` (create if absent): BEM kebab-case classes (`.hero-card__counters`, `.hero-card__counter-item`), horizontal flex layout, small gaps. Match existing card design tokens from `tokens.css`.
+- [x] 16. Add tap-to-reveal fallback: `<ItemCard>` toggles `.is-active` class on click. CSS rule `.is-active` triggers the same hover effect.
+- [x] 17. Add unit test `src/components/__tests__/HeroCard.test.tsx` — for a hero with curated counters, assert 3 `<dl-item-card>` elements exist; for a hero without, assert 0.
 
 ### Phase 5: Curation (5 Heroes MVP)
 
@@ -261,7 +257,7 @@ scripts/
 
 ### Phase 6: Verification
 
-- [ ] 25. Add `e2e/smoke.spec.ts` test: navigate to `/heroes`, locate Haze's `HeroCard`, assert 3 `dl-item-card` elements exist beneath it, hover the first, assert `dl-item-tooltip` becomes visible / has `item-id` attribute set.
+- [x] 25. Add `e2e/smoke.spec.ts` test: navigate to `/heroes`, click Haze, assert 3 `dl-item-card` elements render in `.hero-card__counters`. (Tooltip behavior is handled by the library's Shadow-DOM built-in tooltip and is not asserted here.)
 - [ ] 26. Manual QA: run `pnpm dev`, verify on `/heroes` that 5 curated heroes show counter items, hover works, tap works (browser dev tools touch emulation OK), bundle size still under 60 KB gzipped.
 - [ ] 27. Steam Overlay smoke test (manual, if user has Deadlock installed): open the deployed page in Steam Overlay, verify usability. (Optional — defer to user.)
 
@@ -290,19 +286,18 @@ scripts/
 
 ## Must Have
 
-1. `src/components/deadlock-ui/` adapter layer (4 files: types, provider, ItemCard, ItemTooltip)
+1. `src/components/deadlock-ui/` adapter layer (3 files: types, provider, ItemCard) — `ItemTooltip` removed in favor of library's built-in tooltip
 2. `src/lib/types.ts` extended with `CounterEntry`, `HeroCounters`, `CountersData`, `CounterSchemaVersion`
 3. `data/counters/schema/v1.json` + `data/counters/heroes/*.yaml` (5 heroes)
 4. `scripts/generate-counters.ts` + `scripts/validate-counter-data.ts`
 5. `src/generated/counters.json` (baked, committed)
-6. `src/components/AppShell.tsx` mounts global `<ItemTooltip>`
-7. `src/components/HeroCard.tsx` renders top 3 inline counter items for curated heroes
-8. `src/lib/tooltip-state.ts` exports global `hoveredItem` signal
-9. CI step `pnpm counters:validate` (in `ci.yml`)
-10. E2E test for hover/tap counter UX
-11. `pnpm` script aliases `counters:generate`, `counters:validate`
-12. `lastReviewedPatch` field tracked on every curated entry
-13. `schemaVersion: 1` field present (future-proofing)
+6. `src/components/HeroCard.tsx` renders top 3 inline counter items for curated heroes
+7. `@deadlock-api/ui-core`'s `<dl-item-card>` handles its own built-in tooltip on hover (no custom tooltip wrapper)
+8. CI step `pnpm counters:validate` (in `ci.yml`)
+9. E2E test for hover/tap counter UX
+10. `pnpm` script aliases `counters:generate`, `counters:validate`
+11. `lastReviewedPatch` field tracked on every curated entry
+12. `schemaVersion: 1` field present (future-proofing)
 
 ## Must NOT Have
 
@@ -310,7 +305,7 @@ scripts/
 2. NO `as any`, `@ts-ignore`, or `@ts-expect-error` anywhere
 3. NO custom `fetch()` calls to `api.deadlock-api.com` or any external API (ui-core handles its own internally; this is the approved exception per AGENTS.md)
 4. NO `<dl-item-card>` mounted at module-eval time — only inside Solid components reactive scope
-5. NO duplicate `<dl-item-tooltip>` instances — one global tooltip at AppShell level
+5. NO custom `<dl-item-tooltip>` instances — `<dl-item-card>` from `@deadlock-api/ui-core` manages its own tooltip
 6. NO router navigation for the counter feature — entirely inline on `/heroes`
 7. NO `/heroes/:id` detail page — that is a separate future plan
 8. NO React-style `.map()` in JSX — use `<For>`; NO ternaries for conditional rendering — use `<Show>` / `<Switch>`

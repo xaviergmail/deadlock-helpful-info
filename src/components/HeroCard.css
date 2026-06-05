@@ -17,6 +17,8 @@
 .hero-card__counter-item {
   cursor: pointer;
   border-radius: var(--border-radius);
+  min-width: 48px;
+  min-height: 48px;
 }
 
 /* Tap-to-reveal: .is-active highlights the selected item (applied by ItemCard on click) */

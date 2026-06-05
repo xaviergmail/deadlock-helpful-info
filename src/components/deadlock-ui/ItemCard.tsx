@@ -21,10 +21,6 @@ export default function ItemCard(props: ItemCardProps) {
     <dl-item-card
       item-class-name={props.itemId}
       class={cardClass()}
-      onMouseEnter={() => props.onHoverChange?.(true)}
-      onMouseLeave={() => props.onHoverChange?.(false)}
-      onFocus={() => props.onHoverChange?.(true)}
-      onBlur={() => props.onHoverChange?.(false)}
       onClick={() => setIsActive((a) => !a)}
       onKeyDown={(e: KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') setIsActive((a) => !a);

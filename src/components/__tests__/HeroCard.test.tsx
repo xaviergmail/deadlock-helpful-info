@@ -1,5 +1,9 @@
+vi.mock('@deadlock-api/ui-core/loader', () => ({
+  defineCustomElements: vi.fn(),
+}));
+
 import { render, screen } from '@solidjs/testing-library';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import type { Hero } from '~/lib/types';
 import HeroCard from '../HeroCard';
 
@@ -7,6 +11,18 @@ const hero: Hero = {
   id: 1,
   name: 'Abrams',
   class_name: 'hero_abrams',
+  images: {
+    icon_image_small: 'https://example.com/small.png',
+    icon_image_small_webp: 'https://example.com/small.webp',
+    icon_hero_card: 'https://example.com/card.png',
+    icon_hero_card_webp: 'https://example.com/card.webp',
+  },
+};
+
+const hazeHero: Hero = {
+  id: 5,
+  name: 'Haze',
+  class_name: 'hero_haze',
   images: {
     icon_image_small: 'https://example.com/small.png',
     icon_image_small_webp: 'https://example.com/small.webp',
@@ -54,5 +70,15 @@ describe('HeroCard', () => {
   it('root element has class hero-card', () => {
     render(() => <HeroCard hero={hero} />);
     expect(document.querySelector('.hero-card')).toBeInTheDocument();
+  });
+
+  it('renders 3 dl-item-card elements for hero with curated counters', () => {
+    render(() => <HeroCard hero={hazeHero} />);
+    expect(document.querySelectorAll('dl-item-card').length).toBe(3);
+  });
+
+  it('renders 0 dl-item-card elements for hero without curated counters', () => {
+    render(() => <HeroCard hero={hero} />);
+    expect(document.querySelectorAll('dl-item-card').length).toBe(0);
   });
 });

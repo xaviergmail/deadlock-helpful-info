@@ -1,7 +1,6 @@
 import { For, Show } from 'solid-js';
 import ItemCard from '~/components/deadlock-ui/ItemCard';
 import countersData from '~/generated/counters.json';
-import { setHoveredItem } from '~/lib/tooltip-state';
 import type { CountersData } from '~/lib/types';
 import type { Hero } from '~/lib/types';
 import '~/components/HeroCard.css';
@@ -50,13 +49,7 @@ export default function HeroCard(props: HeroCardProps) {
             <Show when={topCounters().length > 0}>
               <div class="hero-card__counters">
                 <For each={topCounters()}>
-                  {(entry) => (
-                    <ItemCard
-                      itemId={entry.item}
-                      class="hero-card__counter-item"
-                      onHoverChange={(active) => setHoveredItem(active ? entry.item : null)}
-                    />
-                  )}
+                  {(entry) => <ItemCard itemId={entry.item} class="hero-card__counter-item" />}
                 </For>
               </div>
             </Show>

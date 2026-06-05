@@ -23,24 +23,6 @@ describe('ItemCard', () => {
     expect(el?.className).toContain('my-custom');
   });
 
-  it('calls onHoverChange(true) on mouseenter', () => {
-    const onHoverChange = vi.fn();
-    render(() => <ItemCard itemId="decay" onHoverChange={onHoverChange} />);
-    // biome-ignore lint/style/noNonNullAssertion: element is asserted present above via render
-    const el = document.querySelector('dl-item-card')!;
-    fireEvent.mouseEnter(el);
-    expect(onHoverChange).toHaveBeenCalledWith(true);
-  });
-
-  it('calls onHoverChange(false) on mouseleave', () => {
-    const onHoverChange = vi.fn();
-    render(() => <ItemCard itemId="decay" onHoverChange={onHoverChange} />);
-    // biome-ignore lint/style/noNonNullAssertion: element is asserted present above via render
-    const el = document.querySelector('dl-item-card')!;
-    fireEvent.mouseLeave(el);
-    expect(onHoverChange).toHaveBeenCalledWith(false);
-  });
-
   it('toggles .is-active class on click', () => {
     render(() => <ItemCard itemId="decay" />);
     // biome-ignore lint/style/noNonNullAssertion: element is asserted present above via render

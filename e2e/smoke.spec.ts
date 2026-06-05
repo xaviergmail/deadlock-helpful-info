@@ -61,4 +61,58 @@ test.describe('smoke', () => {
     expect(box).not.toBeNull();
     expect(box?.width).toBeLessThanOrEqual(128);
   });
+
+  test('counter items render for Haze', async ({ page }) => {
+    const mockItems = [
+      {
+        id: 1001,
+        class_name: 'metal_skin',
+        name: 'Metal Skin',
+        type: 'upgrade',
+        item_slot_type: 'vitality',
+        item_tier: 4,
+        activation: 'instant_cast',
+        cost: 3000,
+        tooltip_sections: [],
+        component_items: [],
+      },
+      {
+        id: 1002,
+        class_name: 'knockdown',
+        name: 'Knockdown',
+        type: 'upgrade',
+        item_slot_type: 'spirit',
+        item_tier: 3,
+        activation: 'instant_cast',
+        cost: 3000,
+        tooltip_sections: [],
+        component_items: [],
+      },
+      {
+        id: 1003,
+        class_name: 'return_fire',
+        name: 'Return Fire',
+        type: 'upgrade',
+        item_slot_type: 'weapon',
+        item_tier: 3,
+        activation: 'passive',
+        cost: 3000,
+        tooltip_sections: [],
+        component_items: [],
+      },
+    ];
+
+    await page.route('**/v1/assets/generic-data', (route) => route.fulfill({ json: {} }));
+    await page.route('**/v1/assets/items**', (route) => route.fulfill({ json: mockItems }));
+
+    await page.goto('/#/heroes');
+    const hazeTile = page.getByRole('option', { name: /haze/i });
+    await hazeTile.click();
+    await expect(hazeTile).toHaveAttribute('aria-selected', 'true');
+
+    await expect(page.locator('.hero-card__counters')).toBeAttached();
+    await expect(page.locator('dl-item-card')).toHaveCount(3);
+    // Tooltip behavior is handled by @deadlock-api/ui-core's built-in tooltip
+    // (rendered inside dl-item-card's shadow DOM on hover) — not asserted here.
+  });
 });

@@ -10,18 +10,8 @@ import type { JSX } from 'solid-js';
 export interface ItemCardProps {
   /** Item class-name slug (e.g. `"decay"`, `"metal_skin"`). */
   itemId: string;
-  /** Called with `true` on hover/focus, `false` on leave/blur. */
-  onHoverChange?: (active: boolean) => void;
   /** Additional CSS class(es) to merge onto the root element. */
   class?: string;
-}
-
-/**
- * Props for the {@link ItemTooltip} wrapper component.
- */
-export interface ItemTooltipProps {
-  /** Item class-name slug, or `null` to hide the tooltip. */
-  itemId: string | null;
 }
 
 /**
