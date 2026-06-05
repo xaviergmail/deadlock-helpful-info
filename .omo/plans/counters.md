@@ -263,10 +263,10 @@ scripts/
 
 ## Final Verification Wave
 
-- [ ] F1. Plan Compliance Audit — `oracle` consultation. Verify all "Must Have" items present, all "Must NOT Have" absent, all constraints honored.
-- [ ] F2. Code Quality Review — review YAML schema, type definitions, adapter boundaries. Look for `any`, type suppressions, premature abstractions.
+- [x] F1. Plan Compliance Audit — `oracle` consultation. PASS_WITH_NOTES after commit `5490380`. Initial FAIL on Must Have 9 (E2E lacked hover/tap assertion); fixed by adding dispatched-click + `.is-active` toggle assertion in `e2e/smoke.spec.ts:113-125`. Note: hover-tooltip is library-owned (Shadow DOM) and covered by F3 manual QA.
+- [x] F2. Code Quality Review — `oracle` consultation. PASS after commit `5490380`. Initial FAIL on 4 items (HeroCard test false positive, dead `DeadlockUiProvider`, unused `DeadlockUiProviderProps`, 4 unused JSX intrinsics); all resolved with no regressions.
 - [ ] F3. Manual QA — `pnpm dev`, browse `/heroes`, hover/tap each curated hero's counters, verify tooltip works, check console for errors, verify bundle-size CI passes.
-- [ ] F4. Scope Fidelity — confirm extensibility hooks (schemaVersion field, separated adapter layer) are present but not over-built.
+- [x] F4. Scope Fidelity — combined with F1 audit. PASS. `schemaVersion: 1` literal type + field present end-to-end; adapter layer isolated to `src/components/deadlock-ui/`; `CounterEntry.item: string` is current v1 shape (no premature `target: { type, id }` union); no migration scripts; pivot deletions confirmed clean.
 
 ---
 
