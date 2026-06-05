@@ -26,3 +26,52 @@
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
+
+/* Counter sections (two-row layout) */
+.hero-card__recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.hero-card__section {
+  border-radius: var(--border-radius);
+  padding: var(--space-2);
+}
+
+.hero-card__section--curated {
+  background: var(--counter-curated-bg);
+  border: 1px solid var(--counter-curated-border);
+}
+
+.hero-card__section--analytics {
+  background: var(--counter-analytics-bg);
+  border: 1px solid var(--counter-analytics-border);
+}
+
+.hero-card__section-header {
+  font-size: var(--text-sm);
+  color: var(--color-fg-muted);
+  font-weight: 600;
+  margin: 0 0 var(--space-1) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-card__section-items {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-1);
+  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.hero-card__section-empty {
+  font-size: var(--text-sm);
+  color: var(--color-fg-muted);
+  text-align: center;
+  padding: var(--space-2) 0;
+  margin: 0;
+}

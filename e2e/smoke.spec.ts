@@ -110,7 +110,9 @@ test.describe('smoke', () => {
     await hazeTile.click();
     await expect(hazeTile).toHaveAttribute('aria-selected', 'true');
 
-    await expect(page.locator('.hero-card__counters')).toBeAttached();
+    await expect(page.locator('.hero-card__section--curated')).toBeAttached();
+    await expect(page.locator('.hero-card__section--analytics')).toBeAttached();
+    await expect(page.locator('.hero-card__section-empty')).toBeAttached();
     await expect(page.locator('dl-item-card')).toHaveCount(3);
 
     // Tap-to-reveal UX (our code, not library Shadow DOM): clicking a counter
@@ -127,5 +129,17 @@ test.describe('smoke', () => {
     await expect(firstCounter).toHaveClass(/is-active/);
     await firstCounter.dispatchEvent('click');
     await expect(firstCounter).not.toHaveClass(/is-active/);
+  });
+
+  test('analytics-only section for uncurated hero (Apollo)', async ({ page }) => {
+    await page.route('**/v1/assets/generic-data', (route) => route.fulfill({ json: {} }));
+    await page.route('**/v1/assets/items**', (route) => route.fulfill({ json: [] }));
+
+    await page.goto('/#/heroes');
+    await page.getByRole('option', { name: /apollo/i }).click();
+
+    await expect(page.locator('.hero-card__section--curated')).not.toBeAttached();
+    await expect(page.locator('.hero-card__section--analytics')).toBeAttached();
+    await expect(page.locator('.hero-card__section--analytics dl-item-card')).toHaveCount(1);
   });
 });

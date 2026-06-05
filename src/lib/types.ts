@@ -38,3 +38,48 @@ export interface HeroCounters {
 
 /** Generated runtime data: { [heroClassName]: HeroCounters }. heroClassName includes "hero_" prefix. */
 export type CountersData = Record<string, HeroCounters>;
+
+export interface CuratedCounterEntry {
+  readonly source: 'curated';
+  readonly item: string;
+  readonly confidence: 'high' | 'medium' | 'low';
+  readonly reason: string;
+  readonly lastReviewedPatch: string;
+}
+
+export interface AnalyticsCounterEntry {
+  readonly source: 'analytics';
+  readonly item: string;
+  readonly winRateDelta: number;
+  readonly sampleSize: number;
+  readonly reason: string;
+  readonly generatedAt: string;
+}
+
+export type CounterEntryUnion = CuratedCounterEntry | AnalyticsCounterEntry;
+
+export function isCurated(e: CounterEntryUnion): e is CuratedCounterEntry {
+  return e.source === 'curated';
+}
+
+export function isAnalytics(e: CounterEntryUnion): e is AnalyticsCounterEntry {
+  return e.source === 'analytics';
+}
+
+export interface AnalyticsHeroData {
+  readonly heroId: number;
+  readonly status: 'ok' | 'empty' | 'api_error' | 'stale_preserved';
+  readonly refreshedAt: string | null;
+  readonly counters: readonly AnalyticsCounterEntry[];
+}
+
+export interface AnalyticsCountersFile {
+  readonly schemaVersion: 1;
+  readonly generatedAt: string;
+  readonly config: {
+    readonly minAverageBadge: number;
+    readonly minMatchesPlayed: number;
+    readonly minWinRateDelta: number;
+  };
+  readonly heroes: Readonly<Record<string, AnalyticsHeroData>>;
+}

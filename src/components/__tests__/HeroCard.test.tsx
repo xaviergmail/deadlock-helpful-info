@@ -2,6 +2,42 @@ vi.mock('@deadlock-api/ui-core/loader', () => ({
   defineCustomElements: vi.fn(),
 }));
 
+// Mock analytics JSON — must be hoisted before imports
+vi.mock('~/generated/counters-analytics.json', () => ({
+  default: {
+    schemaVersion: 1,
+    generatedAt: '2026-06-05T00:00:00.000Z',
+    config: { minAverageBadge: 50, minMatchesPlayed: 100, minWinRateDelta: 0.025 },
+    heroes: {
+      hero_test_analytics: {
+        heroId: 8888,
+        status: 'ok',
+        refreshedAt: '2026-06-05T00:00:00.000Z',
+        counters: [
+          {
+            source: 'analytics',
+            item: 'upgrade_grit',
+            winRateDelta: 0.042,
+            sampleSize: 1000,
+            reason: '+4.2pp win rate over 1000 matches',
+            generatedAt: '2026-06-05T00:00:00.000Z',
+          },
+          {
+            source: 'analytics',
+            item: 'upgrade_metal_skin',
+            winRateDelta: 0.035,
+            sampleSize: 800,
+            reason: '+3.5pp win rate over 800 matches',
+            generatedAt: '2026-06-05T00:00:00.000Z',
+          },
+        ],
+      },
+      // hero_haze intentionally OMITTED → analytics counters = [] → preserves existing test counting 3 curated items only
+      // hero_test_uncurated intentionally OMITTED → analytics counters = [] → preserves existing test counting 0 items
+    },
+  },
+}));
+
 import { render, screen } from '@solidjs/testing-library';
 import { describe, expect, it, vi } from 'vitest';
 import type { Hero } from '~/lib/types';
@@ -59,6 +95,18 @@ const heroUncurated: Hero = {
   },
 };
 
+const heroWithAnalytics: Hero = {
+  id: 8888,
+  name: 'Analytics Test',
+  class_name: 'hero_test_analytics',
+  images: {
+    icon_image_small: 'https://example.com/small.png',
+    icon_image_small_webp: 'https://example.com/small.webp',
+    icon_hero_card: 'https://example.com/card.png',
+    icon_hero_card_webp: 'https://example.com/card.webp',
+  },
+};
+
 describe('HeroCard', () => {
   it('renders ? placeholder when no hero provided', () => {
     render(() => <HeroCard hero={undefined} />);
@@ -96,5 +144,35 @@ describe('HeroCard', () => {
   it('renders 0 dl-item-card elements for hero without curated counters', () => {
     render(() => <HeroCard hero={heroUncurated} />);
     expect(document.querySelectorAll('dl-item-card').length).toBe(0);
+  });
+
+  it('renders .hero-card__section--curated for hero with curated data', () => {
+    render(() => <HeroCard hero={hazeHero} />);
+    expect(document.querySelector('.hero-card__section--curated')).toBeInTheDocument();
+  });
+
+  it('does not render .hero-card__section--curated for hero without curated data', () => {
+    render(() => <HeroCard hero={heroUncurated} />);
+    expect(document.querySelector('.hero-card__section--curated')).not.toBeInTheDocument();
+  });
+
+  it('always renders .hero-card__section--analytics', () => {
+    render(() => <HeroCard hero={heroUncurated} />);
+    expect(document.querySelector('.hero-card__section--analytics')).toBeInTheDocument();
+  });
+
+  it('renders analytics dl-item-card elements when hero has analytics data', () => {
+    render(() => <HeroCard hero={heroWithAnalytics} />);
+    const analyticsSection = document.querySelector('.hero-card__section--analytics');
+    expect(analyticsSection).toBeInTheDocument();
+    expect(analyticsSection?.querySelectorAll('dl-item-card').length).toBe(2);
+  });
+
+  it('renders empty state text when hero has no analytics data', () => {
+    render(() => <HeroCard hero={heroUncurated} />);
+    expect(document.querySelector('.hero-card__section-empty')).toBeInTheDocument();
+    expect(document.querySelector('.hero-card__section-empty')?.textContent).toBe(
+      'Not enough match data.',
+    );
   });
 });

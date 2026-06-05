@@ -1,13 +1,16 @@
 import { For, Show } from 'solid-js';
 import ItemCard from '~/components/deadlock-ui/ItemCard';
+import analyticsData from '~/generated/counters-analytics.json';
 import countersData from '~/generated/counters.json';
-import type { CountersData } from '~/lib/types';
+import type { AnalyticsCountersFile, CountersData } from '~/lib/types';
 import type { Hero } from '~/lib/types';
 import '~/components/HeroCard.css';
 
 interface HeroCardProps {
   hero: Hero | undefined;
 }
+
+const SECTION_LABELS = { curated: 'Curated', analytics: 'Analytics' } as const;
 
 export default function HeroCard(props: HeroCardProps) {
   return (
@@ -43,16 +46,38 @@ export default function HeroCard(props: HeroCardProps) {
       </div>
       <Show when={props.hero}>
         {(hero) => {
-          const topCounters = () =>
+          const curated = () =>
             (countersData as CountersData)[hero().class_name]?.itemCounters.slice(0, 3) ?? [];
+          const analytics = () =>
+            (analyticsData as unknown as AnalyticsCountersFile).heroes[
+              hero().class_name
+            ]?.counters.slice(0, 3) ?? [];
           return (
-            <Show when={topCounters().length > 0}>
-              <div class="hero-card__counters">
-                <For each={topCounters()}>
-                  {(entry) => <ItemCard itemId={entry.item} class="hero-card__counter-item" />}
-                </For>
+            <div class="hero-card__recommendations">
+              <Show when={curated().length > 0}>
+                <div class="hero-card__section hero-card__section--curated">
+                  <h3 class="hero-card__section-header">{SECTION_LABELS.curated}</h3>
+                  <div class="hero-card__section-items">
+                    <For each={curated()}>
+                      {(entry) => <ItemCard itemId={entry.item} class="hero-card__counter-item" />}
+                    </For>
+                  </div>
+                </div>
+              </Show>
+              <div class="hero-card__section hero-card__section--analytics">
+                <h3 class="hero-card__section-header">{SECTION_LABELS.analytics}</h3>
+                <Show
+                  when={analytics().length > 0}
+                  fallback={<p class="hero-card__section-empty">Not enough match data.</p>}
+                >
+                  <div class="hero-card__section-items">
+                    <For each={analytics()}>
+                      {(entry) => <ItemCard itemId={entry.item} class="hero-card__counter-item" />}
+                    </For>
+                  </div>
+                </Show>
               </div>
-            </Show>
+            </div>
           );
         }}
       </Show>

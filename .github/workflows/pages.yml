@@ -43,6 +43,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Generate analytics counters
+        run: pnpm analytics:generate
+        env:
+          NODE_ENV: production
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 

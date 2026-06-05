@@ -18,6 +18,7 @@
     "typecheck": "tsc --noEmit",
     "counters:generate": "node --experimental-strip-types scripts/generate-counters.ts",
     "counters:validate": "node --experimental-strip-types scripts/validate-counter-data.ts",
+    "analytics:generate": "node --experimental-strip-types scripts/generate-analytics.ts",
     "lint": "biome check .",
     "format": "biome format --write .",
     "check": "biome check --write .",
