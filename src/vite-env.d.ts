@@ -6,7 +6,11 @@
 export {};
 
 // JSX intrinsic element declarations for @deadlock-api/ui-core web components.
-// These are KEPT after the spike — they are the foundation for the adapter layer.
+// Only `dl-item-card` is consumed by the adapter layer today. The other
+// components in the library (`dl-item-tooltip`, `dl-item-grid`, `dl-provider`,
+// `dl-shop-panel`) are intentionally NOT declared — add them here only when
+// the adapter layer starts rendering them, otherwise the surface area gives
+// false impressions about what is supported.
 declare module 'solid-js' {
   namespace JSX {
     interface IntrinsicElements {
@@ -23,42 +27,6 @@ declare module 'solid-js' {
         'show-tier-badge'?: boolean;
         /** Language override for item name only. */
         'item-name-language'?: string;
-        class?: string;
-        style?: string;
-        [key: string]: unknown;
-      };
-      'dl-item-tooltip': {
-        /** Numeric item ID. */
-        'item-id'?: number | string;
-        /** Item class name slug. */
-        'item-class-name'?: string;
-        class?: string;
-        style?: string;
-        [key: string]: unknown;
-      };
-      'dl-item-grid': {
-        /** Filter by slot type: `"weapon"` | `"vitality"` | `"spirit"` */
-        'slot-type'?: string;
-        /** Filter by tier (1–4). */
-        tier?: number | string;
-        /** Only show shopable items. */
-        'shopable-only'?: boolean;
-        class?: string;
-        style?: string;
-        [key: string]: unknown;
-      };
-      'dl-provider': {
-        /** Language code for localized item names. */
-        language?: string;
-        /** Global tooltip trigger: `"hover"` | `"click"` | `"none"` */
-        'tooltip-trigger'?: string;
-        /** Show tier badge globally. */
-        'show-tier-badge'?: boolean;
-        class?: string;
-        style?: string;
-        [key: string]: unknown;
-      };
-      'dl-shop-panel': {
         class?: string;
         style?: string;
         [key: string]: unknown;

@@ -43,6 +43,22 @@ const heroNoImage: Hero = {
   },
 };
 
+// Deliberately fabricated class_name that does NOT appear in counters.json.
+// Using a real hero with curated counters would yield 3 cards; using a real
+// uncurated hero would silently start failing if curation later expands to
+// cover them. A clearly-fake slug keeps this test stable across curation churn.
+const heroUncurated: Hero = {
+  id: 9999,
+  name: 'Uncurated',
+  class_name: 'hero_test_uncurated',
+  images: {
+    icon_image_small: 'https://example.com/small.png',
+    icon_image_small_webp: 'https://example.com/small.webp',
+    icon_hero_card: 'https://example.com/card.png',
+    icon_hero_card_webp: 'https://example.com/card.webp',
+  },
+};
+
 describe('HeroCard', () => {
   it('renders ? placeholder when no hero provided', () => {
     render(() => <HeroCard hero={undefined} />);
@@ -78,7 +94,7 @@ describe('HeroCard', () => {
   });
 
   it('renders 0 dl-item-card elements for hero without curated counters', () => {
-    render(() => <HeroCard hero={hero} />);
+    render(() => <HeroCard hero={heroUncurated} />);
     expect(document.querySelectorAll('dl-item-card').length).toBe(0);
   });
 });

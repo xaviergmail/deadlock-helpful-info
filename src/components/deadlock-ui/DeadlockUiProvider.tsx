@@ -1,4 +1,5 @@
 import type { ParentComponent } from 'solid-js';
+import type { DeadlockUiProviderProps } from './types';
 
 /**
  * Phase 1 stub — renders children directly without wrapping in `<dl-provider>`.
@@ -11,7 +12,7 @@ import type { ParentComponent } from 'solid-js';
  * simultaneously. The `language` prop is accepted now so call-sites don't
  * need to change when the upgrade happens.
  */
-const DeadlockUiProvider: ParentComponent<{ language?: string }> = (props) => {
+const DeadlockUiProvider: ParentComponent<DeadlockUiProviderProps> = (props) => {
   return <>{props.children}</>;
 };
 

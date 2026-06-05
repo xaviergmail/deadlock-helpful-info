@@ -112,7 +112,20 @@ test.describe('smoke', () => {
 
     await expect(page.locator('.hero-card__counters')).toBeAttached();
     await expect(page.locator('dl-item-card')).toHaveCount(3);
-    // Tooltip behavior is handled by @deadlock-api/ui-core's built-in tooltip
-    // (rendered inside dl-item-card's shadow DOM on hover) — not asserted here.
+
+    // Tap-to-reveal UX (our code, not library Shadow DOM): clicking a counter
+    // item toggles the `.is-active` class. We dispatch the click rather than
+    // calling `.click()` because mocked item responses do not fully hydrate
+    // Stencil's Shadow DOM, leaving the host element without rendered content
+    // → Playwright considers it not visible and aborts a physical click. The
+    // Solid `onClick` handler we are validating fires on the bubbled DOM event
+    // regardless of host visibility, so `dispatchEvent` is the right primitive
+    // here. Hover-tooltip rendering lives inside `<dl-item-card>`'s Shadow DOM
+    // and is owned by @deadlock-api/ui-core; manual QA covers it.
+    const firstCounter = page.locator('dl-item-card').first();
+    await firstCounter.dispatchEvent('click');
+    await expect(firstCounter).toHaveClass(/is-active/);
+    await firstCounter.dispatchEvent('click');
+    await expect(firstCounter).not.toHaveClass(/is-active/);
   });
 });

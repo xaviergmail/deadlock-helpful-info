@@ -1,5 +1,3 @@
-import type { JSX } from 'solid-js';
-
 /**
  * Props for the {@link ItemCard} wrapper component.
  *
@@ -16,9 +14,13 @@ export interface ItemCardProps {
 
 /**
  * Props for the {@link DeadlockUiProvider} wrapper component.
+ *
+ * `children` is provided implicitly by Solid's `ParentComponent<T>` and is NOT
+ * declared here. The provider is a Phase 1 noop wrapper kept so call-sites
+ * (currently only `AppShell`) don't change when `<dl-provider>` is adopted in
+ * a future phase for global language switching.
  */
 export interface DeadlockUiProviderProps {
-  children: JSX.Element;
   /** BCP-47 language tag for item name localisation (e.g. `"en"`, `"de"`). */
   language?: string;
 }
