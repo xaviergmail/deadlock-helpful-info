@@ -15,6 +15,10 @@
   --counter-analytics-bg: rgba(100, 140, 200, 0.06);
   --counter-analytics-border: rgba(100, 140, 200, 0.22);
 
+  /* Win-rate delta trend (Item Matchups badges) */
+  --color-delta-positive: hsl(140 40% 55%);
+  --color-delta-negative: hsl(0 50% 60%);
+
   /* Spacing (4px base) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;

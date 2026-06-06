@@ -12,7 +12,6 @@ import type {
 const BASE_URL = 'https://api.deadlock-api.com';
 const MIN_AVERAGE_BADGE = 50;
 const MIN_MATCHES_PLAYED = 100;
-const MIN_WIN_RATE_DELTA = 0.025;
 const MAX_ITEMS_PER_HERO = 3;
 const OUTPUT_PATH = 'src/generated/counters-analytics.json';
 
@@ -148,7 +147,6 @@ for (const hero of heroes) {
       if (baselineRate === undefined) continue;
       const winRate = stat.wins / stat.matches;
       const delta = winRate - baselineRate;
-      if (delta < MIN_WIN_RATE_DELTA) continue;
       const className = itemClassMap.get(stat.item_id);
       if (className === undefined) continue;
       if (curatedItems.has(className)) continue;
@@ -158,14 +156,20 @@ for (const hero of heroes) {
     candidates.sort((a, b) => b.delta - a.delta);
     const top = candidates.slice(0, MAX_ITEMS_PER_HERO);
 
-    const counters: AnalyticsCounterEntry[] = top.map((c) => ({
-      source: 'analytics' as const,
-      item: c.className,
-      winRateDelta: c.delta,
-      sampleSize: c.sampleSize,
-      reason: `+${(c.delta * 100).toFixed(1)}pp win rate over ${c.sampleSize} matches`,
-      generatedAt,
-    }));
+    const counters: AnalyticsCounterEntry[] = top.map((c) => {
+      // Round to 0.1pp BEFORE picking the sign so a tiny negative never bakes a
+      // misleading "−0.0pp" (mirrors formatDelta in HeroCard.tsx).
+      const pp = Math.round(c.delta * 1000) / 10;
+      const sign = pp > 0 ? '+' : pp < 0 ? '−' : '';
+      return {
+        source: 'analytics' as const,
+        item: c.className,
+        winRateDelta: c.delta,
+        sampleSize: c.sampleSize,
+        reason: `${sign}${Math.abs(pp).toFixed(1)}pp win rate over ${c.sampleSize} matches`,
+        generatedAt,
+      };
+    });
 
     const status = counters.length > 0 ? 'ok' : 'empty';
     heroResults[heroKey] = {
@@ -195,7 +199,7 @@ const output: AnalyticsCountersFile = {
   config: {
     minAverageBadge: MIN_AVERAGE_BADGE,
     minMatchesPlayed: MIN_MATCHES_PLAYED,
-    minWinRateDelta: MIN_WIN_RATE_DELTA,
+    minWinRateDelta: 0,
   },
   heroes: heroResults,
 };

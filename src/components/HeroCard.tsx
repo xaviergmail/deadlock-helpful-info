@@ -10,7 +10,26 @@ interface HeroCardProps {
   hero: Hero | undefined;
 }
 
-const SECTION_LABELS = { curated: 'Curated', analytics: 'Analytics' } as const;
+const SECTION_LABELS = { curated: 'Curated', analytics: 'Item Matchups' } as const;
+
+function formatDelta(d: number): string {
+  const pp = Math.round(d * 1000) / 10;
+  if (pp === 0) return '0.0pp';
+  const sign = pp > 0 ? '+' : '−';
+  return `${sign}${Math.abs(pp).toFixed(1)}pp`;
+}
+
+function formatSampleSize(n: number): string {
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `${Math.round(n / 1_000)}K`;
+  return String(n);
+}
+
+function trendFor(d: number): 'positive' | 'negative' | 'neutral' {
+  if (d > 0.01) return 'positive';
+  if (d < -0.01) return 'negative';
+  return 'neutral';
+}
 
 export default function HeroCard(props: HeroCardProps) {
   return (
@@ -66,13 +85,24 @@ export default function HeroCard(props: HeroCardProps) {
               </Show>
               <div class="hero-card__section hero-card__section--analytics">
                 <h3 class="hero-card__section-header">{SECTION_LABELS.analytics}</h3>
+                <p class="hero-card__section-sub">Win-rate delta vs average</p>
                 <Show
                   when={analytics().length > 0}
-                  fallback={<p class="hero-card__section-empty">Not enough match data.</p>}
+                  fallback={<p class="hero-card__section-empty">Item stats unavailable.</p>}
                 >
                   <div class="hero-card__section-items">
                     <For each={analytics()}>
-                      {(entry) => <ItemCard itemId={entry.item} class="hero-card__counter-item" />}
+                      {(entry) => (
+                        <div class="hero-card__stat-item" data-trend={trendFor(entry.winRateDelta)}>
+                          <ItemCard itemId={entry.item} class="hero-card__counter-item" />
+                          <span class="hero-card__stat-delta">
+                            {formatDelta(entry.winRateDelta)}
+                          </span>
+                          <span class="hero-card__stat-samples">
+                            {formatSampleSize(entry.sampleSize)}
+                          </span>
+                        </div>
+                      )}
                     </For>
                   </div>
                 </Show>

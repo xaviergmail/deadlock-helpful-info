@@ -7,7 +7,7 @@ vi.mock('~/generated/counters-analytics.json', () => ({
   default: {
     schemaVersion: 1,
     generatedAt: '2026-06-05T00:00:00.000Z',
-    config: { minAverageBadge: 50, minMatchesPlayed: 100, minWinRateDelta: 0.025 },
+    config: { minAverageBadge: 50, minMatchesPlayed: 100, minWinRateDelta: 0 },
     heroes: {
       hero_test_analytics: {
         heroId: 8888,
@@ -18,16 +18,24 @@ vi.mock('~/generated/counters-analytics.json', () => ({
             source: 'analytics',
             item: 'upgrade_grit',
             winRateDelta: 0.042,
-            sampleSize: 1000,
-            reason: '+4.2pp win rate over 1000 matches',
+            sampleSize: 1500000,
+            reason: '+4.2pp win rate over 1500000 matches',
             generatedAt: '2026-06-05T00:00:00.000Z',
           },
           {
             source: 'analytics',
             item: 'upgrade_metal_skin',
-            winRateDelta: 0.035,
-            sampleSize: 800,
-            reason: '+3.5pp win rate over 800 matches',
+            winRateDelta: -0.015,
+            sampleSize: 52174,
+            reason: '−1.5pp win rate over 52174 matches',
+            generatedAt: '2026-06-05T00:00:00.000Z',
+          },
+          {
+            source: 'analytics',
+            item: 'upgrade_combat_barrier',
+            winRateDelta: 0.005,
+            sampleSize: 999,
+            reason: '+0.5pp win rate over 999 matches',
             generatedAt: '2026-06-05T00:00:00.000Z',
           },
         ],
@@ -165,14 +173,50 @@ describe('HeroCard', () => {
     render(() => <HeroCard hero={heroWithAnalytics} />);
     const analyticsSection = document.querySelector('.hero-card__section--analytics');
     expect(analyticsSection).toBeInTheDocument();
-    expect(analyticsSection?.querySelectorAll('dl-item-card').length).toBe(2);
+    expect(analyticsSection?.querySelectorAll('dl-item-card').length).toBe(3);
   });
 
   it('renders empty state text when hero has no analytics data', () => {
     render(() => <HeroCard hero={heroUncurated} />);
     expect(document.querySelector('.hero-card__section-empty')).toBeInTheDocument();
     expect(document.querySelector('.hero-card__section-empty')?.textContent).toBe(
-      'Not enough match data.',
+      'Item stats unavailable.',
     );
+  });
+
+  it('renders the "Item Matchups" section label', () => {
+    render(() => <HeroCard hero={heroWithAnalytics} />);
+    expect(screen.getByText('Item Matchups')).toBeInTheDocument();
+  });
+
+  it('renders the analytics subtitle', () => {
+    render(() => <HeroCard hero={heroWithAnalytics} />);
+    expect(document.querySelector('.hero-card__section-sub')?.textContent).toBe(
+      'Win-rate delta vs average',
+    );
+  });
+
+  it('renders signed deltas with Unicode minus for negatives', () => {
+    render(() => <HeroCard hero={heroWithAnalytics} />);
+    const deltas = Array.from(document.querySelectorAll('.hero-card__stat-delta')).map(
+      (el) => el.textContent,
+    );
+    expect(deltas).toEqual(['+4.2pp', '−1.5pp', '+0.5pp']);
+  });
+
+  it('renders compact sample sizes', () => {
+    render(() => <HeroCard hero={heroWithAnalytics} />);
+    const samples = Array.from(document.querySelectorAll('.hero-card__stat-samples')).map(
+      (el) => el.textContent,
+    );
+    expect(samples).toEqual(['1.5M', '52K', '999']);
+  });
+
+  it('sets data-trend attribute per delta bucket', () => {
+    render(() => <HeroCard hero={heroWithAnalytics} />);
+    const trends = Array.from(document.querySelectorAll('.hero-card__stat-item')).map((el) =>
+      el.getAttribute('data-trend'),
+    );
+    expect(trends).toEqual(['positive', 'negative', 'neutral']);
   });
 });

@@ -112,8 +112,32 @@ test.describe('smoke', () => {
 
     await expect(page.locator('.hero-card__section--curated')).toBeAttached();
     await expect(page.locator('.hero-card__section--analytics')).toBeAttached();
-    await expect(page.locator('.hero-card__section-empty')).toBeAttached();
-    await expect(page.locator('dl-item-card')).toHaveCount(3);
+    await expect(page.locator('.hero-card__section-empty')).not.toBeAttached();
+    await expect(page.locator('.hero-card__section--curated dl-item-card')).toHaveCount(3);
+    await expect(page.locator('.hero-card__section--analytics dl-item-card')).toHaveCount(3);
+    await expect(page.locator('.hero-card__section--analytics .hero-card__stat-delta')).toHaveCount(
+      3,
+    );
+    await expect(page.getByText('Win-rate delta vs average')).toBeVisible();
+    await expect(page.locator('dl-item-card')).toHaveCount(6);
+
+    // Each analytics delta renders a signed percentage-point value using the
+    // Unicode minus (U+2212), never an ASCII hyphen, and carries a valid trend
+    // bucket that drives the colour token. Guards the feature's core display.
+    const deltaTexts = await page
+      .locator('.hero-card__section--analytics .hero-card__stat-delta')
+      .allTextContents();
+    expect(deltaTexts).toHaveLength(3);
+    for (const text of deltaTexts) {
+      expect(text).toMatch(/^[+\u2212]?\d+\.\d+pp$/);
+      expect(text).not.toContain('-'); // ASCII hyphen-minus must never leak in
+    }
+    const trends = await page
+      .locator('.hero-card__section--analytics .hero-card__stat-item')
+      .evaluateAll((els) => els.map((el) => el.getAttribute('data-trend')));
+    for (const trend of trends) {
+      expect(['positive', 'negative', 'neutral']).toContain(trend);
+    }
 
     // Tap-to-reveal UX (our code, not library Shadow DOM): clicking a counter
     // item toggles the `.is-active` class. We dispatch the click rather than
@@ -140,6 +164,9 @@ test.describe('smoke', () => {
 
     await expect(page.locator('.hero-card__section--curated')).not.toBeAttached();
     await expect(page.locator('.hero-card__section--analytics')).toBeAttached();
-    await expect(page.locator('.hero-card__section--analytics dl-item-card')).toHaveCount(1);
+    await expect(page.locator('.hero-card__section--analytics dl-item-card')).toHaveCount(3);
+    await expect(
+      page.locator('.hero-card__section--analytics .hero-card__stat-samples'),
+    ).toHaveCount(3);
   });
 });
