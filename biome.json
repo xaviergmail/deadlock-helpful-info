@@ -13,7 +13,8 @@
       "pnpm-lock.yaml",
       "playwright-report",
       "test-results",
-      "src/assets/cheatsheets/**"
+      "src/assets/cheatsheets/**",
+      "public/assets/**"
     ]
   },
   "formatter": {
