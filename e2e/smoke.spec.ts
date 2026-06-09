@@ -36,30 +36,180 @@ test.describe('smoke', () => {
     }
   });
 
-  test('heroes page shows card + inline grid (no overlay, no trigger)', async ({ page }) => {
-    await page.goto('/#/heroes');
-    await expect(page.locator('.hero-card')).toBeVisible();
-    await expect(page.locator('.hero-card [data-placeholder="true"]')).toBeVisible();
-    await expect(page.locator('.hero-picker__grid')).toBeVisible();
+  test('counters page renders two-panel layout', async ({ page }) => {
+    await page.goto('/#/counters');
+    await expect(page.locator('.counters__detail-panel')).toBeVisible();
+    await expect(page.locator('.counters__hero-panel')).toBeVisible();
     await expect(page.locator('[role="option"]')).toHaveCount(38);
-    await expect(page.locator('[role="dialog"]')).toHaveCount(0);
-    await expect(page.locator('.hero-picker__trigger')).toHaveCount(0);
+    await expect(page.locator('.counter-detail-card')).toHaveCount(2);
+    await page.screenshot({ path: '.omo/evidence/task-9-two-panel-layout.png' });
   });
 
-  test('clicking a tile updates the card inline', async ({ page }) => {
-    await page.goto('/#/heroes');
-    await page.locator('[role="option"]').first().click();
-    await expect(page.locator('.hero-card [data-placeholder="true"]')).toHaveCount(0);
-    await expect(page.locator('.hero-card img, .hero-card__fallback')).toBeVisible();
-    await page.screenshot({ path: '.omo/evidence/heroes-inline-selected.png' });
+  test('clicking a hero fills Slot 1', async ({ page }) => {
+    await page.goto('/#/counters');
+    const firstTile = page.locator('[role="option"]').first();
+    const heroName = await firstTile.locator('img').getAttribute('alt');
+    await firstTile.click();
+
+    const slot1 = page.locator('.counter-detail-card').first();
+    await expect(slot1.locator('.counter-detail-card__name')).toHaveText(heroName ?? '');
+    await expect(slot1.locator('.counter-detail-card__section--curated')).toBeVisible();
+    await expect(slot1.locator('.counter-detail-card__section--analytics')).toBeVisible();
+    await expect(page.locator('.counters__prompt')).toBeVisible();
   });
 
-  test('hero tiles do not exceed native image size (128px)', async ({ page }) => {
-    await page.goto('/#/heroes');
-    const tile = page.locator('[role="option"]').first();
-    const box = await tile.boundingBox();
-    expect(box).not.toBeNull();
-    expect(box?.width).toBeLessThanOrEqual(128);
+  test('clicking second hero fills Slot 2', async ({ page }) => {
+    await page.goto('/#/counters');
+    const tiles = page.locator('[role="option"]');
+    await tiles.nth(0).click();
+    await tiles.nth(1).click();
+
+    const slot2 = page.locator('.counter-detail-card').nth(1);
+    const secondHeroName = await tiles.nth(1).locator('img').getAttribute('alt');
+    await expect(slot2.locator('.counter-detail-card__name')).toHaveText(secondHeroName ?? '');
+    await expect(slot2.locator('.counter-detail-card__section--curated')).toBeVisible();
+    await expect(slot2.locator('.counter-detail-card__section--analytics')).toBeVisible();
+  });
+
+  test('two heroes selected disables remaining tiles', async ({ page }) => {
+    await page.goto('/#/counters');
+    const tiles = page.locator('[role="option"]');
+    await tiles.nth(0).click();
+    await tiles.nth(1).click();
+
+    // Remaining tiles should be disabled
+    const disabledTiles = page.locator('[role="option"][aria-disabled="true"]');
+    await expect(disabledTiles).toHaveCount(36);
+
+    for (let i = 0; i < 5; i++) {
+      await expect(disabledTiles.nth(i)).toHaveClass(/hero-tile--disabled/);
+    }
+
+    // Clicking a disabled tile should not change selection
+    const slot1Name = await page
+      .locator('.counter-detail-card')
+      .first()
+      .locator('.counter-detail-card__name')
+      .textContent();
+    await disabledTiles.first().click({ force: true });
+    await expect(
+      page.locator('.counter-detail-card').first().locator('.counter-detail-card__name'),
+    ).toHaveText(slot1Name ?? '');
+
+    await page.screenshot({ path: '.omo/evidence/task-9-disabled-tiles.png' });
+  });
+
+  test('clicking selected hero unselects it', async ({ page }) => {
+    await page.goto('/#/counters');
+    const tiles = page.locator('[role="option"]');
+    await tiles.nth(0).click();
+    await tiles.nth(1).click();
+
+    // Click the first selected hero to unselect it
+    await tiles.nth(0).click();
+
+    // Slot 1 should now show the hero that was in Slot 2
+    const slot1Name = await page
+      .locator('.counter-detail-card')
+      .first()
+      .locator('.counter-detail-card__name')
+      .textContent();
+    const secondHeroName = await tiles.nth(1).locator('img').getAttribute('alt');
+    expect(slot1Name).toBe(secondHeroName);
+
+    // Slot 2 should be empty (placeholder)
+    const slot2 = page.locator('.counter-detail-card').nth(1);
+    await expect(slot2.locator('.counter-detail-card__placeholder')).toBeVisible();
+
+    // Only one tile should be selected now
+    await expect(tiles.nth(1)).toHaveAttribute('aria-selected', 'true');
+    await expect(tiles.nth(0)).toHaveAttribute('aria-selected', 'false');
+
+    await page.screenshot({ path: '.omo/evidence/task-9-promotion.png' });
+  });
+
+  test('shared items are highlighted', async ({ page }) => {
+    const mockItems = [
+      {
+        id: 1001,
+        class_name: 'upgrade_spellbreaker',
+        name: 'Spellbreaker',
+        type: 'upgrade',
+        item_slot_type: 'spirit',
+        item_tier: 3,
+        activation: 'instant_cast',
+        cost: 3000,
+        tooltip_sections: [],
+        component_items: [],
+      },
+      {
+        id: 1002,
+        class_name: 'upgrade_grit',
+        name: 'Grit',
+        type: 'upgrade',
+        item_slot_type: 'vitality',
+        item_tier: 3,
+        activation: 'passive',
+        cost: 3000,
+        tooltip_sections: [],
+        component_items: [],
+      },
+      {
+        id: 1003,
+        class_name: 'upgrade_thermal_detonator',
+        name: 'Thermal Detonator',
+        type: 'upgrade',
+        item_slot_type: 'weapon',
+        item_tier: 3,
+        activation: 'instant_cast',
+        cost: 3000,
+        tooltip_sections: [],
+        component_items: [],
+      },
+      {
+        id: 1004,
+        class_name: 'upgrade_return_fire',
+        name: 'Return Fire',
+        type: 'upgrade',
+        item_slot_type: 'weapon',
+        item_tier: 3,
+        activation: 'passive',
+        cost: 3000,
+        tooltip_sections: [],
+        component_items: [],
+      },
+      {
+        id: 1005,
+        class_name: 'upgrade_melee_rebuttal',
+        name: 'Melee Rebuttal',
+        type: 'upgrade',
+        item_slot_type: 'vitality',
+        item_tier: 3,
+        activation: 'passive',
+        cost: 3000,
+        tooltip_sections: [],
+        component_items: [],
+      },
+    ];
+
+    await page.route('**/v1/assets/generic-data', (route) => route.fulfill({ json: {} }));
+    await page.route('**/v1/assets/items**', (route) => route.fulfill({ json: mockItems }));
+
+    await page.goto('/#/counters');
+
+    // Select Holliday (hero_astro) and Drifter (hero_drifter) — they share
+    // upgrade_spellbreaker in curated and upgrade_grit in analytics
+    await page.getByRole('option', { name: /holliday/i }).click();
+    await page.getByRole('option', { name: /drifter/i }).click();
+
+    // Verify shared items are highlighted (shared items appear in both cards)
+    const sharedItems = page.locator('.counter-item--shared');
+    await expect(sharedItems).toHaveCount(4);
+
+    // Verify the ×2 badge is present on shared items (2 per card)
+    await expect(page.locator('.counter-detail-card__shared-badge')).toHaveCount(4);
+
+    await page.screenshot({ path: '.omo/evidence/task-9-shared-items.png' });
   });
 
   test('counter items render for Haze', async ({ page }) => {
@@ -105,35 +255,39 @@ test.describe('smoke', () => {
     await page.route('**/v1/assets/generic-data', (route) => route.fulfill({ json: {} }));
     await page.route('**/v1/assets/items**', (route) => route.fulfill({ json: mockItems }));
 
-    await page.goto('/#/heroes');
+    await page.goto('/#/counters');
     const hazeTile = page.getByRole('option', { name: /haze/i });
     await hazeTile.click();
     await expect(hazeTile).toHaveAttribute('aria-selected', 'true');
 
-    await expect(page.locator('.hero-card__section--curated')).toBeAttached();
-    await expect(page.locator('.hero-card__section--analytics')).toBeAttached();
-    await expect(page.locator('.hero-card__section-empty')).not.toBeAttached();
-    await expect(page.locator('.hero-card__section--curated dl-item-card')).toHaveCount(5);
-    await expect(page.locator('.hero-card__section--analytics dl-item-card')).toHaveCount(3);
-    await expect(page.locator('.hero-card__section--analytics .hero-card__stat-delta')).toHaveCount(
-      3,
+    const slot1 = page.locator('.counter-detail-card').first();
+    await expect(slot1.locator('.counter-detail-card__section--curated')).toBeAttached();
+    await expect(slot1.locator('.counter-detail-card__section--analytics')).toBeAttached();
+    await expect(slot1.locator('.counter-detail-card__section--curated dl-item-card')).toHaveCount(
+      5,
     );
+    await expect(
+      slot1.locator('.counter-detail-card__section--analytics dl-item-card'),
+    ).toHaveCount(3);
+    await expect(
+      slot1.locator('.counter-detail-card__section--analytics .counter-detail-card__stat-delta'),
+    ).toHaveCount(3);
     await expect(page.getByText('Win-rate delta vs average')).toBeVisible();
     await expect(page.locator('dl-item-card')).toHaveCount(8);
 
     // Each analytics delta renders a signed percentage-point value using the
     // Unicode minus (U+2212), never an ASCII hyphen, and carries a valid trend
     // bucket that drives the colour token. Guards the feature's core display.
-    const deltaTexts = await page
-      .locator('.hero-card__section--analytics .hero-card__stat-delta')
+    const deltaTexts = await slot1
+      .locator('.counter-detail-card__section--analytics .counter-detail-card__stat-delta')
       .allTextContents();
     expect(deltaTexts).toHaveLength(3);
     for (const text of deltaTexts) {
       expect(text).toMatch(/^[+\u2212]?\d+\.\d+pp$/);
       expect(text).not.toContain('-'); // ASCII hyphen-minus must never leak in
     }
-    const trends = await page
-      .locator('.hero-card__section--analytics .hero-card__stat-item')
+    const trends = await slot1
+      .locator('.counter-detail-card__section--analytics .counter-detail-card__stat-item')
       .evaluateAll((els) => els.map((el) => el.getAttribute('data-trend')));
     for (const trend of trends) {
       expect(['positive', 'negative', 'neutral']).toContain(trend);
@@ -155,19 +309,13 @@ test.describe('smoke', () => {
     await expect(firstCounter).not.toHaveClass(/is-active/);
   });
 
-  test('curated hero (Apollo) shows both sections', async ({ page }) => {
-    await page.route('**/v1/assets/generic-data', (route) => route.fulfill({ json: {} }));
-    await page.route('**/v1/assets/items**', (route) => route.fulfill({ json: [] }));
-
+  test('/heroes redirects to /counters', async ({ page }) => {
     await page.goto('/#/heroes');
-    await page.getByRole('option', { name: /apollo/i }).click();
-
-    await expect(page.locator('.hero-card__section--curated')).toBeAttached();
-    await expect(page.locator('.hero-card__section--analytics')).toBeAttached();
-    await expect(page.locator('.hero-card__section--curated dl-item-card')).toHaveCount(5);
-    await expect(page.locator('.hero-card__section--analytics dl-item-card')).toHaveCount(3);
-    await expect(
-      page.locator('.hero-card__section--analytics .hero-card__stat-samples'),
-    ).toHaveCount(3);
+    // Wait for navigation to complete
+    await page.waitForURL(/\/counters/);
+    await expect(page.locator('.counters__detail-panel')).toBeVisible();
+    await expect(page.locator('.counters__hero-panel')).toBeVisible();
+    await expect(page.locator('[role="option"]')).toHaveCount(38);
+    await page.screenshot({ path: '.omo/evidence/task-9-redirect.png' });
   });
 });

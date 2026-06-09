@@ -882,7 +882,7 @@ Max Concurrent: 4 (Wave 1)
   - Files: `src/app.tsx`, `src/routes.ts`, (deleted) `src/pages/heroes.tsx`, `src/components/HeroCard.tsx`, `src/components/HeroCard.css`, `src/components/__tests__/HeroCard.test.tsx`
   - Pre-commit: `pnpm typecheck && pnpm lint && pnpm test --run && pnpm build`
 
-- [ ] 8. CSS consolidation — migrate styles from HeroPicker.css, update global layout
+- [x] 8. CSS consolidation — migrate styles from HeroPicker.css, update global layout
 
   **What to do**:
   - Create `src/components/HeroGrid.css` (new file) — migrate `.hero-tile`, `.hero-tile--selected`, `.hero-tile--disabled` (new), `.hero-tile__img`, `.hero-tile__fallback`, `.hero-picker__grid` styles from `HeroPicker.css`
@@ -974,7 +974,7 @@ Max Concurrent: 4 (Wave 1)
   - Files: `src/components/HeroGrid.css` (new), `src/styles/global.css`, (deleted) `src/components/HeroPicker.css`, `src/components/HeroGrid.tsx` (import change)
   - Pre-commit: `pnpm build`
 
-- [ ] 9. E2E tests — full counters page scenarios
+- [x] 9. E2E tests — full counters page scenarios
 
   **What to do**:
   - Update `e2e/smoke.spec.ts` to replace heroes-related tests with counters page tests
