@@ -1,0 +1,11 @@
+$ vitest --run src/pages/__tests__/counters.test.tsx
+
+ RUN  v2.1.9 /home/xavier/projects/deadlock-helpful-info
+
+ ✓ src/pages/__tests__/counters.test.tsx (12 tests) 725ms
+
+ Test Files  1 passed (1)
+      Tests  12 passed (12)
+   Start at  09:41:36
+   Duration  1.61s (transform 262ms, setup 106ms, collect 251ms, tests 725ms, environment 276ms, prepare 84ms)
+

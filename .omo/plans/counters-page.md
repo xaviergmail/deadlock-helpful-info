@@ -541,7 +541,7 @@ Max Concurrent: 4 (Wave 1)
   - Files: `src/components/HeroGrid.tsx`, `src/components/HeroTile.tsx`, `src/components/__tests__/HeroGrid.test.tsx`, `src/components/__tests__/HeroTile.test.tsx`
   - Pre-commit: `pnpm typecheck && pnpm test --run`
 
-- [ ] 5. CounterDetailCard component + tests
+- [x] 5. CounterDetailCard component + tests
 
   **What to do**:
   - Create `src/components/CounterDetailCard.tsx` — a Solid component that displays hero counter information
@@ -648,7 +648,7 @@ Max Concurrent: 4 (Wave 1)
   - Files: `src/components/CounterDetailCard.tsx`, `src/components/__tests__/CounterDetailCard.test.tsx`
   - Pre-commit: `pnpm typecheck && pnpm test --run src/components/__tests__/CounterDetailCard.test.tsx`
 
-- [ ] 6. CountersPage component + tests
+- [x] 6. CountersPage component + tests
 
   **What to do**:
   - Create `src/pages/counters.tsx` — the main counters page component
