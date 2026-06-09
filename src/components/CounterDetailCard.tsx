@@ -73,12 +73,15 @@ export default function CounterDetailCard(props: CounterDetailCardProps) {
             <div class="counter-detail-card__section counter-detail-card__section--analytics">
               <div class="counter-detail-card__section-header-row">
                 <h3 class="counter-detail-card__section-header">Item Matchups</h3>
-                <span class="counter-detail-card__section-subtitle">Win-rate delta vs average</span>
-                <span
-                  class="counter-detail-card__help-button"
-                  title="pp = percentage points. Shows how much the win rate changes when buying this item vs. the hero's average."
-                >
-                  ?
+                <span class="counter-detail-card__section-subtitle">
+                  Win-rate delta vs average
+                  <span class="counter-detail-card__help-wrap">
+                    <span class="counter-detail-card__help-button">?</span>
+                    <span class="counter-detail-card__help-tooltip">
+                      pp = percentage points. Shows how much the win rate changes when buying this
+                      item vs. the hero's average.
+                    </span>
+                  </span>
                 </span>
               </div>
               <div class="counter-detail-card__section-items">

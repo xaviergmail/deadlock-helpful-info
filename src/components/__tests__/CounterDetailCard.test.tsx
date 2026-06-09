@@ -315,7 +315,7 @@ describe('CounterDetailCard', () => {
     const analyticsSection = document.querySelector('.counter-detail-card__section--analytics');
     expect(analyticsSection).toBeInTheDocument();
     expect(screen.getByText('Item Matchups')).toBeInTheDocument();
-    expect(document.querySelector('.counter-detail-card__section-subtitle')?.textContent).toBe(
+    expect(document.querySelector('.counter-detail-card__section-subtitle')?.textContent).toContain(
       'Win-rate delta vs average',
     );
 

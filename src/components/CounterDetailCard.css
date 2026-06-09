@@ -68,6 +68,13 @@
   margin: 0;
 }
 
+.counter-detail-card__help-wrap {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 0.25rem;
+}
+
 .counter-detail-card__help-button {
   display: inline-flex;
   align-items: center;
@@ -80,8 +87,45 @@
   font-size: 0.75rem;
   font-weight: 700;
   cursor: help;
-  margin-left: auto;
   flex-shrink: 0;
+}
+
+.counter-detail-card__help-tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 220px;
+  padding: var(--space-2);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.counter-detail-card__help-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-border) transparent transparent transparent;
+}
+
+.counter-detail-card__help-wrap:hover .counter-detail-card__help-tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 .counter-detail-card__section-items {
