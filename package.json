@@ -39,7 +39,7 @@
     "@vitest/coverage-v8": "^2.1.9",
     "ajv": "^8.20.0",
     "gzip-size": "^7.0.0",
-    "jsdom": "^26.0.0",
+    "jsdom": "^29.1.1",
     "lint-staged": "^15.3.0",
     "playwright": "^1.60.0",
     "simple-git-hooks": "^2.11.0",
