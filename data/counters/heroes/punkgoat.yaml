@@ -1,11 +1,11 @@
 schemaVersion: 1
-hero: haze
+hero: punkgoat
 itemCounters:
-  - item: upgrade_suppressor
+  - item: upgrade_melee_rebuttal
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_vex_barrier
+  - item: upgrade_counterspell
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
@@ -13,11 +13,11 @@ itemCounters:
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_reduce_debuff_duration
+  - item: upgrade_improved_bullet_armor
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_deflecting_armor
+  - item: upgrade_glitch
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"

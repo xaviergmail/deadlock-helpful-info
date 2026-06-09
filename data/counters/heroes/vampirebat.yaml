@@ -1,19 +1,15 @@
 schemaVersion: 1
-hero: haze
+hero: vampirebat
 itemCounters:
-  - item: upgrade_suppressor
+  - item: upgrade_containment
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_vex_barrier
+  - item: upgrade_targeted_silence
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_metal_skin
-    confidence: medium
-    reason: Curated from community counter-item cheatsheet.
-    lastReviewedPatch: "2026-06-05"
-  - item: upgrade_reduce_debuff_duration
+  - item: upgrade_phantom_strike
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"

@@ -1,7 +1,7 @@
 schemaVersion: 1
-hero: haze
+hero: magician
 itemCounters:
-  - item: upgrade_suppressor
+  - item: upgrade_containment
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
@@ -9,15 +9,11 @@ itemCounters:
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_metal_skin
+  - item: upgrade_counterspell
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_reduce_debuff_duration
-    confidence: medium
-    reason: Curated from community counter-item cheatsheet.
-    lastReviewedPatch: "2026-06-05"
-  - item: upgrade_deflecting_armor
+  - item: upgrade_tech_purge
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"

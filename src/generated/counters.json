@@ -1,25 +1,73 @@
 {
+  "hero_astro": {
+    "schemaVersion": 1,
+    "hero": "hero_astro",
+    "itemCounters": [
+      {
+        "item": "upgrade_spirit_bubble",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_warp_stone",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_spellbreaker",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
   "hero_atlas": {
     "schemaVersion": 1,
     "hero": "hero_atlas",
     "itemCounters": [
       {
-        "item": "upgrade_target_stun",
-        "confidence": "high",
-        "reason": "Interrupts Seismic Impact or Siphon Life channel mid-cast.",
-        "lastReviewedPatch": "2026-06-04"
-      },
-      {
-        "item": "upgrade_metal_skin",
-        "confidence": "high",
-        "reason": "Blocks all bullet damage from Siphon Life during its duration.",
-        "lastReviewedPatch": "2026-06-04"
-      },
-      {
         "item": "upgrade_containment",
         "confidence": "medium",
-        "reason": "Slows Abrams to prevent Shoulder Charge gap-close and disrupt positioning.",
-        "lastReviewedPatch": "2026-06-04"
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_toxic_bullets",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_rupture",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_banshee_slugs",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       }
     ]
   },
@@ -28,22 +76,400 @@
     "hero": "hero_bebop",
     "itemCounters": [
       {
-        "item": "upgrade_target_stun",
-        "confidence": "high",
-        "reason": "Interrupts Hyper Beam channel immediately.",
-        "lastReviewedPatch": "2026-06-04"
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       },
       {
-        "item": "upgrade_unstoppable",
-        "confidence": "high",
-        "reason": "Negates the Hook grab CC, letting you stay in place.",
-        "lastReviewedPatch": "2026-06-04"
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_warp_stone",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_bookworm": {
+    "schemaVersion": 1,
+    "hero": "hero_bookworm",
+    "itemCounters": [
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_tech_purge",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_chrono": {
+    "schemaVersion": 1,
+    "hero": "hero_chrono",
+    "itemCounters": [
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_warp_stone",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_spellbreaker",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_doorman": {
+    "schemaVersion": 1,
+    "hero": "hero_doorman",
+    "itemCounters": [
+      {
+        "item": "upgrade_improved_stamina",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_spellbreaker",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_drifter": {
+    "schemaVersion": 1,
+    "hero": "hero_drifter",
+    "itemCounters": [
+      {
+        "item": "upgrade_suppressor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       },
       {
         "item": "upgrade_metal_skin",
         "confidence": "medium",
-        "reason": "Negates bullet damage from Hyper Beam while active.",
-        "lastReviewedPatch": "2026-06-04"
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_dynamo": {
+    "schemaVersion": 1,
+    "hero": "hero_dynamo",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_unstoppable",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_familiar": {
+    "schemaVersion": 1,
+    "hero": "hero_familiar",
+    "itemCounters": [
+      {
+        "item": "upgrade_non_player_bonus",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_fencer": {
+    "schemaVersion": 1,
+    "hero": "hero_fencer",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_absorbing_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_forge": {
+    "schemaVersion": 1,
+    "hero": "hero_forge",
+    "itemCounters": [
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_suppressor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_warp_stone",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_juggernaut",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_frank": {
+    "schemaVersion": 1,
+    "hero": "hero_frank",
+    "itemCounters": [
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_banshee_slugs",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_silencer",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_glitch",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_ghost": {
+    "schemaVersion": 1,
+    "hero": "hero_ghost",
+    "itemCounters": [
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_rupture",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_toxic_bullets",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_banshee_slugs",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_gigawatt": {
+    "schemaVersion": 1,
+    "hero": "hero_gigawatt",
+    "itemCounters": [
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_tech_purge",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_absorbing_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       }
     ]
   },
@@ -52,22 +478,34 @@
     "hero": "hero_haze",
     "itemCounters": [
       {
-        "item": "upgrade_metal_skin",
-        "confidence": "high",
-        "reason": "Blocks all bullet damage during Bullet Dance spray.",
-        "lastReviewedPatch": "2026-06-04"
-      },
-      {
-        "item": "upgrade_target_stun",
-        "confidence": "high",
-        "reason": "Interrupts the Bullet Dance channel.",
-        "lastReviewedPatch": "2026-06-04"
-      },
-      {
-        "item": "upgrade_return_fire",
+        "item": "upgrade_suppressor",
         "confidence": "medium",
-        "reason": "Reflects a portion of Haze's rapid bullet hits back at her.",
-        "lastReviewedPatch": "2026-06-04"
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_metal_skin",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_deflecting_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       }
     ]
   },
@@ -76,22 +514,742 @@
     "hero": "hero_hornet",
     "itemCounters": [
       {
+        "item": "upgrade_suppressor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
         "item": "upgrade_target_stun",
-        "confidence": "high",
-        "reason": "Knocks Vindicta out of flight or cancels Assassinate channel.",
-        "lastReviewedPatch": "2026-06-04"
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_phantom_strike",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_inferno": {
+    "schemaVersion": 1,
+    "hero": "hero_inferno",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_suppressor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_tech_purge",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_deflecting_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_kelvin": {
+    "schemaVersion": 1,
+    "hero": "hero_kelvin",
+    "itemCounters": [
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_cardio_calibrator",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_tech_purge",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_toxic_bullets",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_krill": {
+    "schemaVersion": 1,
+    "hero": "hero_krill",
+    "itemCounters": [
+      {
+        "item": "upgrade_debuff_reducer",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_toxic_bullets",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_cheat_death",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_lash": {
+    "schemaVersion": 1,
+    "hero": "hero_lash",
+    "itemCounters": [
+      {
+        "item": "upgrade_spirit_bubble",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       },
       {
         "item": "upgrade_containment",
-        "confidence": "high",
-        "reason": "Denies positioning needed for Assassinate line-of-sight.",
-        "lastReviewedPatch": "2026-06-04"
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_spellbreaker",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_magician": {
+    "schemaVersion": 1,
+    "hero": "hero_magician",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_tech_purge",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_mirage": {
+    "schemaVersion": 1,
+    "hero": "hero_mirage",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_rupture",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_glitch",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_nano": {
+    "schemaVersion": 1,
+    "hero": "hero_nano",
+    "itemCounters": [
+      {
+        "item": "upgrade_melee_rebuttal",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_necro": {
+    "schemaVersion": 1,
+    "hero": "hero_necro",
+    "itemCounters": [
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       },
       {
         "item": "upgrade_metal_skin",
         "confidence": "medium",
-        "reason": "Blocks the Assassinate bullet if timed correctly.",
-        "lastReviewedPatch": "2026-06-04"
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_improved_bullet_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_orion": {
+    "schemaVersion": 1,
+    "hero": "hero_orion",
+    "itemCounters": [
+      {
+        "item": "upgrade_spirit_bubble",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_spellbreaker",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_absorbing_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_priest": {
+    "schemaVersion": 1,
+    "hero": "hero_priest",
+    "itemCounters": [
+      {
+        "item": "upgrade_debuff_reducer",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_metal_skin",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_punkgoat": {
+    "schemaVersion": 1,
+    "hero": "hero_punkgoat",
+    "itemCounters": [
+      {
+        "item": "upgrade_melee_rebuttal",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_metal_skin",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_improved_bullet_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_glitch",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_shiv": {
+    "schemaVersion": 1,
+    "hero": "hero_shiv",
+    "itemCounters": [
+      {
+        "item": "upgrade_spirit_sap",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_rupture",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_toxic_bullets",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_banshee_slugs",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_synth": {
+    "schemaVersion": 1,
+    "hero": "hero_synth",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_spellbreaker",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_divine_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_tengu": {
+    "schemaVersion": 1,
+    "hero": "hero_tengu",
+    "itemCounters": [
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_cardio_calibrator",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_counterspell",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_unicorn": {
+    "schemaVersion": 1,
+    "hero": "hero_unicorn",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_target_stun",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_spirit_bubble",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_absorbing_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_vampirebat": {
+    "schemaVersion": 1,
+    "hero": "hero_vampirebat",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_phantom_strike",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_deflecting_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_viper": {
+    "schemaVersion": 1,
+    "hero": "hero_viper",
+    "itemCounters": [
+      {
+        "item": "upgrade_health",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_suppressor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_vex_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_metal_skin",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_viscous": {
+    "schemaVersion": 1,
+    "hero": "hero_viscous",
+    "itemCounters": [
+      {
+        "item": "upgrade_melee_rebuttal",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_glitch",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_warden": {
+    "schemaVersion": 1,
+    "hero": "hero_warden",
+    "itemCounters": [
+      {
+        "item": "upgrade_improved_stamina",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_suppressor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_juggernaut",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_werewolf": {
+    "schemaVersion": 1,
+    "hero": "hero_werewolf",
+    "itemCounters": [
+      {
+        "item": "upgrade_metal_skin",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_improved_bullet_armor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_reduce_debuff_duration",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_rupture",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_targeted_silence",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      }
+    ]
+  },
+  "hero_wraith": {
+    "schemaVersion": 1,
+    "hero": "hero_wraith",
+    "itemCounters": [
+      {
+        "item": "upgrade_containment",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_suppressor",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_tech_purge",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_self_bubble",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_divine_barrier",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       }
     ]
   },
@@ -100,22 +1258,34 @@
     "hero": "hero_yamato",
     "itemCounters": [
       {
-        "item": "upgrade_rupture",
-        "confidence": "high",
-        "reason": "Reduces the massive heal from Shadow Transformation, limiting her sustain.",
-        "lastReviewedPatch": "2026-06-04"
+        "item": "upgrade_healbane",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       },
       {
-        "item": "upgrade_target_stun",
+        "item": "upgrade_counterspell",
         "confidence": "medium",
-        "reason": "Catches Yamato after Shadow Transformation ends when CC immunity drops.",
-        "lastReviewedPatch": "2026-06-04"
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       },
       {
-        "item": "upgrade_containment",
+        "item": "upgrade_targeted_silence",
         "confidence": "medium",
-        "reason": "Slows Yamato to prevent Flying Strike gap-close and Power Slash setups.",
-        "lastReviewedPatch": "2026-06-04"
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_spellbreaker",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
+      },
+      {
+        "item": "upgrade_banshee_slugs",
+        "confidence": "medium",
+        "reason": "Curated from community counter-item cheatsheet.",
+        "lastReviewedPatch": "2026-06-05"
       }
     ]
   }

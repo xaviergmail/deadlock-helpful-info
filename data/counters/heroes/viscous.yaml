@@ -1,11 +1,7 @@
 schemaVersion: 1
-hero: yamato
+hero: viscous
 itemCounters:
-  - item: upgrade_healbane
-    confidence: medium
-    reason: Curated from community counter-item cheatsheet.
-    lastReviewedPatch: "2026-06-05"
-  - item: upgrade_counterspell
+  - item: upgrade_melee_rebuttal
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
@@ -13,11 +9,7 @@ itemCounters:
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_spellbreaker
-    confidence: medium
-    reason: Curated from community counter-item cheatsheet.
-    lastReviewedPatch: "2026-06-05"
-  - item: upgrade_banshee_slugs
+  - item: upgrade_glitch
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"

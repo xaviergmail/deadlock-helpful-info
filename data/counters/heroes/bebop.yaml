@@ -1,15 +1,23 @@
 schemaVersion: 1
 hero: bebop
 itemCounters:
-  - item: upgrade_target_stun
-    confidence: high
-    reason: Interrupts Hyper Beam channel immediately.
-    lastReviewedPatch: "2026-06-04"
-  - item: upgrade_unstoppable
-    confidence: high
-    reason: Negates the Hook grab CC, letting you stay in place.
-    lastReviewedPatch: "2026-06-04"
-  - item: upgrade_metal_skin
+  - item: upgrade_vex_barrier
     confidence: medium
-    reason: Negates bullet damage from Hyper Beam while active.
-    lastReviewedPatch: "2026-06-04"
+    reason: Curated from community counter-item cheatsheet.
+    lastReviewedPatch: "2026-06-05"
+  - item: upgrade_reduce_debuff_duration
+    confidence: medium
+    reason: Curated from community counter-item cheatsheet.
+    lastReviewedPatch: "2026-06-05"
+  - item: upgrade_counterspell
+    confidence: medium
+    reason: Curated from community counter-item cheatsheet.
+    lastReviewedPatch: "2026-06-05"
+  - item: upgrade_warp_stone
+    confidence: medium
+    reason: Curated from community counter-item cheatsheet.
+    lastReviewedPatch: "2026-06-05"
+  - item: upgrade_target_stun
+    confidence: medium
+    reason: Curated from community counter-item cheatsheet.
+    lastReviewedPatch: "2026-06-05"

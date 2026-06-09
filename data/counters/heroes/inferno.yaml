@@ -1,19 +1,19 @@
 schemaVersion: 1
-hero: haze
+hero: inferno
 itemCounters:
+  - item: upgrade_containment
+    confidence: medium
+    reason: Curated from community counter-item cheatsheet.
+    lastReviewedPatch: "2026-06-05"
   - item: upgrade_suppressor
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
-  - item: upgrade_vex_barrier
-    confidence: medium
-    reason: Curated from community counter-item cheatsheet.
-    lastReviewedPatch: "2026-06-05"
-  - item: upgrade_metal_skin
-    confidence: medium
-    reason: Curated from community counter-item cheatsheet.
-    lastReviewedPatch: "2026-06-05"
   - item: upgrade_reduce_debuff_duration
+    confidence: medium
+    reason: Curated from community counter-item cheatsheet.
+    lastReviewedPatch: "2026-06-05"
+  - item: upgrade_tech_purge
     confidence: medium
     reason: Curated from community counter-item cheatsheet.
     lastReviewedPatch: "2026-06-05"
