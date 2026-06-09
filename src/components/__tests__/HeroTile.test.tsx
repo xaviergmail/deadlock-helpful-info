@@ -76,4 +76,31 @@ describe('HeroTile', () => {
     expect(onSelect).toHaveBeenCalledTimes(1);
     expect(onSelect).toHaveBeenCalledWith(hero);
   });
+
+  it('has aria-disabled="true" and disabled class when disabled', () => {
+    render(() => <HeroTile hero={hero} disabled={true} onSelect={() => {}} />);
+    const btn = screen.getByRole('option');
+    expect(btn).toHaveAttribute('aria-disabled', 'true');
+    expect(btn.className).toContain('hero-tile--disabled');
+  });
+
+  it('has tabIndex={-1} when disabled', () => {
+    render(() => <HeroTile hero={hero} disabled={true} onSelect={() => {}} />);
+    const btn = screen.getByRole('option');
+    expect(btn).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('does not have aria-disabled or disabled class when not disabled', () => {
+    render(() => <HeroTile hero={hero} onSelect={() => {}} />);
+    const btn = screen.getByRole('option');
+    expect(btn).not.toHaveAttribute('aria-disabled');
+    expect(btn.className).not.toContain('hero-tile--disabled');
+  });
+
+  it('suppresses onSelect when disabled', () => {
+    const onSelect = vi.fn();
+    render(() => <HeroTile hero={hero} disabled={true} onSelect={onSelect} />);
+    fireEvent.click(screen.getByRole('option'));
+    expect(onSelect).not.toHaveBeenCalled();
+  });
 });

@@ -1,0 +1,17 @@
+$ VITE_BASE=${VITE_BASE:-/deadlock-helpful-info/} vite build
+vite v6.4.3 building for production...
+transforming...
+✓ 48 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                         0.95 kB │ gzip:  0.49 kB
+dist/assets/counter-item-cheatsheet-bVSAFcl3.png    3,791.69 kB
+dist/assets/counter-item-cheatsheet-2-BliXfxjP.png  3,948.45 kB
+dist/assets/heroes-66qj1jlL.css                         1.89 kB │ gzip:  0.55 kB
+dist/assets/index-RNIXGoMZ.css                          2.68 kB │ gzip:  1.02 kB
+dist/assets/not-found-CsO2dVRL.js                       0.31 kB │ gzip:  0.27 kB
+dist/assets/home-5_27-M8Y.js                            0.67 kB │ gzip:  0.44 kB
+dist/assets/cheatsheets-yESBUDu_.js                     0.87 kB │ gzip:  0.51 kB
+dist/assets/heroes-DrFNKGf8.js                         76.82 kB │ gzip:  8.94 kB
+dist/assets/index-D1CRBplX.js                         103.09 kB │ gzip: 37.68 kB
+✓ built in 799ms

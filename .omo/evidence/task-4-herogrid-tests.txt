@@ -1,0 +1,10 @@
+$ vitest --run src/components/__tests__/HeroGrid.test.tsx
+
+ RUN  v2.1.9 /home/xavier/projects/deadlock-helpful-info
+
+ ✓ src/components/__tests__/HeroGrid.test.tsx (7 tests) 97ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  09:36:40
+   Duration  1.05s (transform 179ms, setup 117ms, collect 155ms, tests 97ms, environment 400ms, prepare 102ms)

@@ -1,0 +1,10 @@
+$ vitest --run src/components/__tests__/HeroTile.test.tsx
+
+ RUN  v2.1.9 /home/xavier/projects/deadlock-helpful-info
+
+ ✓ src/components/__tests__/HeroTile.test.tsx (11 tests) 89ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  09:36:40
+   Duration  927ms (transform 166ms, setup 112ms, collect 137ms, tests 89ms, environment 306ms, prepare 104ms)

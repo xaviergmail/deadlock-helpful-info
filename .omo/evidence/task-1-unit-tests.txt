@@ -1,0 +1,27 @@
+$ pnpm typecheck
+$ tsc --noEmit
+(exit 0, 0 errors)
+
+$ pnpm test --run src/lib/__tests__/counters.test.ts
+$ vitest --run src/lib/__tests__/counters.test.ts
+
+ RUN  v2.1.9 /home/xavier/projects/deadlock-helpful-info
+
+ ✓ src/lib/__tests__/counters.test.ts (15 tests) 6ms
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  09:37:16
+   Duration  731ms (transform 78ms, setup 112ms, collect 53ms, tests 6ms, environment 282ms, prepare 101ms)
+
+Coverage of required scenarios from the plan:
+  - no overlap:     "returns empty curated set and partial analytics overlap for hero_astro vs hero_atlas"
+  - partial overlap: "returns empty curated set and partial analytics overlap for hero_astro vs hero_atlas" (analytics = {upgrade_weapon_shielding})
+  - full overlap:   "returns fully overlapping sets when both heroes have identical curated/analytics data"
+  - hero with no data: "returns empty curated set when one hero has no curated data"
+                    "returns empty sets when one hero is in curated data only and the other is unknown"
+  - same hero twice: "returns fully overlapping sets when both heroes have identical curated/analytics data"
+                    "symmetric: computeSharedItems(A, B) equals computeSharedItems(B, A)"
+
+Sanity: pnpm test --run src/components/__tests__/HeroCard.test.tsx
+ ✓ 16 tests passed (helpers not yet migrated from HeroCard; safe to leave for Task 7).

@@ -41,28 +41,46 @@ const heroes: Hero[] = [
 
 describe('HeroGrid', () => {
   it('renders root with role="listbox" and aria-label="Heroes"', () => {
-    render(() => <HeroGrid heroes={heroes} selectedId={undefined} onSelect={() => {}} />);
+    render(() => (
+      <HeroGrid heroes={heroes} selectedIds={[]} disabledIds={[]} onSelect={() => {}} />
+    ));
     const listbox = screen.getByRole('listbox', { name: 'Heroes' });
     expect(listbox).toBeInTheDocument();
     expect(listbox.className).toContain('hero-picker__grid');
   });
 
   it('renders one option per hero', () => {
-    render(() => <HeroGrid heroes={heroes} selectedId={undefined} onSelect={() => {}} />);
+    render(() => (
+      <HeroGrid heroes={heroes} selectedIds={[]} disabledIds={[]} onSelect={() => {}} />
+    ));
     expect(screen.getAllByRole('option')).toHaveLength(3);
   });
 
-  it('marks only the selected hero with aria-selected="true"', () => {
-    render(() => <HeroGrid heroes={heroes} selectedId={2} onSelect={() => {}} />);
+  it('marks only the selected heroes with aria-selected="true"', () => {
+    render(() => (
+      <HeroGrid heroes={heroes} selectedIds={[2]} disabledIds={[]} onSelect={() => {}} />
+    ));
     const options = screen.getAllByRole('option');
     expect(options[0]).toHaveAttribute('aria-selected', 'false');
     expect(options[1]).toHaveAttribute('aria-selected', 'true');
     expect(options[2]).toHaveAttribute('aria-selected', 'false');
   });
 
+  it('marks multiple selected heroes with aria-selected="true"', () => {
+    render(() => (
+      <HeroGrid heroes={heroes} selectedIds={[1, 3]} disabledIds={[]} onSelect={() => {}} />
+    ));
+    const options = screen.getAllByRole('option');
+    expect(options[0]).toHaveAttribute('aria-selected', 'true');
+    expect(options[1]).toHaveAttribute('aria-selected', 'false');
+    expect(options[2]).toHaveAttribute('aria-selected', 'true');
+  });
+
   it('calls onSelect with clicked hero', () => {
     const onSelect = vi.fn();
-    render(() => <HeroGrid heroes={heroes} selectedId={undefined} onSelect={onSelect} />);
+    render(() => (
+      <HeroGrid heroes={heroes} selectedIds={[]} disabledIds={[]} onSelect={onSelect} />
+    ));
     const option = screen.getAllByRole('option')[0];
     if (!option) throw new Error('No option found');
     fireEvent.click(option);
@@ -71,10 +89,22 @@ describe('HeroGrid', () => {
   });
 
   it('renders tiles with correct data-hero-id attributes', () => {
-    render(() => <HeroGrid heroes={heroes} selectedId={undefined} onSelect={() => {}} />);
+    render(() => (
+      <HeroGrid heroes={heroes} selectedIds={[]} disabledIds={[]} onSelect={() => {}} />
+    ));
     const options = screen.getAllByRole('option');
     expect(options[0]).toHaveAttribute('data-hero-id', '1');
     expect(options[1]).toHaveAttribute('data-hero-id', '2');
     expect(options[2]).toHaveAttribute('data-hero-id', '3');
+  });
+
+  it('applies disabled state to heroes in disabledIds', () => {
+    render(() => (
+      <HeroGrid heroes={heroes} selectedIds={[]} disabledIds={[2]} onSelect={() => {}} />
+    ));
+    const options = screen.getAllByRole('option');
+    expect(options[0]).not.toHaveAttribute('aria-disabled');
+    expect(options[1]).toHaveAttribute('aria-disabled', 'true');
+    expect(options[2]).not.toHaveAttribute('aria-disabled');
   });
 });
