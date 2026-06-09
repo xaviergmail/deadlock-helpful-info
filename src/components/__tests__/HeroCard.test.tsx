@@ -144,9 +144,9 @@ describe('HeroCard', () => {
     expect(document.querySelector('.hero-card')).toBeInTheDocument();
   });
 
-  it('renders 3 dl-item-card elements for hero with curated counters', () => {
+  it('renders all curated dl-item-card elements for hero with curated counters', () => {
     render(() => <HeroCard hero={hazeHero} />);
-    expect(document.querySelectorAll('dl-item-card').length).toBe(3);
+    expect(document.querySelectorAll('dl-item-card').length).toBe(5);
   });
 
   it('renders 0 dl-item-card elements for hero without curated counters', () => {

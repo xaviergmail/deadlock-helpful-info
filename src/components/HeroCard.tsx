@@ -66,7 +66,7 @@ export default function HeroCard(props: HeroCardProps) {
       <Show when={props.hero}>
         {(hero) => {
           const curated = () =>
-            (countersData as CountersData)[hero().class_name]?.itemCounters.slice(0, 3) ?? [];
+            (countersData as CountersData)[hero().class_name]?.itemCounters ?? [];
           const analytics = () =>
             (analyticsData as unknown as AnalyticsCountersFile).heroes[
               hero().class_name

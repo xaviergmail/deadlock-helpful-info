@@ -113,13 +113,13 @@ test.describe('smoke', () => {
     await expect(page.locator('.hero-card__section--curated')).toBeAttached();
     await expect(page.locator('.hero-card__section--analytics')).toBeAttached();
     await expect(page.locator('.hero-card__section-empty')).not.toBeAttached();
-    await expect(page.locator('.hero-card__section--curated dl-item-card')).toHaveCount(3);
+    await expect(page.locator('.hero-card__section--curated dl-item-card')).toHaveCount(5);
     await expect(page.locator('.hero-card__section--analytics dl-item-card')).toHaveCount(3);
     await expect(page.locator('.hero-card__section--analytics .hero-card__stat-delta')).toHaveCount(
       3,
     );
     await expect(page.getByText('Win-rate delta vs average')).toBeVisible();
-    await expect(page.locator('dl-item-card')).toHaveCount(6);
+    await expect(page.locator('dl-item-card')).toHaveCount(8);
 
     // Each analytics delta renders a signed percentage-point value using the
     // Unicode minus (U+2212), never an ASCII hyphen, and carries a valid trend
@@ -164,7 +164,7 @@ test.describe('smoke', () => {
 
     await expect(page.locator('.hero-card__section--curated')).toBeAttached();
     await expect(page.locator('.hero-card__section--analytics')).toBeAttached();
-    await expect(page.locator('.hero-card__section--curated dl-item-card')).toHaveCount(3);
+    await expect(page.locator('.hero-card__section--curated dl-item-card')).toHaveCount(5);
     await expect(page.locator('.hero-card__section--analytics dl-item-card')).toHaveCount(3);
     await expect(
       page.locator('.hero-card__section--analytics .hero-card__stat-samples'),
