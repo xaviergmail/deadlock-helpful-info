@@ -48,6 +48,9 @@ importers:
       lint-staged:
         specifier: ^15.3.0
         version: 15.5.2
+      playwright:
+        specifier: ^1.60.0
+        version: 1.60.0
       simple-git-hooks:
         specifier: ^2.11.0
         version: 2.13.1

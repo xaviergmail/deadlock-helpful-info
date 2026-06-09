@@ -16,8 +16,8 @@ export default function CountersPage() {
 
   const selectedIds = () =>
     selection()
-      .filter(Boolean)
-      .map((h) => h!.id);
+      .filter((h): h is Hero => h !== undefined)
+      .map((h) => h.id);
 
   const disabledIds = () => {
     const sel = selection();
