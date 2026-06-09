@@ -124,15 +124,3 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
-
-.page-heroes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  padding: 16px;
-}
-
-.page-heroes .hero-picker__grid {
-  align-self: stretch;
-}

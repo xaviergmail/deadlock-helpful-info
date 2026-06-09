@@ -782,7 +782,7 @@ Max Concurrent: 4 (Wave 1)
   - Files: `src/pages/counters.tsx`, `src/pages/__tests__/counters.test.tsx`
   - Pre-commit: `pnpm typecheck && pnpm test --run src/pages/__tests__/counters.test.tsx`
 
-- [ ] 7. Route/nav/cleanup — delete old files, wire routes, add redirect
+- [x] 7. Route/nav/cleanup — delete old files, wire routes, add redirect
 
   **What to do**:
   - Delete `src/pages/heroes.tsx` (replaced by `counters.tsx`)

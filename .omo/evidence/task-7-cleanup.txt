@@ -1,0 +1,43 @@
+=== Task 7: Cleanup old HeroCard + add /counters route ===
+
+=== Deleted files ===
+src/pages/heroes.tsx
+src/components/HeroCard.tsx
+src/components/HeroCard.css
+src/components/__tests__/HeroCard.test.tsx
+
+=== Stale import check ===
+(exit 1 = no matches = clean)
+
+=== pnpm typecheck ===
+$ tsc --noEmit
+
+=== pnpm test --run ===
+ ✓ src/components/__tests__/HeroTile.test.tsx (11 tests) 92ms
+ ✓ src/components/__tests__/HeroGrid.test.tsx (7 tests) 97ms
+ ✓ src/components/__tests__/CounterDetailCard.test.tsx (9 tests) 94ms
+ ✓ src/pages/__tests__/counters.test.tsx (12 tests) 721ms
+
+ Test Files  7 passed (7)
+      Tests  60 passed (60)
+   Start at  09:43:16
+   Duration  1.72s (transform 1.08s, setup 956ms, collect 1.88s, tests 1.03s, environment 2.12s, prepare 648ms)
+
+
+=== pnpm build ===
+transforming...
+✓ 50 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                         0.95 kB │ gzip:  0.49 kB
+dist/assets/counter-item-cheatsheet-bVSAFcl3.png    3,791.69 kB
+dist/assets/counter-item-cheatsheet-2-BliXfxjP.png  3,948.45 kB
+dist/assets/index-RNIXGoMZ.css                          2.68 kB │ gzip:  1.02 kB
+dist/assets/counters-eFl49ZHU.css                       3.26 kB │ gzip:  0.83 kB
+dist/assets/not-found-GrdNN63x.js                       0.31 kB │ gzip:  0.27 kB
+dist/assets/home-DD7JLkH6.js                            0.67 kB │ gzip:  0.44 kB
+dist/assets/cheatsheets-fj9DRIDg.js                     0.87 kB │ gzip:  0.50 kB
+dist/assets/counters-X2dmi8Kz.js                       78.34 kB │ gzip:  9.43 kB
+dist/assets/index-CtIedviB.js                         103.34 kB │ gzip: 37.77 kB
+✓ built in 659ms
+build exit: 0

@@ -1,4 +1,5 @@
 import { For } from 'solid-js';
+import '~/components/HeroGrid.css';
 import type { Hero } from '~/lib/types';
 import HeroTile from './HeroTile';
 

@@ -1,0 +1,27 @@
+=== Stale ref check (must all be empty) ===
+  (no HeroPicker.css refs - clean)
+  (no HeroCard.css refs - clean)
+  (no page-heroes refs - clean)
+
+=== File existence checks ===
+ls: cannot access 'src/components/HeroPicker.css': No such file or directory
+src/components/HeroGrid.css
+HeroGrid.css EXISTS
+
+=== pnpm build ===
+transforming...
+✓ 51 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                         0.95 kB │ gzip:  0.50 kB
+dist/assets/counter-item-cheatsheet-bVSAFcl3.png    3,791.69 kB
+dist/assets/counter-item-cheatsheet-2-BliXfxjP.png  3,948.45 kB
+dist/assets/index-DBpX4K5M.css                          2.54 kB │ gzip:  0.96 kB
+dist/assets/counters-iPuDQnr1.css                       4.01 kB │ gzip:  1.09 kB
+dist/assets/not-found-LVsDW8b8.js                       0.31 kB │ gzip:  0.27 kB
+dist/assets/home-L7uKqXYk.js                            0.67 kB │ gzip:  0.44 kB
+dist/assets/cheatsheets-C6Cj4oS5.js                     0.87 kB │ gzip:  0.51 kB
+dist/assets/counters-BRXKCugZ.js                       78.34 kB │ gzip:  9.43 kB
+dist/assets/index-BLZZkxCE.js                         103.34 kB │ gzip: 37.77 kB
+✓ built in 664ms
+exit=0
