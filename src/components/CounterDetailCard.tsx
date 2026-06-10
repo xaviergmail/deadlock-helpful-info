@@ -78,8 +78,13 @@ export default function CounterDetailCard(props: CounterDetailCardProps) {
                   <span class="counter-detail-card__help-wrap">
                     <span class="counter-detail-card__help-button">?</span>
                     <span class="counter-detail-card__help-tooltip">
-                      pp = percentage points. Shows how much the win rate changes when buying this
-                      item vs. the hero's average.
+                      pp = percentage points. Shows how much buying this item changes the win rate
+                      vs. the hero's average.
+                      <br />
+                      <br />
+                      <strong>+4.2pp</strong> = your team wins ~4% more often with this item
+                      <br />
+                      <strong>−1.5pp</strong> = your team wins ~1.5% less often with this item
                     </span>
                   </span>
                 </span>
