@@ -13,7 +13,7 @@ import {
 // Hero pair chosen for the no-overlap (curated) and partial-overlap (analytics)
 // assertions. Real data:
 //   curated  hero_astro ∩ hero_atlas = []
-//   analytics hero_astro ∩ hero_atlas = ['upgrade_weapon_shielding']
+//   analytics hero_astro ∩ hero_atlas = ['upgrade_fervor', 'upgrade_proc_silence']
 const H1 = 'hero_astro';
 const H2 = 'hero_atlas';
 
@@ -32,9 +32,10 @@ describe('computeSharedItems', () => {
     // Curated: no overlap in real data.
     expect(shared.curated.size).toBe(0);
 
-    // Analytics: exactly the known shared slug.
-    expect(shared.analytics.size).toBe(1);
-    expect(shared.analytics.has('upgrade_weapon_shielding')).toBe(true);
+    // Analytics: exactly the known shared slugs.
+    expect(shared.analytics.size).toBe(2);
+    expect(shared.analytics.has('upgrade_fervor')).toBe(true);
+    expect(shared.analytics.has('upgrade_proc_silence')).toBe(true);
   });
 
   it('returns fully overlapping sets when both heroes have identical curated/analytics data', () => {

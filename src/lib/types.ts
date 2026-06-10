@@ -74,7 +74,7 @@ export interface AnalyticsHeroData {
 }
 
 export interface AnalyticsCountersFile {
-  readonly schemaVersion: 1;
+  readonly schemaVersion: 2;
   readonly generatedAt: string;
   readonly config: {
     readonly minAverageBadge: number;

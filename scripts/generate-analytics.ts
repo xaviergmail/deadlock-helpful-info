@@ -91,33 +91,7 @@ try {
   globalApiOk = false;
 }
 
-// Step 5: Fetch baseline win rates (all heroes combined, no enemy filter)
-const baselineWinRates = new Map<number, number>();
-
-if (globalApiOk) {
-  try {
-    const baselineRes = await fetch(
-      `${BASE_URL}/v1/analytics/item-stats?min_average_badge=${MIN_AVERAGE_BADGE}`,
-    );
-    if (!baselineRes.ok) {
-      throw new Error(
-        `Baseline stats fetch failed: ${baselineRes.status} ${baselineRes.statusText}`,
-      );
-    }
-    const baselineStats = (await baselineRes.json()) as ApiItemStat[];
-    for (const stat of baselineStats) {
-      if (stat.matches > 0) {
-        baselineWinRates.set(stat.item_id, stat.wins / stat.matches);
-      }
-    }
-    console.log(`Loaded baseline win rates for ${baselineWinRates.size} items.`);
-  } catch (err) {
-    console.error('Failed to fetch baseline stats:', err);
-    globalApiOk = false;
-  }
-}
-
-// Step 6: Per-hero stats — sequential to avoid rate limiting
+// Step 5: Per-hero stats — sequential to avoid rate limiting
 const heroResults: Record<string, AnalyticsHeroData> = {};
 
 for (const hero of heroes) {
@@ -138,15 +112,19 @@ for (const hero of heroes) {
     }
     const heroStats = (await heroRes.json()) as ApiItemStat[];
 
+    // Compute hero-average win rate across all items for this hero
+    const validStats = heroStats.filter((s) => s.matches > 0);
+    const totalWins = validStats.reduce((sum, s) => sum + s.wins, 0);
+    const totalMatches = validStats.reduce((sum, s) => sum + s.matches, 0);
+    const heroAverageWinRate = totalMatches > 0 ? totalWins / totalMatches : 0;
+
     type Candidate = { className: string; delta: number; sampleSize: number };
     const candidates: Candidate[] = [];
 
     for (const stat of heroStats) {
       if (stat.matches < MIN_MATCHES_PLAYED) continue;
-      const baselineRate = baselineWinRates.get(stat.item_id);
-      if (baselineRate === undefined) continue;
       const winRate = stat.wins / stat.matches;
-      const delta = winRate - baselineRate;
+      const delta = winRate - heroAverageWinRate;
       const className = itemClassMap.get(stat.item_id);
       if (className === undefined) continue;
       if (curatedItems.has(className)) continue;
@@ -194,7 +172,7 @@ if (allFailed && priorFile === null) {
 }
 
 const output: AnalyticsCountersFile = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   generatedAt,
   config: {
     minAverageBadge: MIN_AVERAGE_BADGE,

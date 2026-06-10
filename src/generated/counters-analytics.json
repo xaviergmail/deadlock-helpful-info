@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": "2026-06-05T17:21:41.880Z",
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-10T02:54:01.568Z",
   "config": {
     "minAverageBadge": 50,
     "minMatchesPlayed": 100,
@@ -10,1178 +10,1178 @@
     "hero_atlas": {
       "heroId": 6,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_long_range",
-          "winRateDelta": -0.0014270002033859863,
-          "sampleSize": 40321,
-          "reason": "−0.1pp win rate over 40321 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11156139239124441,
+          "sampleSize": 30177,
+          "reason": "+11.2pp win rate over 30177 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_sharpshooter",
-          "winRateDelta": -0.0027058442426062257,
-          "sampleSize": 40740,
-          "reason": "−0.3pp win rate over 40740 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09288122845092672,
+          "sampleSize": 80338,
+          "reason": "+9.3pp win rate over 80338 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": -0.0039593062254483224,
-          "sampleSize": 24039,
-          "reason": "−0.4pp win rate over 24039 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09234018530774668,
+          "sampleSize": 55648,
+          "reason": "+9.2pp win rate over 55648 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_fencer": {
       "heroId": 77,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": 0.040490483591946735,
-          "sampleSize": 54213,
-          "reason": "+4.0pp win rate over 54213 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11129603052451698,
+          "sampleSize": 21964,
+          "reason": "+11.1pp win rate over 21964 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
           "item": "upgrade_discord",
-          "winRateDelta": 0.018675957142878064,
-          "sampleSize": 27378,
-          "reason": "+1.9pp win rate over 27378 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "winRateDelta": 0.10282499838782111,
+          "sampleSize": 26736,
+          "reason": "+10.3pp win rate over 26736 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_spellbreaker",
-          "winRateDelta": 0.01765698479995681,
-          "sampleSize": 71869,
-          "reason": "+1.8pp win rate over 71869 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09641385805294089,
+          "sampleSize": 43356,
+          "reason": "+9.6pp win rate over 43356 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_bebop": {
       "heroId": 15,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_ability_power_shard",
-          "winRateDelta": 0.05984598313706191,
-          "sampleSize": 151692,
-          "reason": "+6.0pp win rate over 151692 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11069837742982003,
+          "sampleSize": 39016,
+          "reason": "+11.1pp win rate over 39016 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_veil_walker",
-          "winRateDelta": 0.057084352276697004,
-          "sampleSize": 29841,
-          "reason": "+5.7pp win rate over 29841 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09555239518600467,
+          "sampleSize": 116600,
+          "reason": "+9.6pp win rate over 116600 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_rupture",
-          "winRateDelta": 0.05641547936323427,
-          "sampleSize": 27080,
-          "reason": "+5.6pp win rate over 27080 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09264002387195225,
+          "sampleSize": 76859,
+          "reason": "+9.3pp win rate over 76859 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_punkgoat": {
       "heroId": 72,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_magic_carpet",
-          "winRateDelta": 0.00563235512544813,
-          "sampleSize": 22689,
-          "reason": "+0.6pp win rate over 22689 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10754497306741895,
+          "sampleSize": 32120,
+          "reason": "+10.8pp win rate over 32120 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_goose_egg",
-          "winRateDelta": 0.004248748774715372,
-          "sampleSize": 88211,
-          "reason": "+0.4pp win rate over 88211 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.08891354531231388,
+          "sampleSize": 90826,
+          "reason": "+8.9pp win rate over 90826 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_medic_bullets",
-          "winRateDelta": 0.0037967401668851375,
-          "sampleSize": 166469,
-          "reason": "+0.4pp win rate over 166469 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.08776935951473241,
+          "sampleSize": 51010,
+          "reason": "+8.8pp win rate over 51010 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_nano": {
       "heroId": 16,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_phantom_strike",
-          "winRateDelta": 0.008092267446392576,
-          "sampleSize": 21354,
-          "reason": "+0.8pp win rate over 21354 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11906321443001222,
+          "sampleSize": 17028,
+          "reason": "+11.9pp win rate over 17028 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_rupture",
-          "winRateDelta": 0.00754885846239306,
-          "sampleSize": 12256,
-          "reason": "+0.8pp win rate over 12256 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.10150947660027732,
+          "sampleSize": 34649,
+          "reason": "+10.2pp win rate over 34649 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_deflecting_armor",
-          "winRateDelta": 0.006063099154044904,
-          "sampleSize": 32330,
-          "reason": "+0.6pp win rate over 32330 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09827360411793362,
+          "sampleSize": 54883,
+          "reason": "+9.8pp win rate over 54883 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_unicorn": {
       "heroId": 81,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": 0.03125338813191603,
-          "sampleSize": 102427,
-          "reason": "+3.1pp win rate over 102427 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11034218641059468,
+          "sampleSize": 29186,
+          "reason": "+11.0pp win rate over 29186 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_sharpshooter",
-          "winRateDelta": 0.030573583969102813,
-          "sampleSize": 42301,
-          "reason": "+3.1pp win rate over 42301 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.0942342275776441,
+          "sampleSize": 36907,
+          "reason": "+9.4pp win rate over 36907 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_long_range",
-          "winRateDelta": 0.030458629942100968,
-          "sampleSize": 42223,
-          "reason": "+3.0pp win rate over 42223 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09108339300739621,
+          "sampleSize": 58822,
+          "reason": "+9.1pp win rate over 58822 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_drifter": {
       "heroId": 64,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": 0.0014053219009358964,
-          "sampleSize": 127231,
-          "reason": "+0.1pp win rate over 127231 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11428898444517321,
+          "sampleSize": 29940,
+          "reason": "+11.4pp win rate over 29940 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_return_fire",
-          "winRateDelta": 0.0011624378446878358,
-          "sampleSize": 36655,
-          "reason": "+0.1pp win rate over 36655 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.0953071653608275,
+          "sampleSize": 91832,
+          "reason": "+9.5pp win rate over 91832 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_melee_rebuttal",
-          "winRateDelta": 0.0008537141195830711,
-          "sampleSize": 59452,
-          "reason": "+0.1pp win rate over 59452 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09288775444303876,
+          "sampleSize": 44228,
+          "reason": "+9.3pp win rate over 44228 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_dynamo": {
       "heroId": 11,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": -0.011252519468683442,
-          "sampleSize": 107687,
-          "reason": "−1.1pp win rate over 107687 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10705819340858264,
+          "sampleSize": 29730,
+          "reason": "+10.7pp win rate over 29730 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_thermal_detonator",
-          "winRateDelta": -0.011843410136582078,
-          "sampleSize": 45440,
-          "reason": "−1.2pp win rate over 45440 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09543192595043443,
+          "sampleSize": 38981,
+          "reason": "+9.5pp win rate over 38981 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": -0.013189316401120033,
-          "sampleSize": 16588,
-          "reason": "−1.3pp win rate over 16588 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_tech_overflow",
+          "winRateDelta": 0.09229387855711008,
+          "sampleSize": 119713,
+          "reason": "+9.2pp win rate over 119713 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_necro": {
       "heroId": 76,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_aprounds",
-          "winRateDelta": -0.024397858369014647,
-          "sampleSize": 20005,
-          "reason": "−2.4pp win rate over 20005 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.1316995563591094,
+          "sampleSize": 37173,
+          "reason": "+13.2pp win rate over 37173 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_deflecting_armor",
-          "winRateDelta": -0.02917136100708151,
-          "sampleSize": 74529,
-          "reason": "−2.9pp win rate over 74529 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.11645283539246237,
+          "sampleSize": 108705,
+          "reason": "+11.6pp win rate over 108705 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_juggernaut",
-          "winRateDelta": -0.033787468764558515,
-          "sampleSize": 151687,
-          "reason": "−3.4pp win rate over 151687 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.1125691752459676,
+          "sampleSize": 78447,
+          "reason": "+11.3pp win rate over 78447 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_orion": {
       "heroId": 17,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_fleetfoot_boots",
-          "winRateDelta": 0.013150391581246978,
-          "sampleSize": 92836,
-          "reason": "+1.3pp win rate over 92836 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11269889712392744,
+          "sampleSize": 26706,
+          "reason": "+11.3pp win rate over 26706 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_hollow_point_rounds",
-          "winRateDelta": 0.011940175257884933,
-          "sampleSize": 91425,
-          "reason": "+1.2pp win rate over 91425 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09503323716519207,
+          "sampleSize": 87421,
+          "reason": "+9.5pp win rate over 87421 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_restorative_locket",
-          "winRateDelta": 0.011761813157679657,
-          "sampleSize": 101844,
-          "reason": "+1.2pp win rate over 101844 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09161698784703354,
+          "sampleSize": 56351,
+          "reason": "+9.2pp win rate over 56351 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_haze": {
       "heroId": 13,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": -0.013939743119558812,
-          "sampleSize": 36324,
-          "reason": "−1.4pp win rate over 36324 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10735293741042468,
+          "sampleSize": 43069,
+          "reason": "+10.7pp win rate over 43069 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_weapon_backstabber",
-          "winRateDelta": -0.015027011786609978,
-          "sampleSize": 233409,
-          "reason": "−1.5pp win rate over 233409 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09499224854039107,
+          "sampleSize": 54509,
+          "reason": "+9.5pp win rate over 54509 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": -0.016444867179866707,
-          "sampleSize": 174967,
-          "reason": "−1.6pp win rate over 174967 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.08481465262162297,
+          "sampleSize": 78915,
+          "reason": "+8.5pp win rate over 78915 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_astro": {
       "heroId": 14,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_thermal_detonator",
-          "winRateDelta": 0.044743127312957376,
-          "sampleSize": 24088,
-          "reason": "+4.5pp win rate over 24088 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.1103934627688744,
+          "sampleSize": 17633,
+          "reason": "+11.0pp win rate over 17633 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": 0.04427781855076407,
-          "sampleSize": 67911,
-          "reason": "+4.4pp win rate over 67911 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09153441622569047,
+          "sampleSize": 24839,
+          "reason": "+9.2pp win rate over 24839 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": 0.042731083583007534,
-          "sampleSize": 11297,
-          "reason": "+4.3pp win rate over 11297 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09148235387213177,
+          "sampleSize": 55707,
+          "reason": "+9.1pp win rate over 55707 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_inferno": {
       "heroId": 1,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_fury_trance",
-          "winRateDelta": 0.029402527560043468,
-          "sampleSize": 40340,
-          "reason": "+2.9pp win rate over 40340 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10913651937702518,
+          "sampleSize": 36840,
+          "reason": "+10.9pp win rate over 36840 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_restorative_locket",
-          "winRateDelta": 0.02601991836557771,
-          "sampleSize": 129642,
-          "reason": "+2.6pp win rate over 129642 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09335898349866512,
+          "sampleSize": 109712,
+          "reason": "+9.3pp win rate over 109712 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_hollow_point_rounds",
-          "winRateDelta": 0.02589086812928232,
-          "sampleSize": 123048,
-          "reason": "+2.6pp win rate over 123048 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09048699535774019,
+          "sampleSize": 73414,
+          "reason": "+9.0pp win rate over 73414 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_tengu": {
       "heroId": 20,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_banshee_slugs",
-          "winRateDelta": -0.014234942409137807,
-          "sampleSize": 74031,
-          "reason": "−1.4pp win rate over 74031 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
-        },
-        {
-          "source": "analytics",
-          "item": "upgrade_self_bubble",
-          "winRateDelta": -0.014525953367014233,
-          "sampleSize": 36406,
-          "reason": "−1.5pp win rate over 36406 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.12045364270881742,
+          "sampleSize": 23118,
+          "reason": "+12.0pp win rate over 23118 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
           "item": "upgrade_proc_silence",
-          "winRateDelta": -0.015300426550258428,
-          "sampleSize": 76468,
-          "reason": "−1.5pp win rate over 76468 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "winRateDelta": 0.10628784446242634,
+          "sampleSize": 69149,
+          "reason": "+10.6pp win rate over 69149 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
+        },
+        {
+          "source": "analytics",
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.1024349898171466,
+          "sampleSize": 46679,
+          "reason": "+10.2pp win rate over 46679 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_kelvin": {
       "heroId": 12,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": -0.017927581510195856,
-          "sampleSize": 64805,
-          "reason": "−1.8pp win rate over 64805 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11930247824969714,
+          "sampleSize": 18261,
+          "reason": "+11.9pp win rate over 18261 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_aprounds",
-          "winRateDelta": -0.02197426313498141,
-          "sampleSize": 9357,
-          "reason": "−2.2pp win rate over 9357 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.10152167231339598,
+          "sampleSize": 57200,
+          "reason": "+10.2pp win rate over 57200 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_spirit_bubble",
-          "winRateDelta": -0.023886451780604445,
-          "sampleSize": 42632,
-          "reason": "−2.4pp win rate over 42632 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09774312029466264,
+          "sampleSize": 24494,
+          "reason": "+9.8pp win rate over 24494 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_ghost": {
       "heroId": 4,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_aprounds",
-          "winRateDelta": 0.007015155743055224,
-          "sampleSize": 16406,
-          "reason": "+0.7pp win rate over 16406 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.1240154186878657,
+          "sampleSize": 30518,
+          "reason": "+12.4pp win rate over 30518 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_glitch",
-          "winRateDelta": 0.006343385121912903,
-          "sampleSize": 55012,
-          "reason": "+0.6pp win rate over 55012 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.10400848971092025,
+          "sampleSize": 100177,
+          "reason": "+10.4pp win rate over 100177 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_spellbreaker",
-          "winRateDelta": 0.005976087156354781,
-          "sampleSize": 92146,
-          "reason": "+0.6pp win rate over 92146 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.10066939855840795,
+          "sampleSize": 63251,
+          "reason": "+10.1pp win rate over 63251 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_lash": {
       "heroId": 31,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_ability_refresher",
-          "winRateDelta": 0.02526306993821259,
-          "sampleSize": 104826,
-          "reason": "+2.5pp win rate over 104826 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11685152012703837,
+          "sampleSize": 39734,
+          "reason": "+11.7pp win rate over 39734 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_auto_cleanse",
-          "winRateDelta": 0.006582510399292363,
-          "sampleSize": 244010,
-          "reason": "+0.7pp win rate over 244010 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.0965908143286609,
+          "sampleSize": 125398,
+          "reason": "+9.7pp win rate over 125398 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_spellbreaker",
-          "winRateDelta": 0.005794228366079235,
-          "sampleSize": 119906,
-          "reason": "+0.6pp win rate over 119906 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09645392913963835,
+          "sampleSize": 80313,
+          "reason": "+9.6pp win rate over 80313 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_forge": {
       "heroId": 8,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_aprounds",
-          "winRateDelta": -0.02388498140264428,
-          "sampleSize": 12149,
-          "reason": "−2.4pp win rate over 12149 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.12888912333476166,
+          "sampleSize": 23829,
+          "reason": "+12.9pp win rate over 23829 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_deflecting_armor",
-          "winRateDelta": -0.025501864100555882,
-          "sampleSize": 45378,
-          "reason": "−2.6pp win rate over 45378 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.11293251075087907,
+          "sampleSize": 72653,
+          "reason": "+11.3pp win rate over 72653 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_juggernaut",
-          "winRateDelta": -0.02848319763696794,
-          "sampleSize": 95488,
-          "reason": "−2.8pp win rate over 95488 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.11169600013735081,
+          "sampleSize": 46711,
+          "reason": "+11.2pp win rate over 46711 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_vampirebat": {
       "heroId": 63,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": 0.04938055272068431,
-          "sampleSize": 111217,
-          "reason": "+4.9pp win rate over 111217 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.09748258574565538,
+          "sampleSize": 36693,
+          "reason": "+9.7pp win rate over 36693 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": 0.029109469939522292,
-          "sampleSize": 15279,
-          "reason": "+2.9pp win rate over 15279 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09376531505585306,
+          "sampleSize": 44453,
+          "reason": "+9.4pp win rate over 44453 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_spirit_bubble",
-          "winRateDelta": 0.026991218735659683,
-          "sampleSize": 87718,
-          "reason": "+2.7pp win rate over 87718 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.08512075134449237,
+          "sampleSize": 77611,
+          "reason": "+8.5pp win rate over 77611 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_mirage": {
       "heroId": 52,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_spirit_sap",
-          "winRateDelta": 0.03156432383883395,
-          "sampleSize": 23820,
-          "reason": "+3.2pp win rate over 23820 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10996616691654248,
+          "sampleSize": 22016,
+          "reason": "+11.0pp win rate over 22016 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_withering_whip",
-          "winRateDelta": 0.03067915104786867,
-          "sampleSize": 32178,
-          "reason": "+3.1pp win rate over 32178 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09196415759094456,
+          "sampleSize": 27980,
+          "reason": "+9.2pp win rate over 27980 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_greater_withering_whip",
-          "winRateDelta": 0.029566258417882574,
-          "sampleSize": 34958,
-          "reason": "+3.0pp win rate over 34958 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.08996942952196008,
+          "sampleSize": 43454,
+          "reason": "+9.0pp win rate over 43454 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_krill": {
       "heroId": 18,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_absorbing_armor",
-          "winRateDelta": 0.001089091312374113,
-          "sampleSize": 67405,
-          "reason": "+0.1pp win rate over 67405 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.1169568094067609,
+          "sampleSize": 24670,
+          "reason": "+11.7pp win rate over 24670 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_crushing_fists",
-          "winRateDelta": 0.0001435230891199124,
-          "sampleSize": 59944,
-          "reason": "0.0pp win rate over 59944 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09889552697782511,
+          "sampleSize": 66372,
+          "reason": "+9.9pp win rate over 66372 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": -0.00007420093727883437,
-          "sampleSize": 98955,
-          "reason": "0.0pp win rate over 98955 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09835913372594074,
+          "sampleSize": 27731,
+          "reason": "+9.8pp win rate over 27731 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_bookworm": {
       "heroId": 67,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_split_shot",
-          "winRateDelta": -0.00021925250392196283,
-          "sampleSize": 33159,
-          "reason": "0.0pp win rate over 33159 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.1156146618864925,
+          "sampleSize": 26026,
+          "reason": "+11.6pp win rate over 26026 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_aoe_root",
-          "winRateDelta": -0.0003001794134900315,
-          "sampleSize": 39099,
-          "reason": "0.0pp win rate over 39099 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09583328756150145,
+          "sampleSize": 50226,
+          "reason": "+9.6pp win rate over 50226 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_hollow_point_rounds",
-          "winRateDelta": -0.00031738315607487966,
-          "sampleSize": 86958,
-          "reason": "0.0pp win rate over 86958 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09087447225673695,
+          "sampleSize": 33633,
+          "reason": "+9.1pp win rate over 33633 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_chrono": {
       "heroId": 10,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": 0.031955814983025854,
-          "sampleSize": 21741,
-          "reason": "+3.2pp win rate over 21741 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10556192920674434,
+          "sampleSize": 28556,
+          "reason": "+10.6pp win rate over 28556 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_medic_bullets",
-          "winRateDelta": 0.02815146674582214,
-          "sampleSize": 137902,
-          "reason": "+2.8pp win rate over 137902 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09258419427084319,
+          "sampleSize": 42891,
+          "reason": "+9.3pp win rate over 42891 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_ability_power_shard",
-          "winRateDelta": 0.027819651063571094,
-          "sampleSize": 112225,
-          "reason": "+2.8pp win rate over 112225 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09146147613968925,
+          "sampleSize": 57235,
+          "reason": "+9.1pp win rate over 57235 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_synth": {
       "heroId": 50,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": 0.023853881093126972,
-          "sampleSize": 16199,
-          "reason": "+2.4pp win rate over 16199 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.1043232751798624,
+          "sampleSize": 28732,
+          "reason": "+10.4pp win rate over 28732 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_long_range",
-          "winRateDelta": 0.0229994589750126,
-          "sampleSize": 38406,
-          "reason": "+2.3pp win rate over 38406 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.08842571225231921,
+          "sampleSize": 38569,
+          "reason": "+8.8pp win rate over 38569 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_sharpshooter",
-          "winRateDelta": 0.022764886241263493,
-          "sampleSize": 38556,
-          "reason": "+2.3pp win rate over 38556 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_diviners_kevlar",
+          "winRateDelta": 0.0863227577107899,
+          "sampleSize": 24069,
+          "reason": "+8.6pp win rate over 24069 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_familiar": {
       "heroId": 79,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_bulletshredimbue",
-          "winRateDelta": 0.03652483259487371,
-          "sampleSize": 78170,
-          "reason": "+3.7pp win rate over 78170 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11336306168199806,
+          "sampleSize": 32718,
+          "reason": "+11.3pp win rate over 32718 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_health_nova",
-          "winRateDelta": 0.03639191666402364,
-          "sampleSize": 25662,
-          "reason": "+3.6pp win rate over 25662 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09297966403565416,
+          "sampleSize": 101119,
+          "reason": "+9.3pp win rate over 101119 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_guardian_ward",
-          "winRateDelta": 0.03597126413042517,
-          "sampleSize": 62370,
-          "reason": "+3.6pp win rate over 62370 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09172647032294057,
+          "sampleSize": 67444,
+          "reason": "+9.2pp win rate over 67444 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_gigawatt": {
       "heroId": 2,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_aprounds",
-          "winRateDelta": -0.031754715634966346,
-          "sampleSize": 26252,
-          "reason": "−3.2pp win rate over 26252 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.13191859079545926,
+          "sampleSize": 46942,
+          "reason": "+13.2pp win rate over 46942 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
           "item": "upgrade_proc_silence",
-          "winRateDelta": -0.037790704220321825,
-          "sampleSize": 161581,
-          "reason": "−3.8pp win rate over 161581 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "winRateDelta": 0.11871153208050406,
+          "sampleSize": 150687,
+          "reason": "+11.9pp win rate over 150687 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_self_bubble",
-          "winRateDelta": -0.03845519006458997,
-          "sampleSize": 66249,
-          "reason": "−3.8pp win rate over 66249 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.11392274393876328,
+          "sampleSize": 95557,
+          "reason": "+11.4pp win rate over 95557 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_shiv": {
       "heroId": 19,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": 0.04170966488056088,
-          "sampleSize": 17194,
-          "reason": "+4.2pp win rate over 17194 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10702189768657644,
+          "sampleSize": 41647,
+          "reason": "+10.7pp win rate over 41647 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_resonant_healing",
-          "winRateDelta": 0.04071719181012712,
-          "sampleSize": 134547,
-          "reason": "+4.1pp win rate over 134547 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09585131463738827,
+          "sampleSize": 121407,
+          "reason": "+9.6pp win rate over 121407 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_aoe_root",
-          "winRateDelta": 0.040658465288449075,
-          "sampleSize": 59145,
-          "reason": "+4.1pp win rate over 59145 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09256369846620416,
+          "sampleSize": 75514,
+          "reason": "+9.3pp win rate over 75514 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_werewolf": {
       "heroId": 80,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_metal_skin",
-          "winRateDelta": 0.03488779491038885,
-          "sampleSize": 109812,
-          "reason": "+3.5pp win rate over 109812 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11876762017637077,
+          "sampleSize": 23928,
+          "reason": "+11.9pp win rate over 23928 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_express_shot",
-          "winRateDelta": 0.031572529584153075,
-          "sampleSize": 12297,
-          "reason": "+3.2pp win rate over 12297 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09817259550423263,
+          "sampleSize": 91570,
+          "reason": "+9.8pp win rate over 91570 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_greater_withering_whip",
-          "winRateDelta": 0.030263561613542822,
-          "sampleSize": 69145,
-          "reason": "+3.0pp win rate over 69145 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.0940653760596083,
+          "sampleSize": 66616,
+          "reason": "+9.4pp win rate over 66616 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_magician": {
       "heroId": 60,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.09420165380215939,
+          "sampleSize": 17766,
+          "reason": "+9.4pp win rate over 17766 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
+        },
+        {
+          "source": "analytics",
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.07989747746429243,
+          "sampleSize": 35204,
+          "reason": "+8.0pp win rate over 35204 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
+        },
+        {
+          "source": "analytics",
           "item": "upgrade_magic_carpet",
-          "winRateDelta": 0.06024401043260741,
-          "sampleSize": 7621,
-          "reason": "+6.0pp win rate over 7621 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
-        },
-        {
-          "source": "analytics",
-          "item": "upgrade_melee_charge",
-          "winRateDelta": 0.05657961124780475,
-          "sampleSize": 65948,
-          "reason": "+5.7pp win rate over 65948 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
-        },
-        {
-          "source": "analytics",
-          "item": "upgrade_long_range",
-          "winRateDelta": 0.053172019267186676,
-          "sampleSize": 25549,
-          "reason": "+5.3pp win rate over 25549 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "winRateDelta": 0.07984805699026287,
+          "sampleSize": 8332,
+          "reason": "+8.0pp win rate over 8332 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_doorman": {
       "heroId": 69,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": 0.0005189302641637195,
-          "sampleSize": 74799,
-          "reason": "+0.1pp win rate over 74799 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11350524994008243,
+          "sampleSize": 22525,
+          "reason": "+11.4pp win rate over 22525 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_cheat_death",
-          "winRateDelta": -0.0006915963264345626,
-          "sampleSize": 15926,
-          "reason": "−0.1pp win rate over 15926 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.0956561311321315,
+          "sampleSize": 45427,
+          "reason": "+9.6pp win rate over 45427 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_weapon_shielding",
-          "winRateDelta": -0.008352493490136281,
-          "sampleSize": 12186,
-          "reason": "−0.8pp win rate over 12186 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.09500735001989485,
+          "sampleSize": 31272,
+          "reason": "+9.5pp win rate over 31272 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_priest": {
       "heroId": 65,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_hollow_point_rounds",
-          "winRateDelta": 0.07973155951765809,
-          "sampleSize": 86743,
-          "reason": "+8.0pp win rate over 86743 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10756288495081923,
+          "sampleSize": 37365,
+          "reason": "+10.8pp win rate over 37365 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_surging_power",
-          "winRateDelta": 0.07594808371521389,
-          "sampleSize": 161548,
-          "reason": "+7.6pp win rate over 161548 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09426378101608923,
+          "sampleSize": 69434,
+          "reason": "+9.4pp win rate over 69434 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_bulletshredimbue",
-          "winRateDelta": 0.0726277719066476,
-          "sampleSize": 68791,
-          "reason": "+7.3pp win rate over 68791 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.0897444550656954,
+          "sampleSize": 106756,
+          "reason": "+9.0pp win rate over 106756 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_frank": {
       "heroId": 66,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_critshot",
-          "winRateDelta": -0.048462199989071864,
-          "sampleSize": 81242,
-          "reason": "−4.8pp win rate over 81242 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
-        },
-        {
-          "source": "analytics",
           "item": "upgrade_fervor",
-          "winRateDelta": -0.05112673777985999,
-          "sampleSize": 36130,
-          "reason": "−5.1pp win rate over 36130 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "winRateDelta": 0.12030416441486119,
+          "sampleSize": 35693,
+          "reason": "+12.0pp win rate over 35693 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_aprounds",
-          "winRateDelta": -0.051166013523199605,
-          "sampleSize": 19469,
-          "reason": "−5.1pp win rate over 19469 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.10581628847504515,
+          "sampleSize": 76860,
+          "reason": "+10.6pp win rate over 76860 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
+        },
+        {
+          "source": "analytics",
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.0987297960119195,
+          "sampleSize": 122081,
+          "reason": "+9.9pp win rate over 122081 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_hornet": {
       "heroId": 3,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_sharpshooter",
-          "winRateDelta": 0.02765659010071564,
-          "sampleSize": 14292,
-          "reason": "+2.8pp win rate over 14292 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10970870913335729,
+          "sampleSize": 21681,
+          "reason": "+11.0pp win rate over 21681 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_blood_tribute",
-          "winRateDelta": 0.025159467239451727,
-          "sampleSize": 10327,
-          "reason": "+2.5pp win rate over 10327 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09330637730186941,
+          "sampleSize": 43869,
+          "reason": "+9.3pp win rate over 43869 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_long_range",
-          "winRateDelta": 0.02381031392898586,
-          "sampleSize": 13649,
-          "reason": "+2.4pp win rate over 13649 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09304578108571404,
+          "sampleSize": 66159,
+          "reason": "+9.3pp win rate over 66159 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_viscous": {
       "heroId": 35,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_long_range",
-          "winRateDelta": 0.0404116262490844,
-          "sampleSize": 26634,
-          "reason": "+4.0pp win rate over 26634 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10749070782397163,
+          "sampleSize": 19185,
+          "reason": "+10.7pp win rate over 19185 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_sharpshooter",
-          "winRateDelta": 0.03896361448948049,
-          "sampleSize": 26897,
-          "reason": "+3.9pp win rate over 26897 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09236475856244797,
+          "sampleSize": 38576,
+          "reason": "+9.2pp win rate over 38576 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_melee_charge",
-          "winRateDelta": 0.03686801514950366,
-          "sampleSize": 64096,
-          "reason": "+3.7pp win rate over 64096 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.08870123366547933,
+          "sampleSize": 59549,
+          "reason": "+8.9pp win rate over 59549 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_viper": {
       "heroId": 58,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": 0.02580166415130103,
-          "sampleSize": 59215,
-          "reason": "+2.6pp win rate over 59215 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.1034584888722252,
+          "sampleSize": 15132,
+          "reason": "+10.3pp win rate over 15132 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_spirit_bubble",
-          "winRateDelta": 0.024545708711455005,
-          "sampleSize": 32561,
-          "reason": "+2.5pp win rate over 32561 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09198381000911493,
+          "sampleSize": 42617,
+          "reason": "+9.2pp win rate over 42617 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_dps_aura",
-          "winRateDelta": 0.022433793023451498,
-          "sampleSize": 36466,
-          "reason": "+2.2pp win rate over 36466 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.091333151669026,
+          "sampleSize": 19384,
+          "reason": "+9.1pp win rate over 19384 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_warden": {
       "heroId": 25,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_grit",
-          "winRateDelta": 0.017028772531511804,
-          "sampleSize": 87463,
-          "reason": "+1.7pp win rate over 87463 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.11446978759172866,
+          "sampleSize": 26965,
+          "reason": "+11.4pp win rate over 26965 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_tech_overflow",
-          "winRateDelta": 0.0084014201829955,
-          "sampleSize": 110777,
-          "reason": "+0.8pp win rate over 110777 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.10623284763655749,
+          "sampleSize": 83338,
+          "reason": "+10.6pp win rate over 83338 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_absorbing_armor",
-          "winRateDelta": 0.007992827237191968,
-          "sampleSize": 77772,
-          "reason": "+0.8pp win rate over 77772 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_discord",
+          "winRateDelta": 0.10146756545577162,
+          "sampleSize": 36952,
+          "reason": "+10.1pp win rate over 36952 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_wraith": {
       "heroId": 7,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_chain_lightning",
-          "winRateDelta": 0.021129584076188035,
-          "sampleSize": 93364,
-          "reason": "+2.1pp win rate over 93364 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.10672463967521306,
+          "sampleSize": 33443,
+          "reason": "+10.7pp win rate over 33443 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_target_stun",
-          "winRateDelta": 0.019888519119955594,
-          "sampleSize": 80798,
-          "reason": "+2.0pp win rate over 80798 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09174751581081908,
+          "sampleSize": 68665,
+          "reason": "+9.2pp win rate over 68665 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_boxing_glove",
-          "winRateDelta": 0.01903130660476371,
-          "sampleSize": 129903,
-          "reason": "+1.9pp win rate over 129903 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09049271299412143,
+          "sampleSize": 98705,
+          "reason": "+9.0pp win rate over 98705 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     },
     "hero_yamato": {
       "heroId": 27,
       "status": "ok",
-      "refreshedAt": "2026-06-05T17:21:41.880Z",
+      "refreshedAt": "2026-06-10T02:54:01.568Z",
       "counters": [
         {
           "source": "analytics",
-          "item": "upgrade_crushing_fists",
-          "winRateDelta": 0.0013634011492908993,
-          "sampleSize": 87561,
-          "reason": "+0.1pp win rate over 87561 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_fervor",
+          "winRateDelta": 0.12049532613602454,
+          "sampleSize": 35886,
+          "reason": "+12.0pp win rate over 35886 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_self_bubble",
-          "winRateDelta": 0.0012337283882567496,
-          "sampleSize": 56923,
-          "reason": "+0.1pp win rate over 56923 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_critshot",
+          "winRateDelta": 0.09936067123857617,
+          "sampleSize": 71057,
+          "reason": "+9.9pp win rate over 71057 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         },
         {
           "source": "analytics",
-          "item": "upgrade_deflecting_armor",
-          "winRateDelta": 0.0006117699607124383,
-          "sampleSize": 56789,
-          "reason": "+0.1pp win rate over 56789 matches",
-          "generatedAt": "2026-06-05T17:21:41.880Z"
+          "item": "upgrade_proc_silence",
+          "winRateDelta": 0.09909553116553549,
+          "sampleSize": 116211,
+          "reason": "+9.9pp win rate over 116211 matches",
+          "generatedAt": "2026-06-10T02:54:01.568Z"
         }
       ]
     }

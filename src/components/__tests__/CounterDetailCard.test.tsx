@@ -86,7 +86,7 @@ vi.mock('~/generated/counters.json', () => ({
 
 vi.mock('~/generated/counters-analytics.json', () => ({
   default: {
-    schemaVersion: 1,
+    schemaVersion: 2,
     generatedAt: '2026-06-05T00:00:00.000Z',
     config: { minAverageBadge: 50, minMatchesPlayed: 100, minWinRateDelta: 0 },
     heroes: {
